@@ -1,19 +1,37 @@
 <?php
 function executeSQLFiles(array $dbOptions, array $dbFiles) {
-	$dbConnection = mysql_connect($dbOptions['host'], $dbOptions['user'], $dbOptions['password']);
-	if (!$dbConnection) {
-		die('Verbindung nicht möglich : ' . mysql_error());
+	// open connection
+	$dbConnection = mysqli_connect($dbOptions['host'], $dbOptions['user'], $dbOptions['password'], $dbOptions['database']);
+	if (mysqli_connect_errno($dbConnection)) {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error($dbConnection) . PHP_EOL;
 	}
-	mysql_select_db($dbOptions['database'], $dbConnection);
+	/* change character set to utf8 */
+	if (!mysqli_set_charset($dbConnection, "utf8")) {
+		printf("Error loading character set utf8: %s\n", mysqli_error($dbConnection));
+	} else {
+		// printf("Current character set: %s\n", mysqli_character_set_name($dbConnection));
+	}
 	// db setup
 	foreach ($dbFiles['setup'] as $listItem) {
 		$query = file_get_contents(__DIR__ . '/../../config/database/' . $listItem['file']);
-		$result = mysql_query($query);
-		if (!$result) {
-			die($listItem['file'] . ': ' . 'Ungültige Anfrage: ' . mysql_error() . PHP_EOL);
+		if (mysqli_multi_query($dbConnection, $query)) {
+			do {
+				$result = mysqli_store_result($dbConnection);
+				if (mysqli_connect_error($dbConnection)) {
+					var_dump($result);
+					echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
+				} else {
+					// echo $listItem['file'] . ' ' . 'OK' . PHP_EOL;
+				}
+				if (mysqli_more_results($dbConnection)) {
+					// echo '-----------------' . PHP_EOL;
+				}
+			} while (mysqli_next_result($dbConnection));
 		} else {
-			echo $listItem['file'] . ' ' . 'OK' . PHP_EOL;
+			echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
 		}
 	}
 	// db migration
+	// close connection
+	mysqli_close($dbConnection);
 }
