@@ -14,11 +14,9 @@ CREATE  TABLE IF NOT EXISTS `levels` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `unilevel` VARCHAR(50) NOT NULL ,
   `usrlevel` ENUM('1','2','3') NOT NULL ,
-  PRIMARY KEY (`id`) )
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `unilevel_UNIQUE` (`unilevel` ASC) )
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE UNIQUE INDEX `unilevel_UNIQUE` ON `levels` (`unilevel` ASC) ;
 
 SHOW WARNINGS;
 
@@ -85,6 +83,11 @@ CREATE  TABLE IF NOT EXISTS `courses` (
   `weekday_id` INT NULL ,
   `coursedata_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
+  INDEX `fk_course_levelmin` (`levelmin_id` ASC) ,
+  INDEX `fk_course_levelmax` (`levelmax_id` ASC) ,
+  INDEX `fk_course_provider` (`provider_id` ASC) ,
+  INDEX `fk_course_weekday` (`weekday_id` ASC) ,
+  UNIQUE INDEX `u_coursedata_id` (`coursedata_id` ASC) ,
   CONSTRAINT `fk_course_levelmin`
     FOREIGN KEY (`levelmin_id` )
     REFERENCES `levels` (`id` )
@@ -106,21 +109,6 @@ CREATE  TABLE IF NOT EXISTS `courses` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_course_levelmin` ON `courses` (`levelmin_id` ASC) ;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_course_levelmax` ON `courses` (`levelmax_id` ASC) ;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_course_provider` ON `courses` (`provider_id` ASC) ;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_course_weekday` ON `courses` (`weekday_id` ASC) ;
-
-SHOW WARNINGS;
-CREATE UNIQUE INDEX `u_coursedata_id` ON `courses` (`coursedata_id` ASC) ;
 
 SHOW WARNINGS;
 
@@ -161,15 +149,13 @@ CREATE  TABLE IF NOT EXISTS `universities` (
   `numstudents` INT NULL ,
   `scrape` TINYINT(1) NOT NULL DEFAULT 0 ,
   PRIMARY KEY (`id`) ,
+  INDEX `fk_universitiy_city` (`city_id` ASC) ,
   CONSTRAINT `fk_universitiy_city`
     FOREIGN KEY (`city_id` )
     REFERENCES `cities` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_universitiy_city` ON `universities` (`city_id` ASC) ;
 
 SHOW WARNINGS;
 
@@ -182,11 +168,9 @@ SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `trainers` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(100) NOT NULL ,
-  PRIMARY KEY (`id`) )
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE UNIQUE INDEX `name_UNIQUE` ON `trainers` (`name` ASC) ;
 
 SHOW WARNINGS;
 
@@ -200,6 +184,7 @@ CREATE  TABLE IF NOT EXISTS `courses_trainers` (
   `course_id` INT NOT NULL ,
   `trainer_id` INT NOT NULL ,
   PRIMARY KEY (`course_id`, `trainer_id`) ,
+  INDEX `fk_courseobjecttrainer_trainer` (`trainer_id` ASC) ,
   CONSTRAINT `fk_courseobjecttrainer_courseobject`
     FOREIGN KEY (`course_id` )
     REFERENCES `courses` (`id` )
@@ -211,9 +196,6 @@ CREATE  TABLE IF NOT EXISTS `courses_trainers` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_courseobjecttrainer_trainer` ON `courses_trainers` (`trainer_id` ASC) ;
 
 SHOW WARNINGS;
 
@@ -243,6 +225,7 @@ CREATE  TABLE IF NOT EXISTS `courses_sports` (
   `course_id` INT NOT NULL ,
   `sport_id` INT NOT NULL ,
   PRIMARY KEY (`course_id`, `sport_id`) ,
+  INDEX `fk_coursesport_sport` (`sport_id` ASC) ,
   CONSTRAINT `fk_coursesport_course`
     FOREIGN KEY (`course_id` )
     REFERENCES `courses` (`id` )
@@ -254,9 +237,6 @@ CREATE  TABLE IF NOT EXISTS `courses_sports` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_coursesport_sport` ON `courses_sports` (`sport_id` ASC) ;
 
 SHOW WARNINGS;
 
@@ -273,15 +253,13 @@ CREATE  TABLE IF NOT EXISTS `courseurls` (
   `datetimecreated` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ,
   `datetimelastupdate` TIMESTAMP NULL ,
   PRIMARY KEY (`id`) ,
+  INDEX `fk_courseurl_university` (`university_id` ASC) ,
   CONSTRAINT `fk_courseurl_university`
     FOREIGN KEY (`university_id` )
     REFERENCES `universities` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_courseurl_university` ON `courseurls` (`university_id` ASC) ;
 
 SHOW WARNINGS;
 
@@ -308,15 +286,13 @@ CREATE  TABLE IF NOT EXISTS `tempcourses` (
   `url` VARCHAR(1000) NULL ,
   `university_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
+  INDEX `fk_tempcourse_university` (`university_id` ASC) ,
   CONSTRAINT `fk_tempcourse_university`
     FOREIGN KEY (`university_id` )
     REFERENCES `universities` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_tempcourse_university` ON `tempcourses` (`university_id` ASC) ;
 
 SHOW WARNINGS;
 
@@ -357,6 +333,9 @@ CREATE  TABLE IF NOT EXISTS `levelsmap` (
   `datetimecreated` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ,
   `datetimelastupdate` TIMESTAMP NULL ,
   PRIMARY KEY (`id`) ,
+  INDEX `fk_levelsmap_university` (`university_id` ASC) ,
+  INDEX `fk_levelsmap_levelmin` (`levelmin_id` ASC) ,
+  INDEX `fk_levelsmap_levelmax` (`levelmax_id` ASC) ,
   CONSTRAINT `fk_levelsmap_university`
     FOREIGN KEY (`university_id` )
     REFERENCES `universities` (`id` )
@@ -375,15 +354,6 @@ CREATE  TABLE IF NOT EXISTS `levelsmap` (
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE INDEX `fk_levelsmap_university` ON `levelsmap` (`university_id` ASC) ;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_levelsmap_levelmin` ON `levelsmap` (`levelmin_id` ASC) ;
-
-SHOW WARNINGS;
-CREATE INDEX `fk_levelsmap_levelmax` ON `levelsmap` (`levelmax_id` ASC) ;
-
-SHOW WARNINGS;
 
 -- -----------------------------------------------------
 -- Table `coursedata`
@@ -395,14 +365,10 @@ CREATE  TABLE IF NOT EXISTS `coursedata` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(100) NULL ,
   `description` VARCHAR(1000) NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-CREATE FULLTEXT INDEX `searchcoursetitle` ON `coursedata` (`title` ASC) ;
-
-SHOW WARNINGS;
-CREATE FULLTEXT INDEX `searchcoursedescription` ON `coursedata` (`description` ASC) ;
+  PRIMARY KEY (`id`) ,
+  FULLTEXT INDEX `searchcoursetitle` (`title` ASC) ,
+  FULLTEXT INDEX `searchcoursedescription` (`description` ASC) )
+ENGINE = MyISAM;
 
 SHOW WARNINGS;
 
@@ -419,7 +385,7 @@ DROP VIEW IF EXISTS `allproviders` ;
 SHOW WARNINGS;
 DROP TABLE IF EXISTS `allproviders`;
 SHOW WARNINGS;
-DELIMITER $$
+-- DELIMITER $$
 CREATE OR REPLACE VIEW `allproviders` AS
 
 SELECT
@@ -445,12 +411,11 @@ FROM
 	`providers`
 JOIN
 	`partners` ON `providers`.`providerid` = `partners`.`id`
-$$
-DELIMITER ;
+-- $$
+-- DELIMITER ;
 
 ;
 SHOW WARNINGS;
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
