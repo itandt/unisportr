@@ -8,3 +8,5 @@ nbproject
 .settings
 composer.lock
 .idea
+
+dbdummydata.sql
