@@ -10,3 +10,4 @@ composer.lock
 .idea
 
 dbdummydata.sql
+/module/*/test/report/

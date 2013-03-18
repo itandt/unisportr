@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="Bootstrap.php">
+    <testsuites>
+        <testsuite name="Application Unit Tests">
+            <directory>./ApplicationTest</directory>
+        </testsuite>
+    </testsuites>
+	<filter>
+		<whitelist>
+			<directory>/var/www/itt/unisportr-zf/module/Application/src/Application/</directory>
+			<!--
+			<exclude>
+				<directory suffix=".phtml">/var/www/itt/unisportr-zf/module/Application/</directory>
+				<directory suffix=".php">/var/www/itt/unisportr-zf/module/Application/test/</directory>
+			</exclude>
+			-->
+		</whitelist>
+	</filter>
+</phpunit>
