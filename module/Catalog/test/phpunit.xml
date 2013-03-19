@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="Bootstrap.php">
+    <testsuites>
+		<testsuite name="Catalog Unit Tests">
+			<directory>./CatalogTest</directory>
+		</testsuite>
+    </testsuites>
+	<filter>
+		<whitelist>
+			<directory>/var/www/itt/unisportr-zf/module/Catalog/src/Catalog/</directory>
+			<!--
+			<exclude>
+				<directory suffix=".phtml">/var/www/itt/unisportr-zf/module/Catalog/</directory>
+				<directory suffix=".php">/var/www/itt/unisportr-zf/module/Catalog/test/</directory>
+			</exclude>
+			-->
+		</whitelist>
+	</filter>
+</phpunit>

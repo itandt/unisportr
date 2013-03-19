@@ -15,6 +15,6 @@ class CatalogController extends AbstractActionController {
 	 * The default action - show the home page
 	 */
 	public function indexAction() {
-		return new ViewModel();
+		return new ViewModel(array("var" => "test"));
 	}
 }
