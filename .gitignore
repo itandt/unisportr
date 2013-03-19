@@ -11,3 +11,4 @@ composer.lock
 
 dbdummydata.sql
 /module/*/test/report/
+/temp/*/mappingresult.txt
