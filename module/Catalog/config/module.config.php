@@ -10,7 +10,7 @@ return array(
 			'catalog' => array(
 				'type'    => 'segment',
 				'options' => array(
-					'route'    => '/catalog',
+					'route'    => '/catalog[/]',
 // 					'route'    => '/catalog[/:action][/:id]',
 // 					'constraints' => array(
 // 						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
