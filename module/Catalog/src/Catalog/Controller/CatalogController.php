@@ -20,10 +20,15 @@ class CatalogController extends AbstractActionController {
 	}
 	
 	public function listSportsAction() {
-		return new ViewModel(array('city' => $this->params()->fromRoute('city', null)));
+		return new ViewModel(
+			array('city' => $this->params()->fromRoute('city', null))
+		);
 	}
 	
 	public function listCoursesAction() {
-		return new ViewModel(array('sport' => $this->params()->fromRoute('sport', null)));
+		return new ViewModel(array(
+			'sport' => $this->params()->fromRoute('sport', null),
+			'city' => $this->params()->fromRoute('city', null)
+		));
 	}
 }
