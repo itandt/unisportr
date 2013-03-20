@@ -40,17 +40,6 @@ class CatalogControllerTest extends AbstractHttpControllerTestCase
 		parent::setUp();
 		$this->traceError = true;
 	}
-
-    public function testIndexActionCanBeAccessed()
-    {
-    	$this->markTestIncomplete();
-
-//     	$this->routeMatch->setParam('action', 'index');
-//     	print_r($this->request);
-//     	die(PHP_EOL . '###' . $this->event->getRouteMatch()->getParam('controller', null) . '###' . PHP_EOL);
-//     	die('###');
-//     	$response = $this->controller->getResponse();
-    }
     
 	public function testListCitiesActionCanBeAccessed() {
         $this->routeMatch->setParam('action', 'list-cities');

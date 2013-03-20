@@ -11,10 +11,6 @@ use Zend\View\Model\ViewModel;
  */
 class CatalogController extends AbstractActionController {
 	
-	public function indexAction() {
-		return $this->forward()->dispatch('Catalog/Controller/Catalog', array('action' => 'list-cities'));
-	}
-	
 	public function listCitiesAction() {
 		return new ViewModel();
 	}

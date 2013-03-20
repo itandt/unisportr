@@ -13,7 +13,7 @@ return array(
 					'route'	=> '/catalog',
 					'defaults' => array(
 						'controller' => 'Catalog\Controller\Catalog',
-						'action'	 => 'index',
+						'action'	 => 'list-cities',
 					),
 				),
 				'may_terminate' => true,
