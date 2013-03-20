@@ -10,6 +10,7 @@ use Zend\Http\Response;
 use Zend\Mvc\MvcEvent;
 use Zend\Mvc\Router\RouteMatch;
 use Zend\Mvc\Router\Http\TreeRouteStack as HttpRouter;
+use Zend\View\Variables;
 use PHPUnit_Framework_TestCase;
 
 class CatalogControllerTest extends AbstractHttpControllerTestCase
@@ -43,31 +44,52 @@ class CatalogControllerTest extends AbstractHttpControllerTestCase
     public function testIndexActionCanBeAccessed()
     {
     	$this->markTestIncomplete();
-    	
-    	// Specify which action to run
-        $this->routeMatch->setParam('action', 'index');
-        // Kick the controller into action
-        $result   = $this->controller->dispatch($this->request);
-        $response = $this->controller->getResponse();
-        // Check the HTTP response code
-        $this->assertEquals(200, $response->getStatusCode());
-        // Check for a ViewModel to be returned
-        $this->assertInstanceOf('Zend\View\Model\ViewModel', $result);
-        // Test the parameters contained in the View model
-        // when the ViewModel has variables: ViewModel(array("var" => "test")
-        // $vars = $result->getVariables();
-        // $this->assertTrue(isset($vars['var']));
+
+//     	$this->routeMatch->setParam('action', 'index');
+//     	print_r($this->request);
+//     	die(PHP_EOL . '###' . $this->event->getRouteMatch()->getParam('controller', null) . '###' . PHP_EOL);
+//     	die('###');
+//     	$response = $this->controller->getResponse();
     }
     
 	public function testListCitiesActionCanBeAccessed() {
-		$this->markTestIncomplete();
+        $this->routeMatch->setParam('action', 'list-cities');
+        $result   = $this->controller->dispatch($this->request);
+        $response = $this->controller->getResponse();
+        
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertInstanceOf('Zend\View\Model\ViewModel', $result);
+        $vars = $result->getVariables();
+        $this->assertFalse(isset($vars['city']));
+        $this->assertFalse(isset($vars['sport']));
 	}
 	
 	public function testListSportsActionCanBeAccessed() {
-		$this->markTestIncomplete();
+		$this->routeMatch->setParam('action', 'list-sports');
+        $this->routeMatch->setParam('city', 'Berlin');
+        $result   = $this->controller->dispatch($this->request);
+        $response = $this->controller->getResponse();
+        $vars = $result->getVariables();
+        
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertInstanceOf('Zend\View\Model\ViewModel', $result);
+        $this->assertTrue(isset($vars['city']));
+        $this->assertNotNull($vars['city']);
 	}
 	
 	public function testListCoursesActionCanBeAccessed() {
-		$this->markTestIncomplete();
+        $this->routeMatch->setParam('action', 'list-courses');
+        $this->routeMatch->setParam('city', 'Berlin');
+        $this->routeMatch->setParam('sport', 'Aikido');
+        $result   = $this->controller->dispatch($this->request);
+        $response = $this->controller->getResponse();
+        $vars = $result->getVariables();
+        
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertInstanceOf('Zend\View\Model\ViewModel', $result);
+        $this->assertTrue(isset($vars['city']));
+        $this->assertNotNull($vars['city']);
+        $this->assertTrue(isset($vars['sport']));
+        $this->assertNotNull($vars['sport']);
 	}
 }
