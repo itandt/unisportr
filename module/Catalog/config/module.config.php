@@ -46,6 +46,7 @@ return array(
 										'action'	 => 'list-courses',
 									),
 								),
+								'may_terminate' => true,
 							),
 						),
 					),
