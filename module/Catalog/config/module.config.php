@@ -8,17 +8,46 @@ return array(
 	'router' => array(
 		'routes' => array(
 			'catalog' => array(
-				'type'    => 'segment',
+				'type'	=> 'literal',
 				'options' => array(
-					'route'    => '/catalog[/]',
-// 					'route'    => '/catalog[/:action][/:id]',
-// 					'constraints' => array(
-// 						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-// 						'id'     => '[0-9]+',
-// 					),
+					'route'	=> '/catalog',
 					'defaults' => array(
 						'controller' => 'Catalog\Controller\Catalog',
-						'action'     => 'index',
+						'action'	 => 'index',
+					),
+				),
+				'may_terminate' => true,
+				'child_routes' => array(
+					'city' => array(
+						'type'	=> 'segment',
+						'options' => array(
+							'route'	=> '/:city',
+							'constraints' => array(
+								'city'  => '[a-zA-Z][a-zA-Z0-9_-]*',
+								'sport' => '[a-zA-Z][a-zA-Z0-9_-]*',
+							),
+							'defaults' => array(
+								'controller' => 'Catalog\Controller\Catalog',
+								'action'	 => 'list-sports',
+							),
+						),
+						'may_terminate' => true,
+						'child_routes' => array(
+							'sport' => array(
+								'type'	=> 'segment',
+								'options' => array(
+									'route'	=> '/:sport',
+									'constraints' => array(
+										'city'  => '[a-zA-Z][a-zA-Z0-9_-]*',
+										'sport' => '[a-zA-Z][a-zA-Z0-9_-]*',
+									),
+									'defaults' => array(
+										'controller' => 'Catalog\Controller\Catalog',
+										'action'	 => 'list-courses',
+									),
+								),
+							),
+						),
 					),
 				),
 			),

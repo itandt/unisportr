@@ -42,6 +42,8 @@ class CatalogControllerTest extends AbstractHttpControllerTestCase
 
     public function testIndexActionCanBeAccessed()
     {
+    	$this->markTestIncomplete();
+    	
     	// Specify which action to run
         $this->routeMatch->setParam('action', 'index');
         // Kick the controller into action
@@ -56,4 +58,16 @@ class CatalogControllerTest extends AbstractHttpControllerTestCase
         // $vars = $result->getVariables();
         // $this->assertTrue(isset($vars['var']));
     }
+    
+	public function testListCitiesActionCanBeAccessed() {
+		$this->markTestIncomplete();
+	}
+	
+	public function testListSportsActionCanBeAccessed() {
+		$this->markTestIncomplete();
+	}
+	
+	public function testListCoursesActionCanBeAccessed() {
+		$this->markTestIncomplete();
+	}
 }

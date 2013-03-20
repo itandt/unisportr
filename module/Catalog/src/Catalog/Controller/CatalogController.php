@@ -7,14 +7,23 @@ use Zend\View\Model\ViewModel;
 /**
  * CatalogController
  * 
- * @author
- * @version 
+ * @author automatix
  */
 class CatalogController extends AbstractActionController {
-	/**
-	 * The default action - show the home page
-	 */
+	
 	public function indexAction() {
-		return new ViewModel(array("var" => "test"));
+		return $this->forward()->dispatch('Catalog/Controller/Catalog', array('action' => 'list-cities'));
+	}
+	
+	public function listCitiesAction() {
+		return new ViewModel();
+	}
+	
+	public function listSportsAction() {
+		return new ViewModel(array('city' => $this->params()->fromRoute('city', null)));
+	}
+	
+	public function listCoursesAction() {
+		return new ViewModel(array('sport' => $this->params()->fromRoute('sport', null)));
 	}
 }
