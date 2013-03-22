@@ -1,6 +1,7 @@
 <?php
 namespace Catalog\Controller;
 
+use Catalog\Model\City;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -11,8 +12,12 @@ use Zend\View\Model\ViewModel;
  */
 class CatalogController extends AbstractActionController {
 	
+	protected $cityTable;
+	
 	public function listCitiesAction() {
-		return new ViewModel();
+		return new ViewModel(array(
+			'cities' => $this->getCityTable()->fetchAll()
+		));
 	}
 	
 	public function listSportsAction() {
@@ -26,5 +31,13 @@ class CatalogController extends AbstractActionController {
 			'sport' => $this->params()->fromRoute('sport', null),
 			'city' => $this->params()->fromRoute('city', null)
 		));
+	}
+	
+	function getCityTable() {
+		if (!$this->cityTable) {
+			$serviceLocator = $this->getServiceLocator();
+			$this->cityTable = $serviceLocator->get('Catalog\Model\CityTable');
+		}
+		return $this->cityTable;
 	}
 }
