@@ -13,10 +13,10 @@
 return array(
 	'db' => array(
 		'driver'         => 'Pdo',
-		'dsn'            => 'mysql:dbname=unisportr_zf;host=localhost',
 		'driver_options' => array(
 			PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
 		),
+		'pdodriver'      => 'mysql',
 	),
 	'service_manager' => array(
 		'factories' => array(
