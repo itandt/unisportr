@@ -14,10 +14,10 @@ use Zend\Mvc\MvcEvent;
 
 class Module
 {
-    public function onBootstrap(MvcEvent $e)
+    public function onBootstrap(MvcEvent $mvcEvent)
     {
-        $e->getApplication()->getServiceManager()->get('translator');
-        $eventManager        = $e->getApplication()->getEventManager();
+        $mvcEvent->getApplication()->getServiceManager()->get('translator');
+        $eventManager        = $mvcEvent->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
     }
