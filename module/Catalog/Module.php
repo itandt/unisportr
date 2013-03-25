@@ -13,8 +13,11 @@ use Zend\Db\ResultSet\ResultSet;
 
 use Catalog\Model\City;
 use Catalog\Model\CityTable;
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
-class Module
+class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface
 {
     public function onBootstrap(MvcEvent $e)
     {
