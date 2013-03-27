@@ -1,37 +1,14 @@
 <?php
-echo __FILE__;
-$title = 'My cities';
+$title = $this->translate('List of cities');
 $this->headTitle($title);
 ?>
+
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-<table class="table">
-<tr>
-    <th>ID</th>
-    <th>Name</th>
-</tr>
-<?php
-function createUrlFriendlyName($name) // $name must be an UTF-8 encoded string
-{
-	$name=mb_convert_encoding(trim($name), 'HTML-ENTITIES', 'UTF-8');
-	$name=preg_replace(
-			array('/&szlig;/', '/&(..)lig;/', '/&([aouAOU])uml;/', '/&(.)[^;]*;/', '/\W/'),
-			array('ss', '$1', '$1e', '$1', '-'),
-			$name);
-	$name=preg_replace('/-{2,}/', '-', $name);
-	return trim($name, '-');
-}
-?>
-
 <?php foreach ($cities as $city) : ?>
-<tr>
-    <td><?php echo $this->escapeHtml($city->id);?></td>
-    <?php // $this-> url()->fromRoute('catalog', array('city' => $this->escapeHtml($city->name))); ?>
-    <?php
-    $cityHref = $this->url('city',  array('city' => $this->escapeHtml($city->name)));
-    $cityName = $this->escapeHtml($city->name);
-    ?>
-    <td><a href="<?php echo $cityHref; ?>"><?php echo $cityName; ?></a></td>
-</tr>
+<span>
+	<a href="<?php echo $this->url('city',  array('city' => $this->escapeHtml($city->name))); ?>">
+		<?php echo $this->escapeHtml($city->name); ?>
+	</a>
+</span>
 <?php endforeach; ?>
-</table>
