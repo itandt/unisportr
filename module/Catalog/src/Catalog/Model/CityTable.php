@@ -2,6 +2,7 @@
 namespace Catalog\Model;
 
 use Zend\Db\TableGateway\TableGateway;
+use Zend\Db\Sql\Where;
 
 class CityTable {
 	
@@ -12,7 +13,9 @@ class CityTable {
 	}
 	
 	public function fetchAll() {
-		$resultSet = $this->tableGateway->select();
+		$where = new Where();
+		$where->notEqualTo('name', '');
+		$resultSet = $this->tableGateway->select($where);
 		return $resultSet;
 	}
 	
