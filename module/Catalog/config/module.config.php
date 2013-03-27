@@ -17,40 +17,30 @@ return array(
 					),
 				),
 				'may_terminate' => true,
-				'child_routes' => array(
-					'city' => array(
-						'type'	=> 'segment',
-						'options' => array(
-							'route'	=> '/:city',
-							'constraints' => array(
-								'city'  => '[a-zA-Z][a-zA-Z0-9_-]*',
-								'sport' => '[a-zA-Z][a-zA-Z0-9_-]*',
-							),
-							'defaults' => array(
-								'controller' => 'Catalog\Controller\Catalog',
-								'action'	 => 'list-sports',
-							),
-						),
-						'may_terminate' => true,
-						'child_routes' => array(
-							'sport' => array(
-								'type'	=> 'segment',
-								'options' => array(
-									'route'	=> '/:sport',
-									'constraints' => array(
-										'city'  => '[a-zA-Z][a-zA-Z0-9_-]*',
-										'sport' => '[a-zA-Z][a-zA-Z0-9_-]*',
-									),
-									'defaults' => array(
-										'controller' => 'Catalog\Controller\Catalog',
-										'action'	 => 'list-courses',
-									),
-								),
-								'may_terminate' => true,
-							),
-						),
+			),
+			'city' => array(
+				'type'	=> 'regex',
+				'options' => array(
+					'regex'	=> '/catalog/(?<city>[\p{L}]*)/u',
+					'defaults' => array(
+						'controller' => 'Catalog\Controller\Catalog',
+						'action'	 => 'list-sports',
 					),
+					'spec'	=> '/catalog/%city%',
 				),
+				'may_terminate' => true,
+			),
+			'city' => array(
+				'type'	=> 'regex',
+				'options' => array(
+					'regex'	=> '/catalog/(?<city>[\p{L}]*)/(?<sport>[\p{L}]*)/',
+					'defaults' => array(
+						'controller' => 'Catalog\Controller\Catalog',
+						'action'	 => 'list-courses',
+					),
+					'spec'	=> '/catalog/%city%/%sport%',
+				),
+				'may_terminate' => true,
 			),
 		),
 	),
