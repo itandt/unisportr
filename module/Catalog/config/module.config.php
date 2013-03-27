@@ -19,9 +19,9 @@ return array(
 				'may_terminate' => true,
 			),
 			'city' => array(
-				'type'	=> 'regex',
+				'type'	=> 'ITT\Mvc\Router\Http\UnicodeRegex',
 				'options' => array(
-					'regex'	=> '/catalog/(?<city>[\p{L}]*)/u',
+					'regex'	=> '/catalog/(?<city>[\p{L}]*)',
 					'defaults' => array(
 						'controller' => 'Catalog\Controller\Catalog',
 						'action'	 => 'list-sports',
@@ -30,10 +30,10 @@ return array(
 				),
 				'may_terminate' => true,
 			),
-			'city' => array(
-				'type'	=> 'regex',
+			'sport' => array(
+				'type'	=> 'ITT\Mvc\Router\Http\UnicodeRegex',
 				'options' => array(
-					'regex'	=> '/catalog/(?<city>[\p{L}]*)/(?<sport>[\p{L}]*)/',
+					'regex'	=> '/catalog/(?<city>[\p{L}]*)/(?<sport>[\p{L}]*)',
 					'defaults' => array(
 						'controller' => 'Catalog\Controller\Catalog',
 						'action'	 => 'list-courses',

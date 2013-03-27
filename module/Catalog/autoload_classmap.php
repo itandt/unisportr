@@ -3,6 +3,10 @@
 return array(
     'Catalog\Module'                               => __DIR__ . '/Module.php',
     'Catalog\Controller\CatalogController'         => __DIR__ . '/src/Catalog/Controller/CatalogController.php',
+    'Catalog\Model\City'                           => __DIR__ . '/src/Catalog/Model/City.php',
+    'Catalog\Model\CityTable'                      => __DIR__ . '/src/Catalog/Model/CityTable.php',
     'CatalogTest\Bootstrap'                        => __DIR__ . '/test/Bootstrap.php',
     'CatalogTest\Controller\CatalogControllerTest' => __DIR__ . '/test/CatalogTest/Controller/CatalogControllerTest.php',
+    'CatalogTest\Model\CityTableTest'              => __DIR__ . '/test/CatalogTest/Model/CityTableTest.php',
+    'CatalogTest\Model\CityTest'                   => __DIR__ . '/test/CatalogTest/Model/CityTest.php',
 );
