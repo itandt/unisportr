@@ -52,7 +52,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
     	try {
     		return array (
     			'factories' =>array(
-	    			'Catalog\Model\CityTable' => function ($serviceManager) {
+	    			'CityTable' => function ($serviceManager) {
 	    				$tableGateway = $serviceManager->get('CityTableGateway');
 	    				$table = new CityTable($tableGateway);
 	    				return $table;

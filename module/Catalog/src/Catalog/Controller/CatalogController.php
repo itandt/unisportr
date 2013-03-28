@@ -36,7 +36,7 @@ class CatalogController extends AbstractActionController {
 	function getCityTable() {
 		if (!$this->cityTable) {
 			$serviceLocator = $this->getServiceLocator();
-			$this->cityTable = $serviceLocator->get('Catalog\Model\CityTable');
+			$this->cityTable = $serviceLocator->get('CityTable');
 		}
 		return $this->cityTable;
 	}
