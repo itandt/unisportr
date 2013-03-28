@@ -1,4 +1,21 @@
 <?php
 echo __FILE__;
-echo PHP_EOL . '<br />' . PHP_EOL;
+$title = $this->translate('List of sports in') . ' ' . $city;
+$this->headTitle($title);
 echo 'current city = ' . $city;
+?>
+
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php foreach ($sports as $sport) : ?>
+<span>
+	
+	<?php $urlParams = array('sport' => $this->escapeHtml($sport->title), 'city' => $city); ?>
+	<a href="<?php echo $this->url('sport',  $urlParams); ?>">
+		<?php echo $this->escapeHtml($sport->title); ?>
+		(<?php echo $this->escapeHtml($sport->category); ?>)
+		[<?php echo $this->escapeHtml($sport->countCourses) . ' ' . $this->translate('courses'); ?>]
+	</a>
+	
+</span>
+<?php endforeach; ?>

@@ -16,6 +16,8 @@ use Catalog\Model\CityTable;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Catalog\Model\Sport;
+use Catalog\Model\SportTable;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface
 {
@@ -62,7 +64,18 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 	    				$resultSetPrototype = new ResultSet();
 	    				$resultSetPrototype->setArrayObjectPrototype(new City());
 	    				return new TableGateway('cities', $dbAdapter, null, $resultSetPrototype);
-	    			}
+	    			},
+	    			'SportTable' => function ($serviceManager) {
+	    				$tableGateway = $serviceManager->get('SportTableGateway');
+	    				$table = new SportTable($tableGateway);
+	    				return $table;
+	    			},
+	    			'SportTableGateway' => function ($serviceManager) {
+	    				$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+	    				$resultSetPrototype = new ResultSet();
+	    				$resultSetPrototype->setArrayObjectPrototype(new Sport());
+	    				return new TableGateway('sports', $dbAdapter, null, $resultSetPrototype);
+	    			},
 	    		)
     		);
     	} catch (\Exception $e) {
