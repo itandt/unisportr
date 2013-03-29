@@ -40,7 +40,7 @@ class SportTable {
 			->greaterThan('courses.enddate', new Expression('NOW()'))
 			->equalTo('cities.name', $cityName)
 		;
-		$select->where($where, Predicate::OP_OR);
+		$select->where($where, Predicate::OP_AND);
 		$select->group(array('sports.id', 'sports.category'));
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		$resultSet = $this->tableGateway->selectWith($select);
