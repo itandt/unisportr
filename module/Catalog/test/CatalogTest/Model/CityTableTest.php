@@ -10,7 +10,9 @@ class CityTableTest extends PHPUnit_Framework_TestCase {
 		
 	public function testFetchAllReturnsAllCities() {
 		$resultSet = new ResultSet();
-		$mockTableGateway = $this->getMock('Zend\Db\TableGateway\TableGateway', array('select'), array(), '',  false);
+		$mockTableGateway = $this->getMock(
+			'Zend\Db\TableGateway\TableGateway', array('select'), array(), '',  false
+		);
 		$mockTableGateway
 			->expects($this->once())
 			->method('select')
