@@ -93,7 +93,6 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 				echo $e->getMessage();
 			} while ($e = $e->getPrevious());
 		}
-		// $breakpoint = null;
 	}
 	
 }
