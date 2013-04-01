@@ -31,7 +31,7 @@ class SportTable {
 		$select
 			->join('courses_sports', 'courses_sports.sport_id = sports.id', array())
 			->join('courses', 'courses_sports.course_id = courses.id', array())
-			->join('allproviders', 'courses.provider_id = allproviders.id', array())
+			->join('allproviders', 'courses.provider_id = allproviders.providerid', array())
 			->join('cities', 'cities.id = allproviders.city_id', array(
 				'countCourses' => new Expression('COUNT(courses.id)'))
 			)
