@@ -18,6 +18,8 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Catalog\Model\Sport;
 use Catalog\Model\SportTable;
+use Catalog\Model\Course;
+use Catalog\Model\CourseTable;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface
 {
@@ -75,6 +77,17 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 	    				$resultSetPrototype = new ResultSet();
 	    				$resultSetPrototype->setArrayObjectPrototype(new Sport());
 	    				return new TableGateway('sports', $dbAdapter, null, $resultSetPrototype);
+	    			},
+	    			'CourseTable' => function ($serviceManager) {
+	    				$tableGateway = $serviceManager->get('CourseTableGateway');
+	    				$table = new CourseTable($tableGateway);
+	    				return $table;
+	    			},
+	    			'CourseTableGateway' => function ($serviceManager) {
+	    				$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+	    				$resultSetPrototype = new ResultSet();
+	    				$resultSetPrototype->setArrayObjectPrototype(new Course());
+	    				return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
 	    			},
 	    		)
     		);

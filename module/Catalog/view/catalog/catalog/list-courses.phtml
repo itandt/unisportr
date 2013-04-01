@@ -1,6 +1,25 @@
 <?php
-echo __FILE__;
-echo PHP_EOL . '<br />' . PHP_EOL;
+$title = $this->translate('List of') . ' ' . $sport . ' ' . $this->translate('courses in') . ' ' . $city;
+$this->headTitle($title);
 echo 'current city = ' . $city;
-echo PHP_EOL . '<br />' . PHP_EOL;
 echo 'current sport = ' . $sport;
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php foreach ($courses as $course) : ?>
+<div>
+	<div>id: <?php echo $this->escapeHtml($course->id); ?></div>
+	<div>title: <?php echo $this->escapeHtml($course->title); ?></div>
+	<div>startDate: <?php echo $this->escapeHtml($course->startDate); ?></div>
+	<div>endDate: <?php echo $this->escapeHtml($course->endDate); ?></div>
+	<div>startTime: <?php echo $this->escapeHtml($course->startTime); ?></div>
+	<div>endTime: <?php echo $this->escapeHtml($course->endTime); ?></div>
+	<div>providerName: <?php echo $this->escapeHtml($course->providerName); ?></div>
+	<div>providerType: <?php echo $this->escapeHtml($course->providerType); ?></div>
+	<div>weekday: <?php echo $this->escapeHtml($course->weekday); ?></div>
+	<div>usrLevelMin: <?php echo $this->escapeHtml($course->usrLevelMin); ?></div>
+	<div>usrLevelMax: <?php echo $this->escapeHtml($course->usrLevelMax); ?></div>
+	<div>uniLevelMin: <?php echo $this->escapeHtml($course->uniLevelMin); ?></div>
+	<div>uniLevelMax: <?php echo $this->escapeHtml($course->uniLevelMax); ?></div>
+</div>
+<br />
+<?php endforeach; ?>

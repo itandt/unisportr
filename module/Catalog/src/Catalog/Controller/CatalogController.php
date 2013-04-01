@@ -6,6 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Catalog\Model\SportTable;
 use Catalog\Model\CityTable;
+use Catalog\Model\CourseTable;
 
 /**
  * CatalogController
@@ -16,6 +17,7 @@ class CatalogController extends AbstractActionController {
 
 	protected $cityTable;
 	protected $sportTable;
+	protected $courseTable;
 	
 	public function listCitiesAction() {
 		return new ViewModel(array(
@@ -32,9 +34,12 @@ class CatalogController extends AbstractActionController {
 	}
 	
 	public function listCoursesAction() {
+		$cityName = $this->params()->fromRoute('city', null);
+		$sportTitle = $this->params()->fromRoute('sport', null);
 		return new ViewModel(array(
-			'sport' => $this->params()->fromRoute('sport', null),
-			'city' => $this->params()->fromRoute('city', null)
+			'city' => $cityName,
+			'sport' => $sportTitle,
+			'courses' => $this->getCourseTable()->findAllByCityNameAndSportTitle($cityName, $sportTitle)
 		));
 	}
 
@@ -60,5 +65,17 @@ class CatalogController extends AbstractActionController {
 			$this->sportTable = $serviceLocator->get('SportTable');
 		}
 		return $this->sportTable;
+	}
+	
+	/**
+	 * Gets a CourseTable object.
+	 * @return CourseTable
+	 */
+	function getCourseTable() {
+		if (!$this->courseTable) {
+			$serviceLocator = $this->getServiceLocator();
+			$this->courseTable = $serviceLocator->get('CourseTable');
+		}
+		return $this->courseTable;
 	}
 }
