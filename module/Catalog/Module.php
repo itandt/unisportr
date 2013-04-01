@@ -21,82 +21,79 @@ use Catalog\Model\SportTable;
 use Catalog\Model\Course;
 use Catalog\Model\CourseTable;
 
-class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface
-{
-    public function onBootstrap(MvcEvent $e)
-    {
-    	/**
-		 * @var ServiceManager $serviceManager
-    	 */
-        $serviceManager = $e->getApplication()->getServiceManager();
-        $registeredServices = $serviceManager->getRegisteredServices();
-		$breakpoint = null;
-    }
+class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
-    public function getConfig()
-    {
-        return include __DIR__ . '/config/module.config.php';
-    }
+	public function onBootstrap(MvcEvent $e) {
+		/**
+		 * @var ServiceManager $serviceManager
+		 */
+		$serviceManager = $e->getApplication()->getServiceManager();
+		$registeredServices = $serviceManager->getRegisteredServices();
+		$breakpoint = null;
+	}
+	
+	public function getConfig() {
+		return include __DIR__ . '/config/module.config.php';
+	}
 
-    public function getAutoloaderConfig()
-    {
-        return array(
-            'Zend\Loader\ClassMapAutoloader' => array(
-                __DIR__ . '/autoload_classmap.php',
-            ),
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
-        );
-    }
-    
-    public function getServiceConfig() {
-    	try {
-    		return array (
-    			'factories' =>array(
-	    			'CityTable' => function ($serviceManager) {
-	    				$tableGateway = $serviceManager->get('CityTableGateway');
-	    				$table = new CityTable($tableGateway);
-	    				return $table;
-	    			},
-	    			'CityTableGateway' => function ($serviceManager) {
-	    				$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
-	    				$resultSetPrototype = new ResultSet();
-	    				$resultSetPrototype->setArrayObjectPrototype(new City());
-	    				return new TableGateway('cities', $dbAdapter, null, $resultSetPrototype);
-	    			},
-	    			'SportTable' => function ($serviceManager) {
-	    				$tableGateway = $serviceManager->get('SportTableGateway');
-	    				$table = new SportTable($tableGateway);
-	    				return $table;
-	    			},
-	    			'SportTableGateway' => function ($serviceManager) {
-	    				$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
-	    				$resultSetPrototype = new ResultSet();
-	    				$resultSetPrototype->setArrayObjectPrototype(new Sport());
-	    				return new TableGateway('sports', $dbAdapter, null, $resultSetPrototype);
-	    			},
-	    			'CourseTable' => function ($serviceManager) {
-	    				$tableGateway = $serviceManager->get('CourseTableGateway');
-	    				$table = new CourseTable($tableGateway);
-	    				return $table;
-	    			},
-	    			'CourseTableGateway' => function ($serviceManager) {
-	    				$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
-	    				$resultSetPrototype = new ResultSet();
-	    				$resultSetPrototype->setArrayObjectPrototype(new Course());
-	    				return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
-	    			},
-	    		)
-    		);
-    	} catch (\Exception $e) {
-    		do {
-    			echo $e->getMessage();
-    		} while ($e = $e->getPrevious());
-    	}
-    	// $breakpoint = null;
-
-    }
+	public function getAutoloaderConfig() {
+		return array(
+			'Zend\Loader\ClassMapAutoloader' => array(
+				__DIR__ . '/autoload_classmap.php',
+			),
+			'Zend\Loader\StandardAutoloader' => array(
+				'namespaces' => array(
+					__NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+				),
+			),
+		);
+	}
+	
+	public function getServiceConfig() {
+		try {
+			return array (
+				'factories' =>array(
+					'CityTable' => function ($serviceManager) {
+						$tableGateway = $serviceManager->get('CityTableGateway');
+						$table = new CityTable($tableGateway);
+						return $table;
+					},
+					'CityTableGateway' => function ($serviceManager) {
+						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+						$resultSetPrototype = new ResultSet();
+						$resultSetPrototype->setArrayObjectPrototype(new City());
+						return new TableGateway('cities', $dbAdapter, null, $resultSetPrototype);
+					},
+					'SportTable' => function ($serviceManager) {
+						$tableGateway = $serviceManager->get('SportTableGateway');
+						$table = new SportTable($tableGateway);
+						return $table;
+					},
+					'SportTableGateway' => function ($serviceManager) {
+						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+						$resultSetPrototype = new ResultSet();
+						$resultSetPrototype->setArrayObjectPrototype(new Sport());
+						return new TableGateway('sports', $dbAdapter, null, $resultSetPrototype);
+					},
+					'CourseTable' => function ($serviceManager) {
+						$tableGateway = $serviceManager->get('CourseTableGateway');
+						$table = new CourseTable($tableGateway);
+						return $table;
+					},
+					'CourseTableGateway' => function ($serviceManager) {
+						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+						$resultSetPrototype = new ResultSet();
+						$resultSetPrototype->setArrayObjectPrototype(new Course());
+						return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
+					},
+				)
+			);
+		} catch (\Exception $e) {
+			do {
+				echo $e->getMessage();
+			} while ($e = $e->getPrevious());
+		}
+		// $breakpoint = null;
+	}
+	
 }
