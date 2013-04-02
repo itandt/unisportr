@@ -3,6 +3,7 @@ namespace Course\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Db\ResultSet\ResultSet;
 
 /**
  * CourseController
@@ -10,16 +11,33 @@ use Zend\View\Model\ViewModel;
  * @author automatix
  */
 class CourseController extends AbstractActionController {
+
+	/**
+	 * @var Zend\Db\TableGateway\TableGateway
+	 */
+	protected $courseTable;
 	
 	public function displayCourseAction() {
 		$id = $this->params()->fromRoute('id', null);
 		$title = $this->params()->fromRoute('title', null);
-		$course = new \stdClass();
+		$course = $this->getCourseTable()->findOnceByID($id)->current();
 		return new ViewModel(array(
 			'id' => $id,
 			'title' => $title,
 			'course' => $course
 		));
+	}
+	
+	/**
+	 * Gets a CourseTable object.
+	 * @return CourseTable
+	 */
+	function getCourseTable() {
+		if (!$this->courseTable) {
+			$serviceLocator = $this->getServiceLocator();
+			$this->courseTable = $serviceLocator->get('CourseTable');
+		}
+		return $this->courseTable;
 	}
 	
 }

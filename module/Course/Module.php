@@ -4,6 +4,10 @@ namespace Course;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Course\Model\Course;
+use Zend\Db\TableGateway\TableGateway;
+use Zend\Db\ResultSet\ResultSet;
+use Course\Model\CourseTable;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
@@ -29,6 +33,19 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 	public function getServiceConfig() {
 		try {
 			return array (
+				'factories' => array(
+					'CourseTable' => function($serviceManager) {
+						$tableGateway = $serviceManager->get('CourseTableGateway');
+						$table = new CourseTable($tableGateway);
+						return $table;
+					},
+					'CourseTableGateway' => function($serviceManager) {
+						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+						$resultSetPrototype = new ResultSet();
+						$resultSetPrototype->setArrayObjectPrototype(new Course());
+						return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
+					}
+				)
 			);
 		} catch (\Exception $e) {
 			do {

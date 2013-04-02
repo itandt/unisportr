@@ -5,3 +5,13 @@ echo 'course id = ' . $id;
 echo PHP_EOL . '<br />' . PHP_EOL;
 echo 'course title = ' . $title;
 ?>
+
+<?php
+echo PHP_EOL . '<br /><br />' . PHP_EOL;
+echo '<pre>';
+print_r($course);
+echo '</pre>';
+echo PHP_EOL . '<br /><br />' . PHP_EOL;
+?>
+
+<h1><?php echo $this->escapeHtml($course->title) . ' ' . '(' . $this->escapeHtml($course->id) . ')'; ?></h1>
