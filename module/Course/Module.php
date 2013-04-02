@@ -34,7 +34,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 		try {
 			return array (
 				'factories' => array(
-					'CourseTable' => function($serviceManager) {
+					'Course\Model\CourseTable' => function($serviceManager) {
 						$tableGateway = $serviceManager->get('CourseTableGateway');
 						$table = new CourseTable($tableGateway);
 						return $table;

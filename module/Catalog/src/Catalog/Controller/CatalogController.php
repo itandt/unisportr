@@ -50,7 +50,7 @@ class CatalogController extends AbstractActionController {
 	function getCityTable() {
 		if (!$this->cityTable) {
 			$serviceLocator = $this->getServiceLocator();
-			$this->cityTable = $serviceLocator->get('CityTable');
+			$this->cityTable = $serviceLocator->get('Catalog\Model\CityTable');
 		}
 		return $this->cityTable;
 	}
@@ -62,7 +62,7 @@ class CatalogController extends AbstractActionController {
 	function getSportTable() {
 		if (!$this->sportTable) {
 			$serviceLocator = $this->getServiceLocator();
-			$this->sportTable = $serviceLocator->get('SportTable');
+			$this->sportTable = $serviceLocator->get('Catalog\Model\SportTable');
 		}
 		return $this->sportTable;
 	}
@@ -74,7 +74,7 @@ class CatalogController extends AbstractActionController {
 	function getCourseTable() {
 		if (!$this->courseTable) {
 			$serviceLocator = $this->getServiceLocator();
-			$this->courseTable = $serviceLocator->get('CourseTable');
+			$this->courseTable = $serviceLocator->get('Catalog\Model\CourseTable');
 		}
 		return $this->courseTable;
 	}

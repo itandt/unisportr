@@ -35,7 +35,7 @@ class CourseController extends AbstractActionController {
 	function getCourseTable() {
 		if (!$this->courseTable) {
 			$serviceLocator = $this->getServiceLocator();
-			$this->courseTable = $serviceLocator->get('CourseTable');
+			$this->courseTable = $serviceLocator->get('Course\Model\CourseTable');
 		}
 		return $this->courseTable;
 	}

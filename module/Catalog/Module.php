@@ -53,7 +53,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 		try {
 			return array (
 				'factories' =>array(
-					'CityTable' => function ($serviceManager) {
+					'Catalog\Model\CityTable' => function ($serviceManager) {
 						$tableGateway = $serviceManager->get('CityTableGateway');
 						$table = new CityTable($tableGateway);
 						return $table;
@@ -64,7 +64,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 						$resultSetPrototype->setArrayObjectPrototype(new City());
 						return new TableGateway('cities', $dbAdapter, null, $resultSetPrototype);
 					},
-					'SportTable' => function ($serviceManager) {
+					'Catalog\Model\SportTable' => function ($serviceManager) {
 						$tableGateway = $serviceManager->get('SportTableGateway');
 						$table = new SportTable($tableGateway);
 						return $table;
@@ -75,7 +75,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 						$resultSetPrototype->setArrayObjectPrototype(new Sport());
 						return new TableGateway('sports', $dbAdapter, null, $resultSetPrototype);
 					},
-					'CourseTable' => function ($serviceManager) {
+					'Catalog\Model\CourseTable' => function ($serviceManager) {
 						$tableGateway = $serviceManager->get('CourseTableGateway');
 						$table = new CourseTable($tableGateway);
 						return $table;
