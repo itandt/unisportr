@@ -6,7 +6,13 @@ echo 'current sport = ' . $sport;
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <?php foreach ($courses as $course) : ?>
+<?php
+	$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
+	$aURL = $this->url('course',  $urlParams);
+	$aText = $this->translate('course') . ' ' . $this->translate('link');
+?>
 <div>
+	<div><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></div>
 	<div>id: <?php echo $this->escapeHtml($course->id); ?></div>
 	<div>title: <?php echo $this->escapeHtml($course->title); ?></div>
 	<div>startDate: <?php echo $this->escapeHtml($course->startDate); ?></div>

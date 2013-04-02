@@ -8,7 +8,8 @@
 return array(
 	'modules' => array(
 		'Application',
-		'Catalog'
+		'Catalog',
+		'Course'
 	),
 	'module_listener_options' => array(
 		'module_paths' => array(
