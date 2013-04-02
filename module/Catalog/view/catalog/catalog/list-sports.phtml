@@ -9,7 +9,7 @@ echo 'current city = ' . $city;
 
 <?php foreach ($sports as $sport) : ?>
 <?php
-	$urlParams = array('sport' => $this->escapeHtml($sport->title), 'city' => $city);
+	$urlParams = array('sport' => $this->escapeHtml($sport->title), 'city' => $this->escapeHtml($city));
 	$aURL = $this->url('sport',  $urlParams);
 	$aText =
 		$this->escapeHtml($sport->title)
