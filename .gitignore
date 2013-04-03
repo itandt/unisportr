@@ -8,6 +8,7 @@ nbproject
 .settings
 composer.lock
 .idea
+config/application.config.php.default
 
 dbdummydata.sql
 /module/*/test/report/
