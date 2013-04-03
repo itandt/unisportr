@@ -1,0 +1,28 @@
+<div><?php echo sprintf($this->translate('Your search returned %s results.'), $courses->count()); ?></div>
+<?php foreach ($courses as $course) : ?>
+<?php
+	$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
+	$aURL = $this->url('course',  $urlParams);
+	$aText = $this->translate('course') . ' ' . $this->translate('link');
+?>
+<div>
+	<div><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></div>
+	<div>id: <?php echo $this->escapeHtml($course->id); ?></div>
+	<div>title: <?php echo $this->escapeHtml($course->title); ?></div>
+	<div>description: <?php echo $this->escapeHtml($course->description); ?></div>
+	<div>startDate: <?php echo $this->escapeHtml($course->startDate); ?></div>
+	<div>endDate: <?php echo $this->escapeHtml($course->endDate); ?></div>
+	<div>startTime: <?php echo $this->escapeHtml($course->startTime); ?></div>
+	<div>endTime: <?php echo $this->escapeHtml($course->endTime); ?></div>
+	<div>providerName: <?php echo $this->escapeHtml($course->providerName); ?></div>
+	<div>providerType: <?php echo $this->escapeHtml($course->providerType); ?></div>
+	<div>city: <?php echo $this->escapeHtml($course->city); ?></div>
+	<div>weekday: <?php echo $this->escapeHtml($course->weekday); ?></div>
+	<div>usrLevelMin: <?php echo $this->escapeHtml($course->usrLevelMin); ?></div>
+	<div>usrLevelMax: <?php echo $this->escapeHtml($course->usrLevelMax); ?></div>
+	<div>uniLevelMin: <?php echo $this->escapeHtml($course->uniLevelMin); ?></div>
+	<div>uniLevelMax: <?php echo $this->escapeHtml($course->uniLevelMax); ?></div>
+	<div>relevance: <?php echo $this->escapeHtml($course->relevance); ?></div>
+</div>
+<br />
+<?php endforeach; ?>

@@ -1,0 +1,28 @@
+<?php
+$title = $this->translate('Course search');
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('search-courses'));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('keyword'));
+echo $this->formRow($form->get('trainer'));
+
+echo $this->formRow($form->get('city'));
+echo $this->formRow($form->get('level'));
+echo $this->formRow($form->get('weekday'));
+
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+?>
+<?php
+if ($courses instanceof Zend\Db\ResultSet\ResultSetInterface) {
+	echo $this->render('search/search/list-courses.phtml', array(
+		'courses' => $courses
+	));
+}
+?>

@@ -4,6 +4,10 @@ namespace Search;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Search\Model\CourseTable;
+use Zend\Db\ResultSet\ResultSet;
+use Search\Model\Course;
+use Zend\Db\TableGateway\TableGateway;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
@@ -28,6 +32,17 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 		try {
 			return array (
 				'factories' => array(
+					'Search\Model\CourseTable' => function($serviceManager) {
+						$tableGateway = $serviceManager->get('CourseTableGateway');
+						$table = new CourseTable($tableGateway);
+						return $table;
+					},
+					'CourseTableGateway' => function($serviceManager) {
+						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+						$resultSetPrototype = new ResultSet();
+						$resultSetPrototype->setArrayObjectPrototype(new Course());
+						return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
+					}
 				)
 			);
 		} catch (\Exception $e) {

@@ -7,6 +7,17 @@ return array(
 	),
 	'router' => array(
 		'routes' => array(
+			'search' => array(
+				'type'	=> 'literal',
+				'options' => array(
+					'route'	=> '/search',
+					'defaults' => array(
+						'controller' => 'Search\Controller\Search',
+						'action'	 => 'search',
+					),
+				),
+				'may_terminate' => true,
+			),
 			'search-courses' => array(
 				'type'	=> 'literal',
 				'options' => array(
