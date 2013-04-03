@@ -35,11 +35,11 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 			return array (
 				'factories' => array(
 					'Course\Model\CourseTable' => function($serviceManager) {
-						$tableGateway = $serviceManager->get('CourseTableGateway');
+						$tableGateway = $serviceManager->get('Course\Model\CourseTableGateway');
 						$table = new CourseTable($tableGateway);
 						return $table;
 					},
-					'CourseTableGateway' => function($serviceManager) {
+					'Course\Model\CourseTableGateway' => function($serviceManager) {
 						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new Course());

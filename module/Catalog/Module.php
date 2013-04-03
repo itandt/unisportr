@@ -54,33 +54,33 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 			return array (
 				'factories' =>array(
 					'Catalog\Model\CityTable' => function ($serviceManager) {
-						$tableGateway = $serviceManager->get('CityTableGateway');
+						$tableGateway = $serviceManager->get('Catalog\Model\CityTableGateway');
 						$table = new CityTable($tableGateway);
 						return $table;
 					},
-					'CityTableGateway' => function ($serviceManager) {
+					'Catalog\Model\CityTableGateway' => function ($serviceManager) {
 						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new City());
 						return new TableGateway('cities', $dbAdapter, null, $resultSetPrototype);
 					},
 					'Catalog\Model\SportTable' => function ($serviceManager) {
-						$tableGateway = $serviceManager->get('SportTableGateway');
+						$tableGateway = $serviceManager->get('Catalog\Model\SportTableGateway');
 						$table = new SportTable($tableGateway);
 						return $table;
 					},
-					'SportTableGateway' => function ($serviceManager) {
+					'Catalog\Model\SportTableGateway' => function ($serviceManager) {
 						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new Sport());
 						return new TableGateway('sports', $dbAdapter, null, $resultSetPrototype);
 					},
 					'Catalog\Model\CourseTable' => function ($serviceManager) {
-						$tableGateway = $serviceManager->get('CourseTableGateway');
+						$tableGateway = $serviceManager->get('Catalog\Model\CourseTableGateway');
 						$table = new CourseTable($tableGateway);
 						return $table;
 					},
-					'CourseTableGateway' => function ($serviceManager) {
+					'Catalog\Model\CourseTableGateway' => function ($serviceManager) {
 						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new Course());
