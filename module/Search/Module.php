@@ -1,6 +1,10 @@
 <?php
 namespace Search;
 
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
 	public function getConfig() {
