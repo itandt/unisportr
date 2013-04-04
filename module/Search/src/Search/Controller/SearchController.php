@@ -42,7 +42,8 @@ class SearchController extends AbstractActionController {
 		}
 		return new ViewModel(array(
 			'form' => $form,
-			'courses' => $courses
+			'courses' => $courses,
+			'cities' => $this->getServiceLocator()->get('Search\Model\CityStorage')->getCities(),
 		));
 	}
 	
