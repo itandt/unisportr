@@ -1,8 +1,8 @@
 <?php
-namespace Search\Model;
+namespace Cache\Model;
 
 use Zend\Cache\Storage\Adapter\AbstractAdapter;
-use Search\Model\CityTable;
+use Cache\Model\CityTable;
 
 class CityStorage {
 

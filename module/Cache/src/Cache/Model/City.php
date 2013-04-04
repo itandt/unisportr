@@ -1,5 +1,5 @@
 <?php
-namespace Search\Model;
+namespace Cache\Model;
 
 use Zend\Stdlib\ArraySerializableInterface;
 use Zend\InputFilter\Factory as InputFactory;

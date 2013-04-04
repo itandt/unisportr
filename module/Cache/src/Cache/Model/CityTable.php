@@ -1,5 +1,5 @@
 <?php
-namespace Search\Model;
+namespace Cache\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Where;

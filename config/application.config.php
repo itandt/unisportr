@@ -6,17 +6,18 @@
  * @see https://github.com/zendframework/ZFTool
  */
 return array(
-	'modules' => array(
-		'Application',
-		'Catalog',
-		'Course',
-		'Search'
-	),
-	'module_listener_options' => array(
-		'module_paths' => array(
-			'./module',
-			'./vendor'
-		),
-		'config_glob_paths' => array('config/autoload/{,*.}{global,local}.php')
-	)
-);
+    'modules' => array(
+        'Application',
+        'Catalog',
+        'Course',
+        'Search',
+        'Cache'
+        ),
+    'module_listener_options' => array(
+        'module_paths' => array(
+            './module',
+            './vendor'
+            ),
+        'config_glob_paths' => array('config/autoload/{,*.}{global,local}.php')
+        )
+    );
