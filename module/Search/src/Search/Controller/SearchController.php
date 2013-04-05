@@ -25,7 +25,7 @@ class SearchController extends AbstractActionController {
 	}
 	
 	public function searchCoursesAction() {
-		$form = new CourseSearchForm();
+		$form = $this->getServiceLocator()->get('Search\Form\CourseSearchForm');
 		$request = $this->getRequest();
 		if ($request->isPost()) {
 			$courseSearchInput = new CourseSearchInput();

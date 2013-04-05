@@ -31,8 +31,17 @@ class CityStorage {
 	}
 	
 	private function cacheCities() {
-		$cities = $this->cityTable->fetchAll()->toArray();
+		$cities = $this->getCitiesShallowArray();
 		$this->cacheAdapter->setItem(self::CACHE_LISTENER_CITIES, $cities);
+	}
+	
+	private function getCitiesShallowArray() {
+		$cities = $this->cityTable->fetchAll()->toArray();
+		$citiesShallowArray = array();
+		foreach ($cities as $city) {
+			$citiesShallowArray[$city['id']] = $city['name']; 
+		}
+		return $citiesShallowArray;
 	}
 	
 }

@@ -8,6 +8,7 @@ use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Search\Model\CourseTable;
 use Search\Model\Course;
+use Search\Controller\SearchController;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
@@ -42,6 +43,12 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new Course());
 						return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
+					},
+					'Search\Form\CourseSearchForm' => function ($serviceManager) {
+						$cacheService = $serviceManager->get('Cache\Model\CityStorage');
+						$cities = $cacheService->getCities();
+						$searchForm = new Form\CourseSearchForm($cities);
+						return $searchForm;
 					},
 				)
 			);

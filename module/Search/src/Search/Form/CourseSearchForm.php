@@ -2,11 +2,16 @@
 namespace Search\Form;
 
 use Zend\Form\Form;
+use Cache\Model\CityStorage;
+use Cache;
 
 class CourseSearchForm extends Form {
+
+	private $cities;
 	
-	public function __construct() {
+	public function __construct(array $cities) {
 		parent::__construct('courseSearch');
+		$this->setCities($cities);
 		$this->setAttribute('method', 'post');
 		$this->add(array(
 			'name' => 'keyword',
@@ -25,11 +30,10 @@ class CourseSearchForm extends Form {
 		));
 		$this->add(array(
 			'name' => 'city',
-			'attributes' => array(
-				'type'  => 'text',
-			),
+			'type'  => 'Zend\Form\Element\Select',
 			'options' => array(
 				'label' => 'Stadt',
+				'value_options' => $this->cities
 			),
 		));
 		$this->add(array(
@@ -74,5 +78,8 @@ class CourseSearchForm extends Form {
 		));
 	}
 	
+	public function setCities(array $cities) {
+		$this->cities = $cities;
+	}
 	
 }
