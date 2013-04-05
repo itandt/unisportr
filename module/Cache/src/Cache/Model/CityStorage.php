@@ -5,7 +5,9 @@ use Zend\Cache\Storage\Adapter\AbstractAdapter;
 use Cache\Model\CityTable;
 
 class CityStorage {
-
+	
+	const CACHE_LISTENER_CITIES = 'cache_cities';
+	
 	/**
 	 * @var CityTable
 	 */
@@ -21,17 +23,16 @@ class CityStorage {
 	}
 	
 	public function getCities() {
-		if (!$this->cacheAdapter->hasItem('cities')) {
+		if (!$this->cacheAdapter->hasItem(self::CACHE_LISTENER_CITIES)) {
 			$this->cacheCities();
 		}
-		$cities = $this->cacheAdapter->getItem('cities');
+		$cities = $this->cacheAdapter->getItem(self::CACHE_LISTENER_CITIES);
 		return $cities;
 	}
 	
 	private function cacheCities() {
 		$cities = $this->cityTable->fetchAll()->toArray();
-		$this->cacheAdapter->setItem('cities', $cities);
-// 		$this->cacheAdapter->setItem('cities', 123);
+		$this->cacheAdapter->setItem(self::CACHE_LISTENER_CITIES, $cities);
 	}
 	
 }

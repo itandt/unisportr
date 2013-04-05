@@ -24,4 +24,5 @@ return array(
 			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
 		),
 	),
+	'cache_ttl' => 60 * 60 * 24, // 1 day
 );

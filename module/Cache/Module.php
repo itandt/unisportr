@@ -6,15 +6,23 @@ use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
+use Zend\Mvc\MvcEvent;
 use Zend\Cache\Storage\Adapter\MemcachedOptions;
 use Zend\Cache\Storage\Adapter\Memcached;
 use Cache\Model\CityTable;
 use Cache\Model\City;
 use Cache\Model\CityStorage;
 
-class Module
-{
-    public function getConfig()
+class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
+	
+	private $moduleConfig;
+	
+    public function onBootstrap(MvcEvent $mvcEvent) {
+    	$application = $mvcEvent->getParam('application');
+    	$this->moduleConfig = $application->getConfig();
+	}
+	
+	public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
     }
@@ -54,8 +62,8 @@ class Module
 					},
 					'Zend\Cache\Adapter\MemcachedOptions' => function ($serviceManager) {
 						return new MemcachedOptions(array(
-							'ttl'			=> 60, // 1 minute // 60 * 60 * 24 * 7, // 1 week
-							'namespace'		=> 'cache_listener',
+							'ttl'			=> $this->moduleConfig['cache_ttl'], // 60 * 60, // 1 hour // 60 * 60 * 24 * 7, // 1 week
+							'namespace'		=> CityStorage::CACHE_LISTENER_CITIES,
 							'key_pattern'	=> null,
 							'readable'		=> true,
 							'writable'		=> true,
