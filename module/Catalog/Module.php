@@ -23,15 +23,6 @@ use Catalog\Model\CourseTable;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
-	public function onBootstrap(MvcEvent $e) {
-		/**
-		 * @var ServiceManager $serviceManager
-		 */
-		$serviceManager = $e->getApplication()->getServiceManager();
-		$registeredServices = $serviceManager->getRegisteredServices();
-		$breakpoint = null;
-	}
-	
 	public function getConfig() {
 		return include __DIR__ . '/config/module.config.php';
 	}
