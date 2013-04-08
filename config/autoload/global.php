@@ -22,6 +22,25 @@ return array(
 	'service_manager' => array(
 		'factories' => array(
 			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+			'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+		),
+	),
+	'navigation' => array(
+		'default' => array(
+			array(
+				'label' => 'Catalog',
+				'route' => 'catalog',
+			),
+			array(
+				'label' => 'Search',
+				'route' => 'search/courses',
+// 				'pages' => array(
+// 					array(
+// 						'label' => 'Courses',
+// 						'route' => 'search/courses',
+// 					),
+// 				),
+			),
 		),
 	),
 );
