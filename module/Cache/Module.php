@@ -15,31 +15,23 @@ use Cache\Model\CityStorage;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
-	private $moduleConfig;
-	
-    public function onBootstrap(MvcEvent $mvcEvent) {
-    	$application = $mvcEvent->getParam('application');
-    	$this->moduleConfig = $application->getConfig();
+	public function getConfig() {
+		return include __DIR__ . '/config/module.config.php';
 	}
-	
-	public function getConfig()
-    {
-        return include __DIR__ . '/config/module.config.php';
-    }
 
-    public function getAutoloaderConfig()
-    {
-        return array(
+	public function getAutoloaderConfig()
+	{
+		return array(
 			'Zend\Loader\ClassMapAutoloader' => array(
 				__DIR__ . '/autoload_classmap.php',
 			),
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
-        );
-    }
+			'Zend\Loader\StandardAutoloader' => array(
+				'namespaces' => array(
+					__NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+				),
+			),
+		);
+	}
 	
 	public function getServiceConfig() {
 		try {
@@ -62,7 +54,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 					},
 					'Zend\Cache\Adapter\MemcachedOptions' => function ($serviceManager) {
 						return new MemcachedOptions(array(
-							'ttl'			=> $this->moduleConfig['cache_ttl'], // 60 * 60, // 1 hour // 60 * 60 * 24 * 7, // 1 week
+							'ttl'			=> $serviceManager->get('Config')['ttl'],
 							'namespace'		=> CityStorage::CACHE_LISTENER_CITIES,
 							'key_pattern'	=> null,
 							'readable'		=> true,

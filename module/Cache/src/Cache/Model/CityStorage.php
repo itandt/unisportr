@@ -20,6 +20,7 @@ class CityStorage {
 	public function __construct(CityTable $cityTable, AbstractAdapter $cacheAdapter) {
 		$this->cityTable	= $cityTable;
 		$this->cacheAdapter	= $cacheAdapter;
+		// $this->cacheAdapter->removeItem(self::CACHE_LISTENER_CITIES);
 	}
 	
 	public function getCities() {
