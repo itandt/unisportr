@@ -76,7 +76,6 @@ class CourseTable {
 		$select->having($having);
 		$select->group(array('courses.id'));
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
-		// die($test);
 		$resultSet = $this->tableGateway->selectWith($select);
 		return $resultSet;
 	}
