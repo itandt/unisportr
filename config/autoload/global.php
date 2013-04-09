@@ -1,4 +1,5 @@
 <?php
+$breakpoint = null;
 /**
  * Global Configuration Override
  *
