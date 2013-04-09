@@ -1,3 +1,20 @@
 <?php
-echo __FILE__;
+$title = $this->translate('About') . ' ' . 'unisportr';
+$this->headTitle($title);
 ?>
+
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Willkommen bei unisport<em>r</em>!</p>
+<p>unisport<em>r</em> ist die erste Suchmaschine für Hochschulsportkurse an allen größ<em>r</em>en Universitäten in Deutschland.</p>
+<p>unisport<em>r</em> ist erst am Anfang. Wenn Ihr Ideen habt od<em>r</em> eine weitere Uni vorschlagen wollt, schreibt uns einfach.</p>
+<p>unisport<em>r</em> wird noch viel meh<em>r</em>. Es erwarten euch viele zusätzliche Funktionen rund um den Hochschulsport. Also schaut wied<em>r</em> rein.</p>
+<p>Euer unisport<em>r</em> Team</p>
+<p>&nbsp;</p>
+<p>Bisher unterstützte Universitäten:</p>
+<ul>
+	<?php foreach ($cities as $city) : ?>
+	<li><?php echo $this->escapeHtml($city); ?></li>
+	<?php endforeach; ?>
+	<li>Deine Uni ist nicht dabei? Schreib uns einfach!</li>
+</ul>

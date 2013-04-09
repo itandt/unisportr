@@ -57,7 +57,7 @@ return array(
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'de_DE',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
