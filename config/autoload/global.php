@@ -34,7 +34,7 @@ return array(
 			),
 			array(
 				'label' => 'Search',
-				'route' => 'search/courses',
+				'route' => 'search',
 // 				'pages' => array(
 // 					array(
 // 						'label' => 'Courses',
