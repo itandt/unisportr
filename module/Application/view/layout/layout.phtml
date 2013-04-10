@@ -50,7 +50,8 @@ echo $this->doctype();
 							/></a>
 						</div>
 						<div id="topCenter">
-							<jdoc:include type="modules" name="search" />
+							<!--jdoc:include type="modules" name="search" /-->
+							<?php echo $this->searhForm(); ?>
 						</div>
 						<div id="topRight">&nbsp;</div>
 					</div>

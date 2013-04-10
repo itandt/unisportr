@@ -9,8 +9,13 @@ use Zend\Db\TableGateway\TableGateway;
 use Search\Model\CourseTable;
 use Search\Model\Course;
 use Search\Controller\SearchController;
+use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
 
-class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
+class Module implements
+	ConfigProviderInterface,
+	ServiceProviderInterface,
+	AutoloaderProviderInterface,
+	ViewHelperProviderInterface {
 	
 	public function getConfig() {
 		return include __DIR__ . '/config/module.config.php';
@@ -57,6 +62,20 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 				echo $e->getMessage();
 			} while ($e = $e->getPrevious());
 		}
+	}
+	
+	public function getViewHelperConfig() {
+		return array(
+			'factories' => array(
+				'searhForm' => function($serviceManager) {
+					$helper = new View\Helper\SearchForm(array('render' => true, 'redirect' => false));
+					$helper->setViewTemplate('search/search/search-form');
+					$searchForm = $serviceManager->getServiceLocator()->get('Search\Form\CourseSearchForm');
+					$helper->setSearchForm($searchForm);
+					return $helper;
+				}
+			)
+		);
 	}
 	
 }

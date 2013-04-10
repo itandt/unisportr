@@ -1,0 +1,16 @@
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('search-courses'));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('keyword'));
+echo $this->formRow($form->get('trainer'));
+
+echo $this->formRow($form->get('city'));
+echo $this->formRow($form->get('level'));
+echo $this->formRow($form->get('weekday'));
+
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+?>
