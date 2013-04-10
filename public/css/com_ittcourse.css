@@ -1,0 +1,88 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ com_ittcourse #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* course page #start# */
+#courseTitle {
+	/*background: #000000;*/
+	float: left;
+	width: 80%;
+	font-size: 18px;
+	text-align: left;
+}
+#courseLevel {
+	/*background: #0000cc;*/
+	float: right;
+	width: 20%;
+	font-size: 18px;
+	text-align: right;
+	color: #999999;
+}
+#courseDescription {
+	/*background: #000000;*/
+	margin: 10px 5px 50px 5px;
+	font-size: 16px;
+	text-align: left;
+}
+#courseData {
+	/*background: #9900cc;*/
+	margin: 20px 0 0 0;
+	float: left;
+	width: 450px;
+}
+#courseLink {
+	/*background: #00aa00;*/
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	font-size: 12px;
+}
+#courseDescription #courseDescriptionLabel {
+	margin: 0 0 20px 0;
+}
+#courseDescription #courseDescriptionData {
+	
+}
+#courseData .courseInfo {
+	margin-bottom: 10px;
+}
+#courseData .courseInfo .courseInfoLabel {
+	/*background: #00aa00;*/
+	float: left;
+	clear: left;
+	width: 100px;
+}
+#courseData .courseInfo .courseInfoData {
+	/*background: #aa0000;*/
+	margin: 0 0 0 100px;
+	width: 350px;
+}
+#courseInfoGoogleMap {
+	/*background: #aa33ff;*/
+	margin: 20px 0 0 458px;
+	width: 150px;
+	height: 150px;
+}
+#courseInfoGoogleMap #gMapCanvas {
+	border: 1px dashed #cccccc;
+	width: 148px;
+	height: 148px;
+}
+#courseInfoGoogleMap #gMapLink {
+	/*background: #aa33ff;*/
+	display: block;
+	width: 150px;
+	font-size: 10px;
+	text-align: right;
+}
+#courseData .courseInfo#courseInfoTimeData .courseInfoData > div {
+	/*background: #aaff00;*/
+	display: inline-block;
+	padding-right: 10px;
+}
+#courseTitle a {
+	display: block;
+}
+/* course page #stop# */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ com_ittcourse #stop#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/

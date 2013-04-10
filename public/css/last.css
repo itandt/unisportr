@@ -1,0 +1,21 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ last #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+#boxplus .boxplusBackground {
+	background-color: rgba(255, 255, 255, 0.96);
+}
+#boxplus .boxplusViewer > .boxplusPrev,
+#boxplus .boxplusViewer > .boxplusNext,
+#boxplus .boxplusThumbs,
+#boxplus .boxplusThumbs > ul {
+	cursor: pointer;
+}
+#boxplus .boxplusDialog {
+	background-image: none;
+	background-color: rgba(235, 235, 235, 0.96);
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ last #stop#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/

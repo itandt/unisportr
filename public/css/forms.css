@@ -1,0 +1,235 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ forms #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* common #start# */
+form div.formElementSet {
+	/*background: #ececec;*/
+	clear: both;
+}
+form .formElementSet dt,
+form .formElementSet dt {
+	float: left;
+}
+form .formElementSet dd,
+form .formElementSet dd {
+	float: left;
+}
+form .formElementSet.formCheckboxSet dt,
+form .formElementSet.formCheckboxSet dd,
+form .formElementSet.formRadioSet dt,
+form .formElementSet.formRadioSet dd {
+	float: left;
+	clear: none;
+}
+form .formElementSet.formRadioSet dd input[type=radio] {
+	float: left;
+	margin: 0 8px;
+}
+form .formElementSet.formRadioSet dd input[type=radio]:last-child {
+	margin-right: 0;
+}
+form .formElementSet.formRadioSet dd label {
+	float: left;
+}
+form .formElementSet.formCheckboxSet dd input[type=checkbox] {
+	float: left;
+	margin: 0 6px;
+}
+form .formElementSet.formCheckboxSet dd input[type=checkbox]:last-child {
+	margin-right: 0;
+}
+form .formElementSet.formCheckboxSet dd label {
+	float: left;
+}
+/* common #stop# */
+
+/* search #start# */
+div#searchFormArea {
+	background: linear-gradient(linear, 0 0, 0 100%, from(#91c6ea), to(#007acf)); /* CSS3 */
+	background: -moz-linear-gradient(top, #91c6ea, #007acf); /* Firefox */
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#91c6ea), to(#007acf)); /* Safari, Chrome */
+	background: -o-linear-gradient(top, #91c6ea, #007acf); /* Opera */
+	background: -ms-linear-gradient(top, #91c6ea 0%, #007acf 100%); /* IE */
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#91c6ea', EndColorStr='#007acf'); /* IE */
+	/*background: #00cc99;*/
+	z-index: 100;
+	position: absolute;
+	left: 0;
+	top: 20px;
+	width: 600px;
+	padding: 10px 25px 10px 25px;
+	font-size: 14px;
+	border: 0;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	overflow-y: visible;
+}
+div#searchFormContainer {
+	/*background: #ff9900;*/
+	height: 31px;
+	overflow-y: hidden;
+}
+div#searchFormContainer dt {
+	/*background: #cc0000;*/
+	width: 100px;
+}
+div#searchFormContainer dd {
+	/*background: #0066cc;*/
+}
+form#searchForm {
+	color: #ffffff;
+}
+form#searchForm .invalid {
+	color: #cc0000;
+}
+form#searchForm input[type=text] {
+	border: 0;
+	width: 300px;
+}
+form#searchForm select {
+	border: 0;
+	width: 310px;
+}
+form#searchForm .formElementSet {
+	width: 450px;
+	padding: 10px 0;
+}
+form#searchForm .formElementSet#formElementKeyword {
+	background: transparent;
+	width: auto;
+	float: left;
+	clear: none;
+	margin-bottom: 20px;
+	padding: 0;
+}
+form#searchForm .formElementSet#formElementKeyword dd {
+	background: transparent;
+}
+form#searchForm .formElementSet#formElementKeyword input[type=text]#searchFormKeyword {
+	width: 435px;
+	height: 24px;
+	padding: 4px 7px 3px 7px;
+	font-size: 20px;
+	border-top-right-radius: 0; /* CSS3 */
+	border-bottom-right-radius: 0; /* CSS3 */
+	-moz-border-radius-topright: 0; /* Firefox */
+	-moz-border-radius-bottomright: 0; /* Firefox */
+	-webkit-border-top-right-radius: 0; /* Safari, Chrome */
+	-webkit-border-bottom-right-radius: 0; /* Safari, Chrome */
+	-khtml-border-radius-topright: 0; /* Konqueror */
+	-khtml-border-radius-bottomright: 0; /* Konqueror */
+}
+form#searchForm .formElementSet#formElementSubmit dd {
+	background: transparent;
+}
+form#searchForm .formElementSet#formElementSubmit {
+	background: #ffffff;
+	float: left;
+	clear: right;
+	width: 148px;
+	height: 27px;
+	margin: 0 0 0 0;
+	padding: 2px 2px 2px 0;
+	border-top-right-radius: 5px; /* CSS3 */
+	border-bottom-right-radius: 5px; /* CSS3 */
+	-moz-border-radius-topright: 5px; /* Firefox */
+	-moz-border-radius-bottomright: 5px; /* Firefox */
+	-webkit-border-top-right-radius: 5px; /* Safari, Chrome */
+	-webkit-border-bottom-right-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius-topright: 5px; /* Konqueror */
+	-khtml-border-radius-bottomright: 5px; /* Konqueror */
+}
+form#searchForm .formElementSet#formElementSubmit dd {
+	/*background: #00ff00;*/
+	margin: 0;
+	padding: 0;
+}
+form#searchForm .formElementSet#formElementSubmit dd input[type="button"] {
+	background: linear-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* CSS3 */
+	background: -moz-linear-gradient(top, #ffd760, #efb300); /* Firefox */
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* Safari, Chrome */
+	background: -o-linear-gradient(#ffd760, #efb300); /* Opera */
+	background: -ms-linear-gradient(top, #ffd760 0%, #efb300 100%); /* IE */
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ffd760', EndColorStr='#efb300'); /* IE */				
+	width: 148px;
+	min-height: 10px;				
+	height: 27px;
+	margin: 0 0 0 0;
+	padding: 2px 5px 2px 5px;
+	font-size: 18px;
+	border: 0;
+	border-top-left-radius: 0; /* CSS3 */
+	border-bottom-left-radius: 0; /* CSS3 */
+	-moz-border-radius-topleft: 0; /* Firefox */
+	-moz-border-radius-bottomleft: 0; /* Firefox */
+	-webkit-border-top-left-radius: 0; /* Safari, Chrome */
+	-webkit-border-bottom-left-radius: 0; /* Safari, Chrome */
+	-khtml-border-radius-topleft: 0; /* Konqueror */
+	-khtml-border-radius-bottomleft: 0; /* Konqueror */
+	color: #ffffff;
+}
+#showFormButton {
+	position: absolute;
+	right: 40px;
+	bottom: -23px;
+	min-height: 20px;
+	line-height: 10px;
+	padding: 2px 5px;
+	font-size: 12px;
+}
+#paginationContainer {
+	background: tranparent;
+	/*background: #ff9900;*/
+	/*
+	position: absolute;
+	top: 90px;
+	*/
+	width: 630px;
+	height: 30px;
+	margin-top: 0;
+	padding: 10px 10px;
+	border: 1px solid tranparent;
+	border-color: transparent;
+	font-size: 16px;
+}
+/* search #stop# */
+
+/* pagination #start# */
+#paginationContainer ul {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+#paginationContainer ul li {
+	display: inline-block;
+}
+#paginationContainer ul li a,
+#paginationContainer ul li span {
+	display: block;
+	margin: 1px 5px;
+	padding: 2px 7px;
+	border: 1px solid #007acf;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	font-weight: bold;
+}
+#paginationContainer ul li span {
+	border-color: #999999;
+	color: #999999;
+	cursor: default;
+}
+#paginationContainer ul li.pagination-current span {
+	background: #007acf;
+	border: 1px solid #007acf;
+	color: #ffffff;
+}
+/* pagination #stop# */
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ forms #stop#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/

@@ -1,0 +1,224 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ tags #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* main tags #start# */
+
+*
+{
+    /*
+    box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	*/
+}
+
+root {
+    display: none;
+}
+
+html {
+    background: #ffffff; /*#FAEEEB;*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff; /*#FAEEEB;*/
+    margin: 0;
+    padding: 0;
+	overflow-y: scroll;
+}
+
+
+/* main tags #stop# */
+
+/* forms #start# */
+
+form {
+	/*background: #9fff99;*/
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	float: left;
+	margin-right: auto;
+}
+
+input[type=text],
+input[type=password] {
+	height: 22px;
+	margin: 0 0 5px 0;
+	padding: 1px 5px;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	font-size: 14px;
+}
+
+textarea {
+	margin: 0 0 5px 0;
+	padding: 0;
+	border: 1px solid #e5e5e5;
+	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
+	font-size: 14px;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+}
+
+input[type=text]:hover,
+input[type=text]:focus,
+textarea:hover,
+textarea:focus {
+}
+
+input[type=radio] {
+	display: block;
+	margin: 0;
+}
+
+input[type=checkbox] {
+	display: inline;
+	margin: 0;
+}
+
+select {
+	display: block;
+	height: 22px;
+	margin: 0;
+	padding: 1px 5px;
+	border: 1px solid #000000;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	font-size: 14px;
+}
+
+input[type=button],
+input[type=submit] {
+	min-height: 30px;
+	line-height: 14px;
+	margin: 5px auto;
+	padding: 0 10px 5px 10px;
+	cursor: pointer;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	font-size: 14px;
+	color: #000000;
+}
+
+option {
+}
+
+
+/* forms #stop# */
+
+/* lists #start# */
+
+dl {
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+    /*background: #cc0000;*/
+	margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+dd label {
+    padding: 0;
+    display: block;
+    white-space: nowrap;
+}
+
+ul {
+    text-align: left;
+}
+
+ol {
+    text-align: left;
+}
+
+li {
+}
+
+li ul {
+}
+
+/* lists #stop# */
+
+/* links #start# */
+a {
+}
+a:link, a:visited {
+    text-decoration: none;
+	color: #2172ff;
+}
+a:hover, a:active {
+    text-decoration: none;
+}
+
+/* links #stop# */
+
+/* other #start# */
+
+p {
+    text-align: left;
+}
+
+h1 {
+    font-size: 120%;
+    font-weight: bold;
+	padding: 10px 20px;
+}
+
+h2 {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: left;
+	padding: 10px 20px;
+}
+
+h3 {
+	padding: 10px 20px;
+}
+
+h4 {
+	padding: 10px 20px;
+}
+
+h5 {
+	padding: 10px 20px;
+}
+
+h6 {
+	padding: 10px 20px;
+}
+
+img {
+}
+
+div {
+	text-align: left;
+}
+/* other #stop# */
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ tags #stop#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/

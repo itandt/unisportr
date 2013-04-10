@@ -1,0 +1,102 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ navi #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* navi main #start# */
+#naviMainContainer {
+	/*background: #cc0000;*/
+	margin: 0 auto 10px auto;
+}
+#naviMainContainer > ul {
+	background: url('/templates/unisportr/images/BG_navi-main.png') repeat-x left top;
+	width: auto;
+	min-height: 300px;
+	margin: 50px auto 0 auto;
+	padding: 8px 10px 0 10px;
+	border: 1px solid transparent;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	list-style-type: none;
+}
+#naviMainContainer > ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#naviMainContainer > ul > li {
+	/*background: #a8ef79;*/
+	display: list-item;
+	margin-left: 20px;
+	min-height: 20px;
+	line-height: 20px;
+	text-align: left;
+	border-bottom: 1px solid #e9e9e9;
+}
+#naviMainContainer > ul > li.last {
+	border: none;
+}
+#naviMainContainer > ul > li > ul {
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style-type: none;
+}
+#naviMainContainer > ul > li > ul > li {
+	display: list-item;
+	margin: 0;
+}
+#naviMainContainer a {
+    display: block;
+    line-height: 20px;
+}
+/* navi main #stop# */
+/* navi footer #start# */
+#naviFooterContainer ul {
+	float: right;
+	margin: 10px 0 0 auto;
+	padding: 0;
+	list-style-type: none;
+}
+#naviFooterContainer li {
+	display: list-item;
+	float: left;
+	margin: 0 5px 0 0;
+}
+#naviFooterContainer li:before {
+	content: "- ";
+	font-weight: bold;
+	width: 20px;
+	color: #cccccc;
+}
+#naviFooterContainer ul li:first-child:before {
+	content: "";
+}
+#naviFooterContainer li.first {
+}
+/* navi footer #stop# */
+/* navi general #start# */
+#naviMainContainer li> a,
+#naviFooterContainer li > a {
+    color: #777777;
+}
+#naviMainContainer li.active > a,
+#naviFooterContainer li.active > a {
+    color: #0066FF;
+}
+#naviMainContainer a,
+#naviMainContainer a:link,
+#naviMainContainer a:hover,
+#naviMainContainer a:active,
+#naviMainContainer a:visited,
+#naviFooterContainer a,
+#naviFooterContainer a:link,
+#naviFooterContainer a:hover,
+#naviFooterContainer a:active,
+#naviFooterContainer a:visited {
+	text-decoration: none;
+}
+/* navi general #stop# */
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ navi #stop#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/

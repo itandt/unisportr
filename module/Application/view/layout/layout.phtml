@@ -1,50 +1,95 @@
-<?php echo $this->doctype(); ?>
+<?php
+echo $this->doctype();
+?>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
-
-        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
-
-        <!-- Le styles -->
-        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
-                        ->prependStylesheet($this->basePath() . '/css/style.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
-
-        <!-- Scripts -->
-        <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-                                      ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                                      ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
-
-    </head>
-    <body>
-    	<div><?php echo $this->navigation('navigation')->menu(); ?></div>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <?php echo $this->content; ?>
-            <hr>
-            <footer>
-                <p>&copy; 2005 - 2012 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
-            </footer>
-        </div> <!-- /container -->
-        <?php echo $this->inlineScript() ?>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<?php
+		echo $this->headTitle(
+			'unisportr' . ' ' .
+			$this->translate('The university sports resource'))->setSeparator(' - ')->setAutoEscape(false)
+		;
+		?>
+		<?php
+		echo $this->headLink(array(
+			'rel' => 'shortcut icon',
+			'type' => 'image/vnd.microsoft.icon',
+			'href' => $this->basePath() . '/favicon.ico'
+		));
+		?>
+		<?php
+		echo $this->headLink()
+			->appendStylesheet($this->basePath() . '/css/default.css')
+			->appendStylesheet($this->basePath() . '/css/tags.css')
+			->appendStylesheet($this->basePath() . '/css/main.css')
+			->appendStylesheet($this->basePath() . '/css/navi.css')
+			->appendStylesheet($this->basePath() . '/css/forms.css')
+			->appendStylesheet($this->basePath() . '/css/content.css')
+			->appendStylesheet($this->basePath() . '/css/last.css')
+		;
+		?>
+		<?php
+		$this->headScript()
+			->appendFile($this->basePath() . '/js/jQuery/jquery.min.js')
+			->appendFile($this->basePath() . '/js/jQuery-Validation/jquery.validate.min.js')
+			->appendFile($this->basePath() . '/js/jQuery-Form/jquery.form.js')
+		;
+		?>
+	</head>
+	
+	<body id="bodytag">
+		<div id="main">
+			<div id="container">
+				<div id="header">
+					<div id="topMcc">
+						<div id="topLeft">
+							<a href="<?php echo $this->url('home') ?>" title="unisportr.com"><img
+								id="logo" src="/images/logo.png"
+								alt="<?php echo $this->translate('Home') ?>"
+							/></a>
+						</div>
+						<div id="topCenter">
+							<jdoc:include type="modules" name="search" />
+						</div>
+						<div id="topRight">&nbsp;</div>
+					</div>
+					<div id="version"></div>
+				</div>
+				<div id="content">
+					<div id="mcc">
+						<div id="mccInner"><!-- just due the BG-bottom -->
+							<div id="left">
+								<div id="naviMainContainer">
+									<!--jdoc:include type="modules" name="left" style="none" /-->
+									<?php echo $this->navigation('navigation')->menu(); ?>
+								</div>
+							</div>
+							<div id="center">
+								<!--jdoc:include type="modules" name="pagination" /-->
+								<!--jdoc:include type="component" /-->
+								<?php echo $this->content; ?>
+							</div>
+							<div id="right">
+								<!--jdoc:include type="modules" name="right" style="none" /-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<div id="bottomMcc">
+					<div id="bottomLeft"></div>
+					<div id="bottomCenter">
+						<div id="naviFooterContainer">
+							<!--jdoc:include type="modules" name="bottom" style="none" /-->
+						</div>
+					</div>
+					<div id="bottomRight"></div>
+				</div>
+			</div>
+		</div>
+		<!--jdoc:include type="modules" name="piwik" style="none" /-->
+		<script type="text/javascript" id="fbzScript" src="http://feedeebuzz.de/widget/js/feedeebuzz.js?to=unisportr%40it-and-t.com&amp;p=r&amp;c=bl&amp;l=de"></script>
+	</body>
 </html>
