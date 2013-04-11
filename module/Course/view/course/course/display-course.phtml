@@ -1,11 +1,122 @@
 <?php
-echo __FILE__;
-echo PHP_EOL . '<br />' . PHP_EOL;
-echo 'course id = ' . $id;
-echo PHP_EOL . '<br />' . PHP_EOL;
-echo 'course title = ' . $title;
+use ITT\Util\Utility;
+?>
+<?php
+$title =
+	$this->escapeHtml($course->sport)
+	. ' ' .  $this->translate('Course')
+	. ' ' .  $this->translate('in')
+	. ' ' .  $this->escapeHtml($course->city)
+;
+$this->headTitle($courseTitle . ' - ' . $title);
+?>
+<?php
+$gMapsKey = 'AIzaSyAaQG4TDy5HZ6pduVJ6yndoYi21bao9K98';
+echo $this->headScript()
+	->appendFile($this->basePath() . 'http://maps.googleapis.com/maps/api/js?key=' . $gMapsKey . '&sensor=false', 'text/javascript')
+	->appendFile($this->basePath() . '/js/Log.js', 'text/javascript')
+	->appendFile($this->basePath() . '/js/GMap.js', 'text/javascript')
+;
+?>
+<?php
+$titleMaxLength = 40;
+$courseTitle = strlen($this->escapeHtml($course->title)) > 25
+	? substr($this->escapeHtml($course->title), 0, $titleMaxLength) . '...'
+	: $this->escapeHtml($course->title)
+;
 ?>
 
+<h1 id="pageTitle"><?php echo $title; ?></h1>
+
+<?php
+$courseTitle = $this->escapeHtml($course->title);
+$courseDescription = $this->escapeHtml($course->description);
+$courseLevel = Utility::getOneOrPair(
+	$this->escapeHtml($course->uniLevelMin),
+	$this->escapeHtml($course->uniLevelMax),
+	' - '
+);
+$courseDate = Utility::getOneOrPair(
+	$this->escapeHtml($course->startDate), $this->escapeHtml($course->endDate), ' - '
+);
+$courseWeekday = $this->escapeHtml($course->weekday);
+$courseCity = $this->escapeHtml($course->city);
+$courseTime = Utility::getOneOrPair(
+	$this->escapeHtml($course->startTime), $this->escapeHtml($course->endTime), ' - '
+);
+$courseUrl = $this->escapeHtml($course->url);
+$providerLabel = $this->escapeHtml($course->providerType) == 'university'
+	? $this->translate('university')
+	: $this->translate('partner')
+;
+$courseProvider = $this->escapeHtml($course->providerName);
+$courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
+$courseLocation = $this->escapeHtml($course->location);
+?>
+<?php
+$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
+$aURL = $this->url('course',  $urlParams);
+$aText = $this->translate('course') . ' ' . $this->translate('link');
+?>
+
+<script type="text/javascript">
+jQuery('document').ready(function() {
+//	var address = 'TU-Sportzentrum Dovestraße Berlin';
+	var address = '<?php echo $this->makeAddressGMapsFriendlier($courseLocation, $courseCity); ?>';
+	var gMap = new GMap(address);
+//	gMap.setLogging(true);
+	gMap.showMap();
+});
+</script>
+
+<div id="courseTitle">
+	<a
+		href="<?php echo $courseLink; ?>"
+		title="<?php echo $this->escapeHtml($course->title); ?>"
+	><?php echo $courseTitle; ?></a>
+</div>
+<div id="courseLevel"><?php echo $courseLevel; ?></div>
+<div class="clear"></div>
+<div id="courseData">
+	<div class="courseInfo" id="courseInfoTimeData">
+		<div class="courseInfoLabel"><?php echo $this->translate('date and time'); ?>:</div>
+		<div class="courseInfoData">
+			<div><?php echo $courseDate; ?></div>
+			<div><?php echo $courseWeekday; ?> <?php echo $courseTime; ?></div>
+		</div>
+	</div>
+	<div class="courseInfo">
+		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
+		<div class="courseInfoData"><?php echo $courseLocation; ?></div>
+	</div>
+	<div class="courseInfo">
+		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
+		<div class="courseInfoData"><?php echo $courseTrainer; ?></div>
+	</div>
+	<div class="courseInfo">
+		<div class="courseInfoLabel"><?php echo $providerLabel; ?>:</div>
+		<div class="courseInfoData"><?php echo $courseProvider; ?></div>
+	</div>
+</div>
+<div id="courseInfoGoogleMap">
+	<div id="gMapCanvas"></div>
+	<!-- <a id="gMapLink" href="#"></a> -->
+</div>
+<div class="clear"></div>
+<div id="courseDescription">
+	<div id="courseDescriptionLabel"><?php echo $this->translate('description'); ?></div>
+	<div id="courseDescriptionData"><?php echo $courseDescription; ?></div>
+</div>
+<!--div id="courseSocial">[share]</div-->
+<div id="courseLink">
+	<a
+		href="<?php echo $courseUrl; ?>"
+		title="<?php echo $courseProvider; ?>"
+		rel="nofollow"
+	><?php echo $this->translate('Course on the website of') . ' ' . $courseProvider; ?></a>
+</div>
+
+<?php if(false) : ?>
 <?php
 echo PHP_EOL . '<br /><br />' . PHP_EOL;
 echo '<pre>';
@@ -13,5 +124,4 @@ print_r($course);
 echo '</pre>';
 echo PHP_EOL . '<br /><br />' . PHP_EOL;
 ?>
-
-<h1><?php echo $this->escapeHtml($course->title) . ' ' . '(' . $this->escapeHtml($course->id) . ')'; ?></h1>
+<?php endif; ?>

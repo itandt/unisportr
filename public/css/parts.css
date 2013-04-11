@@ -162,7 +162,7 @@ ul#catalogListSports li span.aTextCountCourses {
 	font-size: 12px;
 }
 #courseDescription #courseDescriptionLabel {
-	margin: 0 0 20px 0;
+	margin: 0 0 20px -4px;
 }
 #courseDescription #courseDescriptionData {
 	
