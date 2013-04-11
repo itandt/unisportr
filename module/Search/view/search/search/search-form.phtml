@@ -1,4 +1,8 @@
 <?php
+use Zend\Form\View\Helper\FormMultiCheckbox;
+use Zend\Form\View\Helper\FormRadio;
+?>
+<?php
 $form = $this->form;
 $form->setAttribute('action', $this->url('search-courses'));
 $form->prepare();
@@ -25,11 +29,11 @@ $form->prepare();
 				</div>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
 					<dt><label><?php echo $this->translate('Level'); ?></label></dt>
-					<dd><?php echo $this->formRow($form->get('level')); ?></dd>
+					<dd><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></dd>
 				</div>
 				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
 					<dt><label><?php echo $this->translate('Weekday'); ?></label></dt>
-					<dd><?php echo $this->formRow($form->get('weekday'), Zend\Form\View\Helper\FormRow::LABEL_PREPEND); ?></dd>
+					<dd><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></dd>
 				</div>
 			</dl>
 			<div class="clear"></div>
