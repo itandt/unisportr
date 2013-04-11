@@ -8,6 +8,7 @@ use Course\Model\Course;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\ResultSet\ResultSet;
 use Course\Model\CourseTable;
+use ITT\View\Helper\MakeAddressGMapsFriendlier;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
@@ -52,6 +53,14 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 				echo $e->getMessage();
 			} while ($e = $e->getPrevious());
 		}
+	}
+	
+	public function getViewHelperConfig() {
+		return array(
+			'invokables' => array(
+				'MakeAddressGMapsFriendlierViewHelper' => 'ITT\View\Helper\MakeAddressGMapsFriendlier()',
+			)
+		);
 	}
 					
 }

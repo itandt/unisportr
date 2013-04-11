@@ -27,6 +27,7 @@ class Module {
 		$viewHelperManager->setInvokableClass('formmulticheckbox', 'ITT\Form\View\Helper\FormMultiCheckbox');
 		$viewHelperManager->setInvokableClass('formradio', 'ITT\Form\View\Helper\FormRadio');
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
+		$viewHelperManager->setInvokableClass('makeaddressgmapsfriendlier', 'ITT\View\Helper\MakeAddressGMapsFriendlier');
 
 		$translator = $serviceManager->get('translator');
 		$translator->addTranslationFile(
