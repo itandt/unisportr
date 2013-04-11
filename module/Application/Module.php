@@ -20,6 +20,12 @@ class Module {
         $eventManager        = $mvcEvent->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        
+        $application = $mvcEvent->getApplication();
+        $serviceManager = $application->getServiceManager();
+        $viewHelperManager = $serviceManager->get('ViewHelperManager');
+        $viewHelperManager->setInvokableClass('formmulticheckbox', 'ITT\Form\View\Helper\FormMultiCheckbox');
+        $viewHelperManager->setInvokableClass('formradio', 'ITT\Form\View\Helper\FormRadio');
     }
 
     public function getConfig()
@@ -37,4 +43,12 @@ class Module {
             ),
         );
     }
+	
+	public function getViewHelperConfig() {
+		return array(
+			'invokables' => array(
+				'FormMultiCheckboxViewHelper' => 'ITT\Form\View\Helper\FormMultiCheckbox()',
+			)
+		);
+	}
 }

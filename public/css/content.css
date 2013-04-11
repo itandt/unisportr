@@ -7,7 +7,7 @@ img#logo {
 	margin: 20px 0 0 0;
 }
 .sideBox {
-	background: url('/templates/unisportr/images/BG_side-content-block-body.png') repeat-x left top;
+	background: url('/images/BG_side-content-block-body.png') repeat-x left top;
 	min-height: 50px;
 	margin: 0 auto 10px auto;
 	padding: 8px 10px 0 10px;
@@ -18,7 +18,7 @@ img#logo {
 	-khtml-border-radius: 5px; /* Konqueror */
 }
 #version {
-	background: url('/templates/unisportr/images/version.png') no-repeat left top;
+	background: url('/images/version.png') no-repeat left top;
 	position: absolute;
 	right: 160px;
 	top: 5px;

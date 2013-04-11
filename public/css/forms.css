@@ -69,6 +69,7 @@ div#searchFormArea {
 }
 div#searchFormContainer {
 	/*background: #ff9900;*/
+	/*height: 31px;*/
 	height: 31px;
 	overflow-y: hidden;
 }
@@ -147,7 +148,8 @@ form#searchForm .formElementSet#formElementSubmit dd {
 	margin: 0;
 	padding: 0;
 }
-form#searchForm .formElementSet#formElementSubmit dd input[type="button"] {
+form#searchForm .formElementSet#formElementSubmit dd input[type="button"],
+form#searchForm .formElementSet#formElementSubmit dd input[type="submit"] {
 	background: linear-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* CSS3 */
 	background: -moz-linear-gradient(top, #ffd760, #efb300); /* Firefox */
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* Safari, Chrome */

@@ -30,10 +30,12 @@ echo $this->doctype();
 		;
 		?>
 		<?php
-		$this->headScript()
-			->appendFile($this->basePath() . '/js/jQuery/jquery.min.js')
-			->appendFile($this->basePath() . '/js/jQuery-Validation/jquery.validate.min.js')
-			->appendFile($this->basePath() . '/js/jQuery-Form/jquery.form.js')
+		echo $this->headScript()
+			->appendFile($this->basePath() . '/js/jQuery/jquery.min.js', 'text/javascript')
+			->appendFile($this->basePath() . '/js/jQuery-Validation/jquery.validate.min.js', 'text/javascript')
+			->appendFile($this->basePath() . '/js/jQuery-Form/jquery.form.js', 'text/javascript')
+			->appendFile($this->basePath() . '/js/search-form.js', 'text/javascript')
+			->appendFile($this->basePath() . '/js/dev.js', 'text/javascript')
 		;
 		?>
 	</head>

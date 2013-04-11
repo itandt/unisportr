@@ -2,15 +2,38 @@
 $form = $this->form;
 $form->setAttribute('action', $this->url('search-courses'));
 $form->prepare();
-
-echo $this->form()->openTag($form);
-echo $this->formRow($form->get('keyword'));
-echo $this->formRow($form->get('trainer'));
-
-echo $this->formRow($form->get('city'));
-echo $this->formRow($form->get('level'));
-echo $this->formRow($form->get('weekday'));
-
-echo $this->formSubmit($form->get('submit'));
-echo $this->form()->closeTag();
 ?>
+<?php echo $this->form()->openTag($form); ?>
+	<div id="searchFormArea">
+		<div id="searchFormContainer">
+			<dl>
+				<div id="formElementKeyword" class="formElementSet">
+					<dd><?php echo $this->formRow($form->get('keyword')); ?></dd>
+				</div>
+				<div id="formElementSubmit" class="formElementSet">
+					<dd><?php echo $this->formSubmit($form->get('submit')); ?></dd>
+				</div>
+
+				<div id="formElementTrainer" class="formElementSet">
+					<dt><label><?php echo $this->translate('Trainer'); ?></label></dt>
+					<dd><?php echo $this->formRow($form->get('trainer')); ?>
+				</div>
+				
+				<div id="formElementCity" class="formElementSet">
+					<dt><label><?php echo $this->translate('City'); ?></label></dt>
+					<dd><?php echo $this->formRow($form->get('city')); ?></dd>
+				</div>
+				<div id="formElementLevel" class="formElementSet formRadioSet">
+					<dt><label><?php echo $this->translate('Level'); ?></label></dt>
+					<dd><?php echo $this->formRow($form->get('level')); ?></dd>
+				</div>
+				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
+					<dt><label><?php echo $this->translate('Weekday'); ?></label></dt>
+					<dd><?php echo $this->formRow($form->get('weekday'), Zend\Form\View\Helper\FormRow::LABEL_PREPEND); ?></dd>
+				</div>
+			</dl>
+			<div class="clear"></div>
+		</div>
+		<input id="showFormButton" type="button" value="Suchoptionen" />
+	</div>
+<?php echo $this->form()->closeTag(); ?>

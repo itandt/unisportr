@@ -13,36 +13,42 @@ class CourseSearchForm extends Form {
 		parent::__construct('courseSearch');
 		$this->setCities($cities);
 		$this->setAttribute('method', 'post');
+		$this->setAttribute('id', 'searchForm');
 		$this->add(array(
 			'name' => 'keyword',
 			'attributes' => array(
 				'type'  => 'text',
+				'id'  => 'searchFormKeyword',
 			),
 		));
 		$this->add(array(
 			'name' => 'trainer',
 			'attributes' => array(
 				'type'  => 'text',
+				'id'  => 'formElementTrainer',
 			),
 			'options' => array(
-				'label' => 'Trainer',
+				// 'label' => 'Trainer',
 			),
 		));
 		$this->add(array(
 			'name' => 'city',
 			'type'  => 'Zend\Form\Element\Select',
 			'options' => array(
-				'label' => 'Stadt',
-				'value_options' => $this->cities
+				// 'label' => 'Stadt',
+				'value_options' => $this->cities,
+				'id'  => 'searchFormCity',
 			),
 		));
 		$this->add(array(
 			'name' => 'level',
 			'type'  => 'Zend\Form\Element\Radio',
 			'attributes' => array(
+				'id'  => '',
+				'value' => 2
 			),
 			'options' => array(
-				'label' => 'Level',
+				// 'label' => 'Level',
 				'value_options' => array(
 					'1' => 'Beginner',
 					'2' => 'Intermediate',
@@ -54,9 +60,11 @@ class CourseSearchForm extends Form {
 			'name' => 'weekday',
 			'type'  => 'Zend\Form\Element\MultiCheckbox',
 			'attributes' => array(
+				'id'  => '',
+				'value' => array(1, 2, 3, 4, 5, 6, 7)
 			),
 			'options' => array(
-				'label' => 'Weekday',
+				// 'label' => 'Weekday',
 				'value_options' => array(
 					'1' => 'Mo',
 					'2' => 'Tu',
