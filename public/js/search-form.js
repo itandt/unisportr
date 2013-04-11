@@ -1,12 +1,18 @@
-var formMaximazed = false;
-var formMinHeight = 31;
-var formMaxHeight = 250;
+var formMaximized = false;
+var formMinimizedHeight = 31;
+// var formMaximizedHeight = 250;
 var executeShowHideForm = function showHideForm() {
-	var newHeight = formMaximazed == true ? formMinHeight : formMaxHeight;
-	formMaximazed = !formMaximazed;
-	jQuery('#searchFormContainer').animate({
-		height: newHeight
-	});
+	var element = jQuery('#searchFormContainer');
+	if (formMaximized == true) {
+		element.animate({
+			height: formMinimizedHeight
+		});
+	} else {
+		element.animate({
+			height: element.prop('scrollHeight')
+		});
+	}
+	formMaximized = !formMaximized;
 }
 jQuery(document).ready(function() {
 //	executeShowHideForm();
