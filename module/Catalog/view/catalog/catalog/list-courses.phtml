@@ -31,7 +31,6 @@ $courseTime = Utility::getOneOrPair(
 $urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
 $aURL = $this->url('course',  $urlParams);
 $aText = $this->translate('course') . ' ' . $this->translate('link');
-// $courseLink = '<a href="' . $aURL . '">' . $aText . '</a>';
 ?>
 <div class="resultBlock">
 	<div class="resultBlockCourseIcon">K</div>
