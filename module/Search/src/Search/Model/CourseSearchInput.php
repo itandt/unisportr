@@ -110,8 +110,5 @@ class CourseSearchInput implements ArraySerializableInterface {
 	public function setInputFilter(InputFilterInterface $inputFilter) {
 		throw new \Exception('The method ' . __CLASS__ . '#' . __METHOD__ . ' is not used.');
 	}
-
-	
-	
 	
 }

@@ -20,6 +20,12 @@ class CourseSearchForm extends Form {
 				'type'  => 'text',
 				'id'  => 'searchFormKeyword',
 			),
+			'options' => array(
+				'label' => 'Keyword',
+				'label_attributes' => array(
+					// 'style' => 'display: none;' // works
+				)
+			),
 		));
 		$this->add(array(
 			'name' => 'trainer',
@@ -28,14 +34,14 @@ class CourseSearchForm extends Form {
 				'id'  => 'formElementTrainer',
 			),
 			'options' => array(
-				// 'label' => 'Trainer',
+				'label' => 'Trainer',
 			),
 		));
 		$this->add(array(
 			'name' => 'city',
 			'type'  => 'Zend\Form\Element\Select',
 			'options' => array(
-				// 'label' => 'Stadt',
+				'label' => 'Stadt',
 				'value_options' => $this->cities,
 				'id'  => 'searchFormCity',
 			),
@@ -48,7 +54,7 @@ class CourseSearchForm extends Form {
 				'value' => 2
 			),
 			'options' => array(
-				// 'label' => 'Level',
+				'label' => 'Level',
 				'value_options' => array(
 					'1' => 'Beginner',
 					'2' => 'Intermediate',
@@ -64,7 +70,7 @@ class CourseSearchForm extends Form {
 				'value' => array(1, 2, 3, 4, 5, 6, 7)
 			),
 			'options' => array(
-				// 'label' => 'Weekday',
+				'label' => 'Weekday',
 				'value_options' => array(
 					'1' => 'Mo',
 					'2' => 'Tu',

@@ -12,30 +12,47 @@ $form->prepare();
 		<div id="searchFormContainer">
 			<dl>
 				<div id="formElementKeyword" class="formElementSet">
-					<dd><?php echo $this->formRow($form->get('keyword')); ?></dd>
+					<dd><?php echo $this->formRow($form->get('keyword'), null, false, false); ?></dd>
 				</div>
 				<div id="formElementSubmit" class="formElementSet">
 					<dd><?php echo $this->formSubmit($form->get('submit')); ?></dd>
 				</div>
 
 				<div id="formElementTrainer" class="formElementSet">
-					<dt><label><?php echo $this->translate('Trainer'); ?></label></dt>
-					<dd><?php echo $this->formRow($form->get('trainer')); ?>
+					<dt><label><?php echo $form->get('trainer')->getLabel(); ?></label></dt>
+					<dd><?php echo $this->formRow($form->get('trainer'), null, false, false); ?>
 				</div>
 				
 				<div id="formElementCity" class="formElementSet">
-					<dt><label><?php echo $this->translate('City'); ?></label></dt>
-					<dd><?php echo $this->formRow($form->get('city')); ?></dd>
+					<dt><label><?php echo $form->get('city')->getLabel(); ?></label></dt>
+					<dd><?php echo $this->formRow($form->get('city'), null, false, false); ?></dd>
 				</div>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
-					<dt><label><?php echo $this->translate('Level'); ?></label></dt>
+					<dt><label><?php echo $form->get('level')->getLabel(); ?></label></dt>
 					<dd><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></dd>
 				</div>
 				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
-					<dt><label><?php echo $this->translate('Weekday'); ?></label></dt>
+					<dt><label><?php echo $form->get('weekday')->getLabel(); ?></label></dt>
 					<dd><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></dd>
 				</div>
 			</dl>
+			<?php if(count($form->getMessages()) > 0): ?>
+			<div id="searchFormMessagesContainer">
+				<span id="searchFormMessagesHeader"><?php echo $this->translate('Please fill out the search form correctly.') ?></span>
+				<ul>
+				<?php foreach ($form->getMessages() as $elementName => $messages): ?>
+					 <li>
+					 	<span><?php echo $form->get($elementName)->getLabel(); ?></span>
+					 	<ul>
+					 		<?php foreach ($messages as $message): ?>
+					 		<li><?php echo $this->translate($message); ?></li>
+					 		<?php endforeach; ?>
+					 	</ul>
+					 </li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
+			<?php endif; ?>
 			<div class="clear"></div>
 		</div>
 		<input id="showFormButton" type="button" value="Suchoptionen" />
