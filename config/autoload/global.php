@@ -24,6 +24,7 @@ return array(
 		'factories' => array(
 			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
 			'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+			'secondary' => 'ITT\Navigation\Service\SecondaryNavigationFactory',
 		),
 	),
 	'navigation' => array(
@@ -34,13 +35,19 @@ return array(
 			),
 			array(
 				'label' => 'Search',
-				'route' => 'search',
-// 				'pages' => array(
-// 					array(
-// 						'label' => 'Courses',
-// 						'route' => 'search/courses',
-// 					),
-// 				),
+				'route' => 'search-courses',
+			),
+		),
+		'secondary' => array(
+			array(
+				'label' => 'About unisportr',
+				'route' => 'application/default',
+				'action' => 'about'
+			),
+			array(
+				'label' => 'Musthead',
+				'route' => 'application/default',
+				'action' => 'musthead'
 			),
 		),
 	),
