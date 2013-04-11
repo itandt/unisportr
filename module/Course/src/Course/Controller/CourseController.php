@@ -23,7 +23,7 @@ class CourseController extends AbstractActionController {
 		$course = $this->getCourseTable()->findOnceByID($id)->current();
 		return new ViewModel(array(
 			'id' => $id,
-			'title' => $title,
+			'courseTitle' => $title,
 			'course' => $course
 		));
 	}

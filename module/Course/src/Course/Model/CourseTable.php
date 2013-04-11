@@ -50,10 +50,12 @@ class CourseTable {
 			->join(array('levelsmax' =>'levels'), 'courses.levelmax_id = levelsmax.id', array(
 				'usrLevelMax' => 'usrlevel', 'uniLevelMax' => 'unilevel'
 			), Select::JOIN_LEFT)
-			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array())
+			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
 			->join('trainers', 'trainer_id = trainers.id', array(
 				'trainers' => new Expression("GROUP_CONCAT(trainers.name SEPARATOR '$concatDelimiter')")
-			))
+			), Select::JOIN_LEFT)
+			->join('courses_sports', 'courses.id = courses_sports.course_id', array(), Select::JOIN_LEFT)
+			->join('sports', 'sport_id = sports.id', array('sport' => 'title'), Select::JOIN_LEFT)
 		;
 		$where
 			->equalTo('courses.id', $id)
