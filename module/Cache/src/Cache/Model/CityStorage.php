@@ -2,7 +2,7 @@
 namespace Cache\Model;
 
 use Zend\Cache\Storage\Adapter\AbstractAdapter;
-use Cache\Model\CityTable;
+use Catalog\Model\CityTable;
 
 class CityStorage {
 	

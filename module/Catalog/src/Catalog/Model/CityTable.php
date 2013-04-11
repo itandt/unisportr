@@ -27,6 +27,7 @@ class CityTable {
 		$where->isNull('courses.status');
 		$select->where($where, Predicate::OP_AND);
 		$select->quantifier(Select::QUANTIFIER_DISTINCT);
+		$select->order('cities.id');
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		$resultSet = $this->tableGateway->selectWith($select);
 		return $resultSet;
