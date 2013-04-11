@@ -2,7 +2,9 @@
 $title = $this->translate('Course search');
 $this->headTitle($title);
 ?>
-<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
+
 <?php
 if ($courses instanceof Zend\Db\ResultSet\ResultSetInterface) {
 	echo $this->render('search/search/list-courses.phtml', array(
