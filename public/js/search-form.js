@@ -1,20 +1,23 @@
-var formMaximized = false;
+var formMaximized = false; // is overwritten by formMaximized defined in search-form.phtml
 var formMinimizedHeight = 31;
 // var formMaximizedHeight = 250;
 var executeShowHideForm = function showHideForm() {
-	var element = jQuery('#searchFormContainer');
+	var searchFormContainerElement = jQuery('#searchFormContainer');
+	var searchFormAreaElement = jQuery('#searchFormArea');
 	if (formMaximized == true) {
-		element.animate({
+		searchFormContainerElement.animate({
 			height: formMinimizedHeight
 		});
+		searchFormAreaElement.css('padding-bottom', '');
 	} else {
-		element.animate({
-			height: element.prop('scrollHeight')
+		searchFormContainerElement.animate({
+			height: searchFormContainerElement.prop('scrollHeight')
 		});
+		searchFormAreaElement.css('padding-bottom', 30);
 	}
 	formMaximized = !formMaximized;
 }
 jQuery(document).ready(function() {
-//	executeShowHideForm();
+	executeShowHideForm();
 	jQuery('#showFormButton').click(executeShowHideForm);
 });

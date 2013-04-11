@@ -86,15 +86,33 @@ div#searchFormContainer dd {
 	/*background: #0066cc;*/
 }
 div#searchFormMessagesContainer {
-	background: #0066cc;
+	/*background: #0066cc;*/
 	width: 430px;
 	padding: 10px;
 	margin: 30px 0 10px 0;
-	border: 1px solid #000000;
+	border: 1px solid #0f82d2;
 	border-radius: 5px; /* CSS3 */
 	-moz-border-radius: 5px; /* Firefox */
 	-webkit-border-radius: 5px; /* Safari, Chrome */
 	-khtml-border-radius: 5px; /* Konqueror */
+}
+div#searchFormMessagesContainer ul {
+}
+div#searchFormMessagesContainer > ul {
+	margin: 20px 0 0 0;
+	padding: 0 0 0 10px;
+	list-style-type: none;
+}
+div#searchFormMessagesContainer > ul > li {
+	font-weight: bold;
+}
+div#searchFormMessagesContainer > ul > li > ul {
+	padding: 0 0 0 10px;
+	list-style-type: none;
+}
+div#searchFormMessagesContainer > ul > li > ul > li {
+	margin: 10px 0;
+	font-weight: normal;
 }
 span#searchFormMessagesHeader {
 	/*background: #cc0000;*/

@@ -7,6 +7,14 @@ $form = $this->form;
 $form->setAttribute('action', $this->url('search-courses'));
 $form->prepare();
 ?>
+<script type="text/javascript">
+<!--
+var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true'; ?>;
+//-->
+</script>
+<?php
+// echo $this->headScript()->appendFile($this->basePath() . '/js/search-form.js', 'text/javascript');
+?>
 <?php echo $this->form()->openTag($form); ?>
 	<div id="searchFormArea">
 		<div id="searchFormContainer">
