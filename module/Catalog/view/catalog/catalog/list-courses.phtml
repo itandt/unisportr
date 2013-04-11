@@ -1,18 +1,55 @@
 <?php
+use ITT\Util\Utility;
+?>
+<?php
 $title = $this->translate('List of') . ' ' . $sport . ' ' . $this->translate('courses in') . ' ' . $city;
 $this->headTitle($title);
-echo 'current city = ' . $city;
-echo 'current sport = ' . $sport;
 ?>
-<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
+
 <?php foreach ($courses as $course) : ?>
 <?php
-	$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
-	$aURL = $this->url('course',  $urlParams);
-	$aText = $this->translate('course') . ' ' . $this->translate('link');
+$titleMaxLength = 40;
+$courseTitle = strlen($this->escapeHtml($course->title)) > 25
+	? substr($this->escapeHtml($course->title), 0, $titleMaxLength) . '...'
+	: $this->escapeHtml($course->title)
+;
+
+$courseLevel = Utility::getOneOrPair(
+	$this->escapeHtml($course->uniLevelMin), $this->escapeHtml($course->uniLevelMax), ' - '
+);
+$courseDate = Utility::getOneOrPair(
+	$this->escapeHtml($course->startDate), $this->escapeHtml($course->endDate), ' - '
+);
+$courseWeekday = $this->escapeHtml($course->weekday);
+$courseTime = Utility::getOneOrPair(
+	$this->escapeHtml($course->startTime), $this->escapeHtml($course->endTime), ' - '
+);
 ?>
+<?php
+$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
+$aURL = $this->url('course',  $urlParams);
+$aText = $this->translate('course') . ' ' . $this->translate('link');
+// $courseLink = '<a href="' . $aURL . '">' . $aText . '</a>';
+?>
+<div class="resultBlock">
+	<div class="resultBlockCourseIcon">K</div>
+	<div class="resultBlockCourseTitle">
+		<a
+			href="<?php echo $aURL; ?>"
+			title="<?php echo $this->escapeHtml($course->title); ?>"
+		><?php echo $courseTitle; ?></a>
+	</div>
+	<div class="resultBlockCourseLevel"><?php echo $courseLevel; ?></div>
+	<div class="resultBlockCourseDate"><?php echo $courseDate; ?></div>
+	<div class="resultBlockCourseWeekday"><?php echo $courseWeekday; ?></div>
+	<div class="resultBlockCourseTime"><?php echo $courseTime; ?></div>
+	<!--div class="resultBlockSocial">[share]</div-->
+</div>
+<?php if(false): ?>
 <div>
-	<div><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></div>
+	<div><?php echo $courseLink; ?></div>
 	<div>id: <?php echo $this->escapeHtml($course->id); ?></div>
 	<div>title: <?php echo $this->escapeHtml($course->title); ?></div>
 	<div>startDate: <?php echo $this->escapeHtml($course->startDate); ?></div>
@@ -28,4 +65,5 @@ echo 'current sport = ' . $sport;
 	<div>uniLevelMax: <?php echo $this->escapeHtml($course->uniLevelMax); ?></div>
 </div>
 <br />
+<?php endif; ?>
 <?php endforeach; ?>

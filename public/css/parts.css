@@ -36,6 +36,96 @@ ul#catalogListSports li span.aTextCountCourses {
 }
 /* catalog #stop# */
 
+/* search result list #start# */
+.resultBlock {
+	/*background: #cc0000;*/
+	position: relative;
+	width: 528px;
+	height: 50px;
+	margin: 10px 0 10px 50px;
+	border: 1px solid #e9e9e9;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+}
+.resultBlock:hover {
+	background: #fefefe;
+}
+.resultBlock#searchResultText {
+	background: linear-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e9e9e9)); /* CSS3 */
+	background: -moz-linear-gradient(top, #ffffff, #e9e9e9); /* Firefox */
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e9e9e9)); /* Safari, Chrome */
+	background: -o-linear-gradient(top, #ffffff, #e9e9e9); /* Opera */
+	background: -ms-linear-gradient(top, #ffffff 0%, #e9e9e9 100%); /* IE */
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ffffff', EndColorStr='#e9e9e9'); /* IE */
+	/*background: #ff9900;*/
+	width: 630px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 0;
+	padding: 10px 10px 10px 10px;
+	font-size: 16px;
+}
+.resultBlock .resultBlockCourseIcon {
+	background: #007acf;
+	position: absolute;
+	left: -30px;
+	top: 0;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	cursor: default;
+}
+.resultBlock .resultBlockCourseTitle {
+	/*background: #000000;*/
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	font-size: 18px;
+	text-align: left;
+}
+.resultBlock .resultBlockCourseTitle a {
+	display: block;
+}
+.resultBlock .resultBlockCourseLevel {
+	/*background: #000000;*/
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 18px;
+	color: #999999;
+}
+.resultBlock .resultBlockCourseDate {
+	/*background: #00aa00;*/
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	font-size: 12px;
+}
+.resultBlock .resultBlockCourseWeekday {
+	/*background: #00aa00;*/
+	position: absolute;
+	left: 150px;
+	bottom: 5px;
+	font-size: 12px;
+}
+.resultBlock .resultBlockCourseTime {
+	/*background: #00aa00;*/
+	position: absolute;
+	left: 220px;
+	bottom: 5px;
+	font-size: 12px;
+}
+/* search result list #stop# */
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++
 /CSS/ parts of the website #start#
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
