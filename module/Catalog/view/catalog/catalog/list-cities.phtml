@@ -1,14 +1,18 @@
 <?php
-$title = $this->translate('List of cities');
+$title = $this->translate('List of cities with university sport courses');
 $this->headTitle($title);
 ?>
 
-<h1><?php echo $this->escapeHtml($title); ?></h1>
+<h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
+<ul id="catalogListCities" class="catalogList">
 <?php foreach ($cities as $city) : ?>
-<?php
-$aURL = $this->url('city',  array('city' => $this->escapeHtml($city->name)));
-$aText = $this->escapeHtml($city->name);
-?>
-<span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span>
+	<li>
+		<?php
+		$aURL = $this->url('city',  array('city' => $this->escapeHtml($city->name)));
+		$aText = $this->escapeHtml($city->name);
+		?>
+		<span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span>
+	</li>
 <?php endforeach; ?>
+</ul>

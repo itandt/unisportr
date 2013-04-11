@@ -1,21 +1,28 @@
 <?php
-echo __FILE__;
 $title = $this->translate('List of sports in') . ' ' . $city;
 $this->headTitle($title);
-echo 'current city = ' . $city;
 ?>
 
-<h1><?php echo $this->escapeHtml($title); ?></h1>
+<h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
+<ul id="catalogListSports" class="catalogList">
 <?php foreach ($sports as $sport) : ?>
-<?php
-	$urlParams = array('sport' => $this->escapeHtml($sport->title), 'city' => $this->escapeHtml($city));
-	$aURL = $this->url('sport',  $urlParams);
-	$aText =
-		$this->escapeHtml($sport->title)
-		. ' ' . '(' . $this->escapeHtml($sport->category) . ')'
-		. ' ' . '[' . $this->escapeHtml($sport->countCourses) . ' ' . $this->translate('courses') . ']'
-	;
-?>
-<span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span>
+	<?php
+		$urlParams = array('sport' => $this->escapeHtml($sport->title), 'city' => $this->escapeHtml($city));
+		$aURL = $this->url('sport',  $urlParams);
+		
+		$aTextCategory = !empty($sport->category)
+			? ' ' . '<span class="aTextCategory">' . '(' . $this->escapeHtml($sport->category) . ')' . '</span>'
+			: ''
+		;
+		$aTextCountCourses =
+			'<span class="aTextCountCourses">'
+			. ' ' . $this->escapeHtml($sport->countCourses) . ' ' . $this->translate('course(-s)')
+			. '</span>'
+		;
+		
+		$aText = $this->escapeHtml($sport->title) . $aTextCategory . $aTextCountCourses;
+	?>
+	<li><span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span></li>
 <?php endforeach; ?>
+</ul>

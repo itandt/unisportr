@@ -1,0 +1,41 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ parts of the website #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* catalog #start# */
+ul.catalogList {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 20px;
+	list-style-type: none;
+}
+ul.catalogList li {
+	margin: 0 0 20px 0;
+}
+
+ul#catalogListCities {
+	
+}
+ul#catalogListCities li {
+	display: inline-block;
+	width: 195px;
+}
+
+ul#catalogListSports {
+	
+}
+ul#catalogListSports li {
+	display: block;
+}
+ul#catalogListSports li span.aTextCategory {
+	color: #777777;
+}
+ul#catalogListSports li span.aTextCountCourses {
+	font-size: 14px;
+	color: #777777;
+}
+/* catalog #stop# */
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++
+/CSS/ parts of the website #start#
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
