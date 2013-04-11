@@ -12,7 +12,7 @@
 	width: auto;
 	min-height: 300px;
 	margin: 50px auto 0 auto;
-	padding: 8px 10px 0 10px;
+	padding: 50px 10px 0 10px;
 	border: 1px solid transparent;
 	border-radius: 5px; /* CSS3 */
 	-moz-border-radius: 5px; /* Firefox */
@@ -21,8 +21,8 @@
 	list-style-type: none;
 }
 #naviMainContainer > ul li {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 #naviMainContainer > ul > li {
 	/*background: #a8ef79;*/
@@ -31,7 +31,11 @@
 	min-height: 20px;
 	line-height: 20px;
 	text-align: left;
-	border-bottom: 1px solid #e9e9e9;
+	border: 1px solid #e9e9e9;;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */				
 }
 #naviMainContainer > ul > li.last {
 	border: none;
@@ -77,6 +81,7 @@
 /* navi general #start# */
 #naviMainContainer li> a,
 #naviFooterContainer li > a {
+	padding: 5px;
     color: #777777;
 }
 #naviMainContainer li.active > a,
