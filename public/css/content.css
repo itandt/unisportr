@@ -26,6 +26,9 @@ img#logo {
 	width: 33px;
 	height: 33px;
 }
+h2#pageSubTitle {
+	
+}
 /* general #stop# */
 
 /* fast contact #start# */
@@ -60,6 +63,13 @@ img#logo {
 	display: none;
 }
 /* fast contact #stop# */
+
+/* home #start# */
+h2#pageSubTitleHomeWelcome {
+	text-align: center;
+	font-weight: normal;
+}
+/* home #stop# */
 
 /* misc #start# */
 #piwik {
