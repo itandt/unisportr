@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-12 14:37+0100\n"
-"PO-Revision-Date: 2013-04-12 17:28+0100\n"
+"POT-Creation-Date: 2013-04-12 19:55+0100\n"
+"PO-Revision-Date: 2013-04-12 19:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-SearchPath-3: M:\\workspace\\itt\\unisportr-zf\\config\n"
 
 #: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:38
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:92
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:87
 msgid "trainer"
 msgstr "Trainer"
 
@@ -95,13 +95,14 @@ msgstr "Impressum"
 
 #: ../view/application/index/about.phtml:2
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/about.phtml:2
-msgid "About"
-msgstr "Über"
+msgid "University sports 2.0"
+msgstr "Hochschulsport 2.0"
 
-#: ../view/application/index/index.phtml:1
-#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:1
-msgid "Welcome to unisportr!"
-msgstr ""
+#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:52
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:52
+msgid "Home"
+msgstr "Startseite"
 
 #: ../view/error/404.phtml:1
 #: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:1
@@ -205,11 +206,6 @@ msgstr "Ein Fehler ist aufgetreten"
 msgid "The university sports resource"
 msgstr "Die Hochschulsport-Plattform"
 
-#: ../view/layout/layout.phtml:52
-#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:52
-msgid "Home"
-msgstr "Startseite"
-
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-cities.phtml:2
 msgid "List of cities with university sport courses"
 msgstr "Liste von Städten mit Hochschulsport-Kursen"
@@ -223,13 +219,13 @@ msgid "courses in"
 msgstr "Kurse in"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:58
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:53
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
 msgid "course"
 msgstr "Kurs"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:58
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:53
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
 msgid "link"
 msgstr "Link"
@@ -242,35 +238,35 @@ msgstr "Liste der Sportarten in"
 msgid "course(-s)"
 msgstr "Kurs(-e)"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:7
-msgid "Course"
-msgstr "Kurs"
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-expired.phtml:18
+msgid "The course"
+msgstr "Der Kurs"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:8
-msgid "in"
-msgstr "in"
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-expired.phtml:18
+msgid "has expired"
+msgstr "ist abgelaufen"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:48
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:43
 msgid "university"
 msgstr "Universität"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:49
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:44
 msgid "partner"
 msgstr "Partner"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:81
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:76
 msgid "date and time"
 msgstr "Termine"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:88
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:83
 msgid "location"
 msgstr "Ort"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:106
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:101
 msgid "description"
 msgstr "Beschreibung"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:115
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:110
 msgid "Course on the website of"
 msgstr "Kurs auf der Website von"
 
@@ -286,6 +282,15 @@ msgstr "Hochschulsportkurssuche"
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:49
 msgid "Please fill out the search form correctly."
 msgstr "Bitte fülle das Suchformular korrekt aus."
+
+#~ msgid "About"
+#~ msgstr "Über"
+
+#~ msgid "Course"
+#~ msgstr "Kurs"
+
+#~ msgid "in"
+#~ msgstr "in"
 
 #~ msgid "List of cities"
 #~ msgstr "Städteliste mit Unisport-Kursen"
