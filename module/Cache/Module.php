@@ -9,7 +9,7 @@ use Zend\Db\TableGateway\TableGateway;
 use Zend\Mvc\MvcEvent;
 use Zend\Cache\Storage\Adapter\MemcachedOptions;
 use Zend\Cache\Storage\Adapter\Memcached;
-use Cache\Model\City;
+use Catalog\Model\City;
 use Cache\Model\CityStorage;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
