@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ZendSkeletonApplication\n"
+"Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-09 19:46+0100\n"
-"PO-Revision-Date: 2013-04-09 19:46+0100\n"
+"POT-Creation-Date: 2013-04-12 01:27+0100\n"
+"PO-Revision-Date: 2013-04-12 01:28+0100\n"
 "Last-Translator: \n"
-"Language-Team: ZF Contributors <zf-devteam@zend.com>\n"
+"Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,115 +14,37 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: M:\\workspace\\itt\\unisportr-zf\\module\n"
+"X-Poedit-SearchPath-2: M:\\workspace\\itt\\unisportr-zf\\public\n"
 
 #: ../view/application/index/about.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/about.phtml:2
 msgid "About"
 msgstr "Über"
 
-#: ../view/application/index/index.phtml:2
-#, php-format
-msgid "Welcome to %sZend Framework 2%s"
-msgstr "Willkommen zu dem %sZend Framework 2%s"
-
-#: ../view/application/index/index.phtml:3
-#, php-format
-msgid ""
-"Congratulations! You have successfully installed the %sZF2 Skeleton "
-"Application%s. You are currently running Zend Framework version %s. This "
-"skeleton can serve as a simple starting point for you to begin building your "
-"application on ZF2."
+#: ../view/application/index/index.phtml:1
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:1
+msgid "Welcome to unisportr!"
 msgstr ""
-"Herzlichen Glückwunsch! Sie haben die %sZF2 Skeleton Application%s "
-"erfolgreich installiert und benutzen gerade die Version %s des Zend "
-"Frameworks. Dieses Gerüst kann Ihnen als Einstiegspunkt, für Ihre weitere "
-"Entwicklung, basierend auf dem Zend Framework 2, dienen."
-
-#: ../view/application/index/index.phtml:4
-msgid "Fork Zend Framework 2 on GitHub"
-msgstr "Fork Zend Framework 2 auf GitHub"
-
-#: ../view/application/index/index.phtml:10
-msgid "Follow Development"
-msgstr "Folge der Entwicklung"
-
-#: ../view/application/index/index.phtml:11
-#, php-format
-msgid ""
-"Zend Framework 2 is under active development. If you are interested in "
-"following the development of ZF2, there is a special ZF2 portal on the "
-"official Zend Framework website which provides links to the ZF2 %swiki%s, "
-"%sdev blog%s, %sissue tracker%s, and much more. This is a great resource for "
-"staying up to date with the latest developments!"
-msgstr ""
-"Das Zend Framework 2 wird z.Z. aktiv weiterentwickelt.  Sollten Sie daran "
-"interessiert sein, die Entwicklung von ZF2 zu verfolgen, so bietet Ihnen die "
-"offizielle Webseite einen eigens für das Zend Framework 2 eingerichteten "
-"Bereich, auf der Sie Verlinkungen zum ZF2 %sWiki%s, %sEntwickler Blog%s, "
-"einem %sFehlerverfolgungssystem%s und noch vielem mehr finden. Dieser "
-"Bereich ist eine hervorragende Quelle um stets aktuell zu bleiben."
-
-#: ../view/application/index/index.phtml:12
-msgid "ZF2 Development Portal"
-msgstr "ZF2 Entwickler Portal"
-
-#: ../view/application/index/index.phtml:16
-msgid "Discover Modules"
-msgstr "Entdecken Sie Module"
-
-#: ../view/application/index/index.phtml:17
-#, php-format
-msgid ""
-"The community is working on developing a community site to serve as a "
-"repository and gallery for ZF2 modules. The project is available %son GitHub"
-"%s. The site is currently live and currently contains a list of some of the "
-"modules already available for ZF2."
-msgstr ""
-"Die Community arbeitet momentan an einer Community Seite, welche als Galerie "
-"für ZF2 Module dient. Dieses Projekt ist %sauf GitHub%s verfügbar. Die "
-"Webseite ist bereits Online und enthält eine Liste mit schon "
-"veröffentlichten Modulen für das Zend Framework 2."
-
-#: ../view/application/index/index.phtml:18
-msgid "Explore ZF2 Modules"
-msgstr "Erkunden Sie ZF2 Module"
-
-#: ../view/application/index/index.phtml:22
-msgid "Help &amp; Support"
-msgstr "Hilfe &amp; Support"
-
-#: ../view/application/index/index.phtml:23
-#, php-format
-msgid ""
-"If you need any help or support while developing with ZF2, you may reach us "
-"via IRC: %s#zftalk on Freenode%s. We'd love to hear any questions or "
-"feedback you may have regarding the beta releases. Alternatively, you may "
-"subscribe and post questions to the %smailing lists%s."
-msgstr ""
-"Sollten Sie Hilfe jeglicher Art bei der Entwicklung mit dem Zend Framework 2 "
-"benötigen, kontaktieren Sie uns doch einfach über das IRC: %s#zftalk on "
-"Freenode%s. Wir freuen uns darauf, Ihnen bei Ihren Fragen zu helfen oder "
-"aber auch Ihre Meinung bezüglich der Beta Versionen zu hören. Alternativ "
-"können Sie auch die %smailing lists%s abonnieren und Ihre Fragen dort "
-"stellen."
-
-#: ../view/application/index/index.phtml:24
-msgid "Ping us on IRC"
-msgstr "Schreiben Sie uns im IRC an"
 
 #: ../view/application/index/musthead.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/musthead.phtml:2
 msgid "Musthead"
 msgstr "Impressum"
 
 #: ../view/error/404.phtml:1
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:1
 msgid "A 404 error occurred"
 msgstr "Es trat ein 404 Fehler auf"
 
 #: ../view/error/404.phtml:10
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:10
 msgid "The requested controller was unable to dispatch the request."
 msgstr ""
 "Der angeforderte Controller war nicht in der Lage die Anfrage zu verarbeiten."
 
 #: ../view/error/404.phtml:13
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:13
 msgid ""
 "The requested controller could not be mapped to an existing controller class."
 msgstr ""
@@ -130,70 +52,251 @@ msgstr ""
 "werden."
 
 #: ../view/error/404.phtml:16
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:16
 msgid "The requested controller was not dispatchable."
 msgstr "Der angeforderte Controller ist nicht aufrufbar."
 
 #: ../view/error/404.phtml:19
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:19
 msgid "The requested URL could not be matched by routing."
 msgstr "Für die angeforderte URL konnte keine Übereinstimmung gefunden werden."
 
 #: ../view/error/404.phtml:22
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:22
 msgid "We cannot determine at this time why a 404 was generated."
 msgstr ""
 "Zu diesem Zeitpunkt ist es uns nicht möglich zu bestimmen, warum ein 404 "
 "Fehler aufgetreten ist."
 
 #: ../view/error/404.phtml:34
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:34
 msgid "Controller"
 msgstr "Controller"
 
 #: ../view/error/404.phtml:41
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:41
 #, php-format
 msgid "resolves to %s"
 msgstr "wird aufgelöst in %s"
 
 #: ../view/error/404.phtml:53 ../view/error/index.phtml:8
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:53
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:8
 msgid "Additional information"
 msgstr "Zusätzliche Information"
 
 #: ../view/error/404.phtml:56 ../view/error/404.phtml:80
 #: ../view/error/index.phtml:11 ../view/error/index.phtml:35
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:56
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:80
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:11
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:35
 msgid "File"
 msgstr "Datei"
 
 #: ../view/error/404.phtml:60 ../view/error/404.phtml:84
 #: ../view/error/index.phtml:15 ../view/error/index.phtml:39
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:60
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:84
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:15
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:39
 msgid "Message"
 msgstr "Meldung"
 
 #: ../view/error/404.phtml:64 ../view/error/404.phtml:88
 #: ../view/error/index.phtml:19 ../view/error/index.phtml:43
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:64
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:88
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:19
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:43
 msgid "Stack trace"
 msgstr "Stapelüberwachung"
 
 #: ../view/error/404.phtml:74 ../view/error/index.phtml:29
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:74
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:29
 msgid "Previous exceptions"
 msgstr "Vorherige Ausnahme"
 
 #: ../view/error/404.phtml:103 ../view/error/index.phtml:58
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:103
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:58
 msgid "No Exception available"
 msgstr "Es ist keine Ausnahme verfügbar"
 
 #: ../view/error/index.phtml:1
+#: M:\workspace\itt\unisportr-zf\module/Application/view/error/index.phtml:1
 msgid "An error occurred"
 msgstr "Ein Fehler ist aufgetreten"
 
-#: ../view/layout/layout.phtml:6 ../view/layout/layout.phtml:32
-msgid "Skeleton Application"
-msgstr ""
+#: ../view/layout/layout.phtml:11
+#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:11
+msgid "The university sports resource"
+msgstr "Die Hochschulsport-Plattform"
 
-#: ../view/layout/layout.phtml:35
+#: ../view/layout/layout.phtml:52
+#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:52
 msgid "Home"
 msgstr "Startseite"
 
-#: ../view/layout/layout.phtml:45
-msgid "All rights reserved."
-msgstr "Alle Rechte vorbehalten."
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-cities.phtml:2
+msgid "List of cities with university sport courses"
+msgstr "Liste von Städten mit Hochschulsport-Kursen"
 
-#~ msgid "Exception"
-#~ msgstr "Ausnahme"
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:5
+msgid "List of"
+msgstr "Liste der"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:5
+msgid "courses in"
+msgstr "Kurse in"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:59
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
+msgid "course"
+msgstr "Kurs"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:59
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
+msgid "link"
+msgstr "Link"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-sports.phtml:2
+msgid "List of sports in"
+msgstr "Liste der Sportarten in"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-sports.phtml:20
+msgid "course(-s)"
+msgstr "Kurs(-e)"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:7
+#, fuzzy
+msgid "Course"
+msgstr "Hochschulsportkurssuche"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:8
+msgid "in"
+msgstr "in"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:49
+msgid "university"
+msgstr "Universität"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:50
+msgid "partner"
+msgstr "Partner"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:82
+msgid "date and time"
+msgstr "Termine"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:89
+msgid "location"
+msgstr "Ort"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:93
+msgid "trainer"
+msgstr "Trainer"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:107
+msgid "description"
+msgstr "Beschreibung"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:116
+msgid "Course on the website of"
+msgstr "Kurs auf der Website von"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:6
+#, php-format
+msgid "Your search returned %s results."
+msgstr "Deine Suche ergab %s Treffer."
+
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-courses.phtml:2
+msgid "Course search"
+msgstr "Hochschulsportkurssuche"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:49
+msgid "Please fill out the search form correctly."
+msgstr "Bitte fülle das Suchformular korrekt aus."
+
+#~ msgid "List of cities"
+#~ msgstr "Städteliste mit Unisport-Kursen"
+
+#~ msgid "Welcome to %sZend Framework 2%s"
+#~ msgstr "Willkommen zu dem %sZend Framework 2%s"
+
+#~ msgid ""
+#~ "Congratulations! You have successfully installed the %sZF2 Skeleton "
+#~ "Application%s. You are currently running Zend Framework version %s. This "
+#~ "skeleton can serve as a simple starting point for you to begin building "
+#~ "your application on ZF2."
+#~ msgstr ""
+#~ "Herzlichen Glückwunsch! Sie haben die %sZF2 Skeleton Application%s "
+#~ "erfolgreich installiert und benutzen gerade die Version %s des Zend "
+#~ "Frameworks. Dieses Gerüst kann Ihnen als Einstiegspunkt, für Ihre weitere "
+#~ "Entwicklung, basierend auf dem Zend Framework 2, dienen."
+
+#~ msgid "Fork Zend Framework 2 on GitHub"
+#~ msgstr "Fork Zend Framework 2 auf GitHub"
+
+#~ msgid "Follow Development"
+#~ msgstr "Folge der Entwicklung"
+
+#~ msgid ""
+#~ "Zend Framework 2 is under active development. If you are interested in "
+#~ "following the development of ZF2, there is a special ZF2 portal on the "
+#~ "official Zend Framework website which provides links to the ZF2 %swiki%s, "
+#~ "%sdev blog%s, %sissue tracker%s, and much more. This is a great resource "
+#~ "for staying up to date with the latest developments!"
+#~ msgstr ""
+#~ "Das Zend Framework 2 wird z.Z. aktiv weiterentwickelt.  Sollten Sie daran "
+#~ "interessiert sein, die Entwicklung von ZF2 zu verfolgen, so bietet Ihnen "
+#~ "die offizielle Webseite einen eigens für das Zend Framework 2 "
+#~ "eingerichteten Bereich, auf der Sie Verlinkungen zum ZF2 %sWiki%s, "
+#~ "%sEntwickler Blog%s, einem %sFehlerverfolgungssystem%s und noch vielem "
+#~ "mehr finden. Dieser Bereich ist eine hervorragende Quelle um stets "
+#~ "aktuell zu bleiben."
+
+#~ msgid "ZF2 Development Portal"
+#~ msgstr "ZF2 Entwickler Portal"
+
+#~ msgid "Discover Modules"
+#~ msgstr "Entdecken Sie Module"
+
+#~ msgid ""
+#~ "The community is working on developing a community site to serve as a "
+#~ "repository and gallery for ZF2 modules. The project is available %son "
+#~ "GitHub%s. The site is currently live and currently contains a list of "
+#~ "some of the modules already available for ZF2."
+#~ msgstr ""
+#~ "Die Community arbeitet momentan an einer Community Seite, welche als "
+#~ "Galerie für ZF2 Module dient. Dieses Projekt ist %sauf GitHub%s "
+#~ "verfügbar. Die Webseite ist bereits Online und enthält eine Liste mit "
+#~ "schon veröffentlichten Modulen für das Zend Framework 2."
+
+#~ msgid "Explore ZF2 Modules"
+#~ msgstr "Erkunden Sie ZF2 Module"
+
+#~ msgid "Help &amp; Support"
+#~ msgstr "Hilfe &amp; Support"
+
+#~ msgid ""
+#~ "If you need any help or support while developing with ZF2, you may reach "
+#~ "us via IRC: %s#zftalk on Freenode%s. We'd love to hear any questions or "
+#~ "feedback you may have regarding the beta releases. Alternatively, you may "
+#~ "subscribe and post questions to the %smailing lists%s."
+#~ msgstr ""
+#~ "Sollten Sie Hilfe jeglicher Art bei der Entwicklung mit dem Zend "
+#~ "Framework 2 benötigen, kontaktieren Sie uns doch einfach über das IRC: "
+#~ "%s#zftalk on Freenode%s. Wir freuen uns darauf, Ihnen bei Ihren Fragen zu "
+#~ "helfen oder aber auch Ihre Meinung bezüglich der Beta Versionen zu hören. "
+#~ "Alternativ können Sie auch die %smailing lists%s abonnieren und Ihre "
+#~ "Fragen dort stellen."
+
+#~ msgid "Ping us on IRC"
+#~ msgstr "Schreiben Sie uns im IRC an"
+
+#~ msgid "All rights reserved."
+#~ msgstr "Alle Rechte vorbehalten."
