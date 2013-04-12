@@ -11,7 +11,6 @@ $title =
 $this->headTitle($courseTitle . ' - ' . $title);
 ?>
 <?php
-$gMapsKey = 'AIzaSyAaQG4TDy5HZ6pduVJ6yndoYi21bao9K98';
 echo $this->headScript()
 	->appendFile($this->basePath() . 'http://maps.googleapis.com/maps/api/js?key=' . $gMapsKey . '&sensor=false', 'text/javascript')
 	->appendFile($this->basePath() . '/js/Log.js', 'text/javascript')

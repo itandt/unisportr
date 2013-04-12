@@ -1,0 +1,5 @@
+<?php
+$breakpoint = null;
+return array(
+	'gMapsKey' => '%gMapsKey%'
+);
