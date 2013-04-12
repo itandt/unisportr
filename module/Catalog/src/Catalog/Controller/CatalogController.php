@@ -21,7 +21,7 @@ class CatalogController extends AbstractActionController {
 	
 	public function listCitiesAction() {
 		return new ViewModel(array(
-			'cities' => $this->getCityTable()->fetchAll()
+			'cities' => $this->getServiceLocator()->get('Cache\Model\CityStorage')->getCities(),
 		));
 	}
 	
