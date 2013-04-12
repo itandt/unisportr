@@ -1,5 +1,6 @@
 <?php
 $breakpoint = null;
+use ITT\Util\Utility;
 /**
  * Global Configuration Override
  *
@@ -36,16 +37,16 @@ return array(
 		),
 		'secondary' => array(
 			array(
-				'label' => 'Catalog',
+				'label' => Utility::poedit('Catalog'),
 				'route' => 'catalog',
 			),
 			array(
-				'label' => 'About unisportr',
+				'label' => Utility::poedit('About unisportr'),
 				'route' => 'application/default',
 				'action' => 'about'
 			),
 			array(
-				'label' => 'Musthead',
+				'label' => Utility::poedit('Musthead'),
 				'route' => 'application/default',
 				'action' => 'musthead'
 			),
