@@ -15,7 +15,7 @@ use Zend\View\Model\ViewModel;
 class IndexController extends AbstractActionController {
 	
 	public function indexAction() {
-		return new ViewModel();
+		return $this->forward()->dispatch('Application\Controller\Index', array('action' => 'about'));
 	}
 	
 	public function mustheadAction() {
