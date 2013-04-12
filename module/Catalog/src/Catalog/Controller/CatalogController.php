@@ -42,18 +42,6 @@ class CatalogController extends AbstractActionController {
 			'courses' => $this->getCourseTable()->findAllByCityNameAndSportTitle($cityName, $sportTitle)
 		));
 	}
-
-	/**
-	 * Gets a CityTable object.
-	 * @return CityTable
-	 */
-	function getCityTable() {
-		if (!$this->cityTable) {
-			$serviceLocator = $this->getServiceLocator();
-			$this->cityTable = $serviceLocator->get('Catalog\Model\CityTable');
-		}
-		return $this->cityTable;
-	}
 	
 	/**
 	 * Gets a SportTable object.
