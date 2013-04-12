@@ -23,7 +23,6 @@ class CourseController extends AbstractActionController {
 		$course = $this->getCourseTable()->findOnceByID($id)->current();
 		return new ViewModel(array(
 			'id' => $id,
-			'courseTitle' => $title,
 			'course' => $course,
 			'gMapsKey' => $this->getServiceLocator()->get('Config')['gMapsKey'],
 		));

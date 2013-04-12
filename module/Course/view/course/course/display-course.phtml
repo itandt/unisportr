@@ -2,13 +2,8 @@
 use ITT\Util\Utility;
 ?>
 <?php
-$title =
-	$this->escapeHtml($course->sport)
-	. ' ' .  $this->translate('Course')
-	. ' ' .  $this->translate('in')
-	. ' ' .  $this->escapeHtml($course->city)
-;
-$this->headTitle($courseTitle . ' - ' . $title);
+$title = $course->title;
+$this->headTitle($title);
 ?>
 <?php
 echo $this->headScript()
@@ -19,7 +14,7 @@ echo $this->headScript()
 ?>
 <?php
 $titleMaxLength = 40;
-$courseTitle = strlen($this->escapeHtml($course->title)) > 25
+$courseTitle = strlen($this->escapeHtml($course->title)) > $titleMaxLength
 	? substr($this->escapeHtml($course->title), 0, $titleMaxLength) . '...'
 	: $this->escapeHtml($course->title)
 ;
@@ -114,13 +109,3 @@ jQuery('document').ready(function() {
 		rel="nofollow"
 	><?php echo $this->translate('Course on the website of') . ' ' . $courseProvider; ?></a>
 </div>
-
-<?php if(false) : ?>
-<?php
-echo PHP_EOL . '<br /><br />' . PHP_EOL;
-echo '<pre>';
-print_r($course);
-echo '</pre>';
-echo PHP_EOL . '<br /><br />' . PHP_EOL;
-?>
-<?php endif; ?>
