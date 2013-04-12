@@ -27,20 +27,20 @@ var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true
 				</div>
 
 				<div id="formElementTrainer" class="formElementSet">
-					<dt><label><?php echo $form->get('trainer')->getLabel(); ?></label></dt>
+					<dt><label><?php echo $this->formlabel($form->get('trainer')); ?></label></dt>
 					<dd><?php echo $this->formRow($form->get('trainer'), null, false, false); ?>
 				</div>
 				
 				<div id="formElementCity" class="formElementSet">
-					<dt><label><?php echo $form->get('city')->getLabel(); ?></label></dt>
+					<dt><label><?php echo $this->formlabel($form->get('city')); ?></label></dt>
 					<dd><?php echo $this->formRow($form->get('city'), null, false, false); ?></dd>
 				</div>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
-					<dt><label><?php echo $form->get('level')->getLabel(); ?></label></dt>
+					<dt><label><?php echo $this->formlabel($form->get('level')); ?></label></dt>
 					<dd><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></dd>
 				</div>
 				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
-					<dt><label><?php echo $form->get('weekday')->getLabel(); ?></label></dt>
+					<dt><label><?php echo $this->formlabel($form->get('weekday')); ?></label></dt>
 					<dd><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></dd>
 				</div>
 			</dl>
@@ -53,7 +53,7 @@ var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true
 					 	<span><?php echo $form->get($elementName)->getLabel(); ?></span>
 					 	<ul>
 					 		<?php foreach ($messages as $message): ?>
-					 		<li><?php echo $this->translate($message); ?></li>
+					 		<li><?php echo $this->escapeHtml($message); ?></li>
 					 		<?php endforeach; ?>
 					 	</ul>
 					 </li>
