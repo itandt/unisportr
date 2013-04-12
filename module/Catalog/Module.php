@@ -20,6 +20,8 @@ use Catalog\Model\Sport;
 use Catalog\Model\SportTable;
 use Catalog\Model\Course;
 use Catalog\Model\CourseTable;
+use Catalog\Model\University;
+use Catalog\Model\UniversityTable;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
@@ -76,6 +78,17 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new Course());
 						return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
+					},
+					'Catalog\Model\UniversityTable' => function ($serviceManager) {
+						$tableGateway = $serviceManager->get('Catalog\Model\UniversityTableGateway');
+						$table = new UniversityTable($tableGateway);
+						return $table;
+					},
+					'Catalog\Model\UniversityTableGateway' => function ($serviceManager) {
+						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+						$resultSetPrototype = new ResultSet();
+						$resultSetPrototype->setArrayObjectPrototype(new University());
+						return new TableGateway('universities', $dbAdapter, null, $resultSetPrototype);
 					},
 				)
 			);

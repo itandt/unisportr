@@ -10,7 +10,9 @@ use Zend\Mvc\MvcEvent;
 use Zend\Cache\Storage\Adapter\MemcachedOptions;
 use Zend\Cache\Storage\Adapter\Memcached;
 use Catalog\Model\City;
+use Catalog\Model\University;
 use Cache\Model\CityStorage;
+use Cache\Model\UniversityStorage;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
@@ -42,7 +44,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 					},
 					'Zend\Cache\Adapter\MemcachedOptions' => function ($serviceManager) {
 						return new MemcachedOptions(array(
-							'ttl'			=> $serviceManager->get('Config')['ttl'],
+							'ttl'			=> $serviceManager->get('Config')['ttl_cities'],
 							'namespace'		=> CityStorage::CACHE_LISTENER_CITIES,
 							'key_pattern'	=> null,
 							'readable'		=> true,
@@ -55,7 +57,23 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 							$serviceManager->get('Catalog\Model\CityTable'),
 							$serviceManager->get('Zend\Cache\Adapter\Memcached')
 						);
-					}
+					},
+					'Zend\Cache\Adapter\MemcachedOptions' => function ($serviceManager) {
+						return new MemcachedOptions(array(
+							'ttl'			=> $serviceManager->get('Config')['ttl_universities'],
+							'namespace'		=> UniversityStorage::CACHE_LISTENER_UNIVERSITIES,
+							'key_pattern'	=> null,
+							'readable'		=> true,
+							'writable'		=> true,
+							'servers'		=> 'localhost',
+						));
+					},
+					'Cache\Model\UniversityStorage' => function ($serviceManager) {
+						return new UniversityStorage(
+							$serviceManager->get('Catalog\Model\UniversityTable'),
+							$serviceManager->get('Zend\Cache\Adapter\Memcached')
+						);
+					},
 				)
 			);
 		} catch (\Exception $e) {
