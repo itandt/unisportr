@@ -2,20 +2,96 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-12 01:27+0100\n"
-"PO-Revision-Date: 2013-04-12 01:28+0100\n"
+"POT-Creation-Date: 2013-04-12 14:37+0100\n"
+"PO-Revision-Date: 2013-04-12 14:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-KeywordsList: translate;poedit\n"
 "X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: M:\\workspace\\itt\\unisportr-zf\\module\n"
 "X-Poedit-SearchPath-2: M:\\workspace\\itt\\unisportr-zf\\public\n"
+"X-Poedit-SearchPath-3: M:\\workspace\\itt\\unisportr-zf\\config\n"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:38
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:92
+msgid "trainer"
+msgstr "Trainer"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:45
+msgid "city"
+msgstr "Stadt"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:58
+msgid "level"
+msgstr "Level"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:60
+msgid "Beginner"
+msgstr "Anfänger"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:61
+msgid "Intermediate"
+msgstr "Mittelstufe"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:62
+msgid "Advanced"
+msgstr "Fortgeschrittene"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:74
+msgid "weekday"
+msgstr "Wochentag"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:76
+msgid "Mo"
+msgstr "Mo"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:77
+msgid "Tu"
+msgstr "Di"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:78
+msgid "We"
+msgstr "Mi"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:79
+msgid "Th"
+msgstr "Do"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:80
+msgid "Fr"
+msgstr "Fr"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:81
+msgid "Sa"
+msgstr "Sa"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:82
+msgid "Su"
+msgstr "So"
+
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:90
+msgid "Find courses!"
+msgstr "Kurse finden!"
+
+#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:40
+msgid "Catalog"
+msgstr "Katalog"
+
+#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:44
+msgid "About unisportr"
+msgstr "Über unisportr"
+
+#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:49
+#: ../view/application/index/musthead.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/musthead.phtml:2
+msgid "Musthead"
+msgstr "Impressum"
 
 #: ../view/application/index/about.phtml:2
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/about.phtml:2
@@ -26,11 +102,6 @@ msgstr "Über"
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:1
 msgid "Welcome to unisportr!"
 msgstr ""
-
-#: ../view/application/index/musthead.phtml:2
-#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/musthead.phtml:2
-msgid "Musthead"
-msgstr "Impressum"
 
 #: ../view/error/404.phtml:1
 #: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:1
@@ -152,13 +223,13 @@ msgid "courses in"
 msgstr "Kurse in"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:59
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:58
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
 msgid "course"
 msgstr "Kurs"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:59
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:58
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
 msgid "link"
 msgstr "Link"
@@ -172,39 +243,34 @@ msgid "course(-s)"
 msgstr "Kurs(-e)"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:7
-#, fuzzy
 msgid "Course"
-msgstr "Hochschulsportkurssuche"
+msgstr "Kurse"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:8
 msgid "in"
 msgstr "in"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:49
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:48
 msgid "university"
 msgstr "Universität"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:50
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:49
 msgid "partner"
 msgstr "Partner"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:82
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:81
 msgid "date and time"
 msgstr "Termine"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:89
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:88
 msgid "location"
 msgstr "Ort"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:93
-msgid "trainer"
-msgstr "Trainer"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:107
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:106
 msgid "description"
 msgstr "Beschreibung"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:116
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:115
 msgid "Course on the website of"
 msgstr "Kurs auf der Website von"
 
