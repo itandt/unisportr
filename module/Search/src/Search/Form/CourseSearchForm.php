@@ -94,7 +94,10 @@ class CourseSearchForm extends Form {
 	}
 	
 	public function setCities(array $cities) {
-		$this->cities = $cities;
+		$this->cities = array();
+		foreach ($cities as $city) {
+			$this->cities[$city->id] = $city->name;
+		}
 	}
 	
 }
