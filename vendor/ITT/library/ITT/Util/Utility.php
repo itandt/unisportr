@@ -19,4 +19,8 @@ class Utility {
 		return $return;
 	}
 	
+	public static function poedit($keyString) {
+		return $keyString;
+	}
+	
 }
