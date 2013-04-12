@@ -3,6 +3,7 @@ namespace Cache\Model;
 
 use Zend\Cache\Storage\Adapter\AbstractAdapter;
 use Catalog\Model\CityTable;
+use Catalog\Model\City;
 
 class CityStorage {
 	
@@ -37,12 +38,11 @@ class CityStorage {
 	}
 	
 	private function getCitiesShallowArray() {
-		$cities = $this->cityTable->fetchAll()->toArray();
-		$citiesShallowArray = array();
-		foreach ($cities as $city) {
-			$citiesShallowArray[$city['id']] = $city['name']; 
+		$cities = array();
+		foreach ($this->cityTable->fetchAll() as $city) {
+			$cities[] = $city;
 		}
-		return $citiesShallowArray;
+		return $cities;
 	}
 	
 }
