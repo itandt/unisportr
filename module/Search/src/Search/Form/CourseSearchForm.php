@@ -4,6 +4,7 @@ namespace Search\Form;
 use Zend\Form\Form;
 use Cache\Model\CityStorage;
 use Cache;
+use ITT\Util\Utility;
 
 class CourseSearchForm extends Form {
 
@@ -34,14 +35,14 @@ class CourseSearchForm extends Form {
 				'id'  => 'formElementTrainer',
 			),
 			'options' => array(
-				'label' => 'trainer',
+				'label' => Utility::poedit('trainer'),
 			),
 		));
 		$this->add(array(
 			'name' => 'city',
 			'type'  => 'Zend\Form\Element\Select',
 			'options' => array(
-				'label' => 'city',
+				'label' => Utility::poedit('city'),
 				'value_options' => $this->cities,
 				'id'  => 'searchFormCity',
 			),
@@ -54,11 +55,11 @@ class CourseSearchForm extends Form {
 				'value' => 2
 			),
 			'options' => array(
-				'label' => 'level',
+				'label' => Utility::poedit('level'),
 				'value_options' => array(
-					'1' => 'Beginner',
-					'2' => 'Intermediate',
-					'3' => 'Advanced',
+					'1' => Utility::poedit('Beginner'),
+					'2' => Utility::poedit('Intermediate'),
+					'3' => Utility::poedit('Advanced'),
 				),
 			),
 		));
@@ -70,15 +71,15 @@ class CourseSearchForm extends Form {
 				'value' => array(1, 2, 3, 4, 5, 6, 7)
 			),
 			'options' => array(
-				'label' => 'weekday',
+				'label' => Utility::poedit('weekday'),
 				'value_options' => array(
-					'1' => 'Mo',
-					'2' => 'Tu',
-					'3' => 'We',
-					'4' => 'Th',
-					'5' => 'Fr',
-					'6' => 'Sa',
-					'7' => 'Su',
+					'1' => Utility::poedit('Mo'),
+					'2' => Utility::poedit('Tu'),
+					'3' => Utility::poedit('We'),
+					'4' => Utility::poedit('Th'),
+					'5' => Utility::poedit('Fr'),
+					'6' => Utility::poedit('Sa'),
+					'7' => Utility::poedit('Su'),
 				),
 			),
 		));
@@ -86,7 +87,7 @@ class CourseSearchForm extends Form {
 			'name' => 'submit',
 			'attributes' => array(
 				'type'  => 'submit',
-				'value' => 'Find courses!',
+				'value' => Utility::poedit('Find courses!'),
 				'id' => 'searchFormSubmit',
 			),
 		));
