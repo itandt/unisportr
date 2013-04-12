@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-12 14:37+0100\n"
-"PO-Revision-Date: 2013-04-12 14:37+0100\n"
+"PO-Revision-Date: 2013-04-12 17:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -244,7 +244,7 @@ msgstr "Kurs(-e)"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:7
 msgid "Course"
-msgstr "Kurse"
+msgstr "Kurs"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:8
 msgid "in"
