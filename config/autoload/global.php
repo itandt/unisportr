@@ -29,16 +29,16 @@ return array(
 	),
 	'navigation' => array(
 		'default' => array(
+// 			array(
+// 				'label' => 'Search',
+// 				'route' => 'search-courses',
+// 			),
+		),
+		'secondary' => array(
 			array(
 				'label' => 'Catalog',
 				'route' => 'catalog',
 			),
-			array(
-				'label' => 'Search',
-				'route' => 'search-courses',
-			),
-		),
-		'secondary' => array(
 			array(
 				'label' => 'About unisportr',
 				'route' => 'application/default',
