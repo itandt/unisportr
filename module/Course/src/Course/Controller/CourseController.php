@@ -21,10 +21,38 @@ class CourseController extends AbstractActionController {
 		$id = $this->params()->fromRoute('id', null);
 		$title = $this->params()->fromRoute('title', null);
 		$course = $this->getCourseTable()->findOnceByID($id)->current();
+		
+		$dateTimeNow = new \DateTime('now');
+		$dateTimeCourseEndDate = new \DateTime($course->endDate);
+		
+		/*
+		$interval = $dateTimeNow->diff($dateTimeCourseEndDate);
+		echo
+			$dateTimeNow->format('d.m.Y') . ' | ' .
+			$dateTimeCourseEndDate->format('d.m.Y') . ' | ' .
+			$interval->format('%d') . ' || '
+		;
+		*/
+		
+		if ($dateTimeCourseEndDate > $dateTimeNow) {
+			$result = new ViewModel(array(
+				'id' => $id,
+				'course' => $course,
+				'gMapsKey' => $this->getServiceLocator()->get('Config')['gMapsKey'],
+			));
+		} else {
+			$result = $this->forward()->dispatch('Course\Controller\Course', array(
+				'action' => 'course-expired',
+				'course' => $course,
+			));
+		}
+		
+		return $result;
+	}
+	
+	public function courseExpiredAction() {
 		return new ViewModel(array(
-			'id' => $id,
-			'course' => $course,
-			'gMapsKey' => $this->getServiceLocator()->get('Config')['gMapsKey'],
+			'course' => $this->params()->fromRoute()['course'],
 		));
 	}
 	

@@ -1,0 +1,18 @@
+<?php
+use ITT\Util\Utility;
+?>
+<?php
+$title = $course->title;
+$this->headTitle($title);
+?>
+<?php
+$titleMaxLength = 40;
+$courseTitle = strlen($this->escapeHtml($course->title)) > $titleMaxLength
+	? substr($this->escapeHtml($course->title), 0, $titleMaxLength) . '...'
+	: $this->escapeHtml($course->title)
+;
+?>
+
+<h1 id="pageTitle"><?php echo $title; ?></h1>
+
+<?php echo $this->translate('The course') . ' ' . $course->title . ' ' . $this->translate('has expired') . '.'; ?>
