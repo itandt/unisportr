@@ -24,7 +24,7 @@ form .formElementSet.formRadioSet dd {
 }
 form .formElementSet.formRadioSet dd input[type=radio] {
 	float: left;
-	margin: 0 8px;
+	margin: 2px 8px 0 8px;
 }
 form .formElementSet.formRadioSet dd input[type=radio]:last-child {
 	margin-right: 0;
@@ -34,7 +34,7 @@ form .formElementSet.formRadioSet dd label {
 }
 form .formElementSet.formCheckboxSet dd input[type=checkbox] {
 	float: left;
-	margin: 0 6px;
+	margin: 2px 6px 0 6px;
 }
 form .formElementSet.formCheckboxSet dd input[type=checkbox]:last-child {
 	margin-right: 0;
