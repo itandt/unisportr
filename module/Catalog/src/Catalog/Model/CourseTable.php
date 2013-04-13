@@ -10,6 +10,8 @@ use Zend\Db\Sql\Platform\Platform;
 
 class CourseTable {
 	
+	const SPORT_TITLE_UNASSIGNED = 'Unassigned';
+	
 	protected $tableGateway;
 	
 	public function __construct(TableGateway $tableGateway) {
@@ -59,7 +61,8 @@ class CourseTable {
 			->greaterThan('courses.enddate', new Expression('NOW()'))
 			->equalTo('cities.name', $cityName)
 		;
-		if (strcasecmp($sportTitle, SportTable::SPORT_TITLE_UNASSIGNED)) {
+		// Filter by sports.title only if the passed sport title != self::SPORT_TITLE_UNASSIGNED
+		if (strcasecmp($sportTitle, self::SPORT_TITLE_UNASSIGNED)) {
 			$where->equalTo('sports.title', $sportTitle);
 		}
 		$select->where($where, Predicate::OP_AND);

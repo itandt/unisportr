@@ -11,8 +11,6 @@ use ITT\Util\Utility;
 
 class SportTable {
 	
-	const SPORT_TITLE_UNASSIGNED = 'unassigned';
-	
 	protected $tableGateway;
 	
 	public function __construct(TableGateway $tableGateway) {
@@ -30,7 +28,7 @@ class SportTable {
 		$select = new Select();
 		$where = new Where();
 		$select->columns(array(
-			'id', 'title' => new Expression('IFNULL(sports.title, "' . Utility::poedit('Unassigned') . '")'), 'category'
+			'id', 'title', 'category'
 		));
 		$select->from($this->tableGateway->getTable());
 		$select

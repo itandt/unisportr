@@ -1,4 +1,7 @@
 <?php
+use Catalog\Model\CourseTable;
+?>
+<?php
 $title = $this->translate('List of sports in') . ' ' . $city;
 $this->headTitle($title);
 ?>
@@ -8,9 +11,16 @@ $this->headTitle($title);
 <ul id="catalogListSports" class="catalogList">
 <?php foreach ($sports as $sport) : ?>
 	<?php
-		$urlParams = array('sport' => $this->escapeHtml($sport->title), 'city' => $this->escapeHtml($city));
+	if (empty($sport->title)) {
+		$sportTitleForDisplay = $this->translate('Unassigned');
+		$sportTitleForURL = CourseTable::SPORT_TITLE_UNASSIGNED;
+	} else {
+		$sportTitleForDisplay = $sportTitleForURL = $sport->title;
+	}
+	?>
+	<?php
+		$urlParams = array('sport' => $this->escapeHtml($sportTitleForURL), 'city' => $this->escapeHtml($city));
 		$aURL = $this->url('sport',  $urlParams);
-		
 		$aTextCategory = !empty($sport->category)
 			? ' ' . '<span class="aTextCategory">' . '(' . $this->escapeHtml($sport->category) . ')' . '</span>'
 			: ''
@@ -20,8 +30,7 @@ $this->headTitle($title);
 			. ' ' . $this->escapeHtml($sport->countCourses) . ' ' . $this->translate('course(-s)')
 			. '</span>'
 		;
-		
-		$aText = $this->translate($this->escapeHtml($sport->title)) . $aTextCategory . $aTextCountCourses;
+		$aText = $this->translate($this->escapeHtml($sportTitleForDisplay)) . $aTextCategory . $aTextCountCourses;
 	?>
 	<li><span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span></li>
 <?php endforeach; ?>
