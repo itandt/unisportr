@@ -41,10 +41,10 @@ class CourseTable {
 			->join('cities', 'allproviders.city_id = cities.id', array(
 				'cityName' => 'name'
 			))
-			->join('courses_sports', 'courses_sports.course_id = courses.id', array())
+			->join('courses_sports', 'courses_sports.course_id = courses.id', array(), Select::JOIN_LEFT)
 			->join('sports', 'courses_sports.sport_id = sports.id', array(
 				'sportTitle' => 'title'
-			))
+			), Select::JOIN_LEFT)
 			->join('weekdays', 'courses.weekday_id = weekdays.id', array(
 				'weekday' => 'labelde'
 			))
@@ -58,8 +58,10 @@ class CourseTable {
 		$where
 			->greaterThan('courses.enddate', new Expression('NOW()'))
 			->equalTo('cities.name', $cityName)
-			->equalTo('sports.title', $sportTitle)
 		;
+		if (strcasecmp($sportTitle, SportTable::SPORT_TITLE_UNASSIGNED)) {
+			$where->equalTo('sports.title', $sportTitle);
+		}
 		$select->where($where, Predicate::OP_AND);
 		$select->group(array('courses.id'));
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());

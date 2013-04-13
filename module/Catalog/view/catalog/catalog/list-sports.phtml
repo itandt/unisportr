@@ -21,7 +21,7 @@ $this->headTitle($title);
 			. '</span>'
 		;
 		
-		$aText = $this->escapeHtml($sport->title) . $aTextCategory . $aTextCountCourses;
+		$aText = $this->translate($this->escapeHtml($sport->title)) . $aTextCategory . $aTextCountCourses;
 	?>
 	<li><span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span></li>
 <?php endforeach; ?>

@@ -1,8 +1,14 @@
 <?php
 use ITT\Util\Utility;
+use Catalog\Model\SportTable;
 ?>
 <?php
-$title = $this->translate('List of') . ' ' . $sport . ' ' . $this->translate('courses in') . ' ' . $city;
+if (strcasecmp($sport, SportTable::SPORT_TITLE_UNASSIGNED)) {
+	$title = $this->translate('List of') . ' ' . $sport . ' ' . $this->translate('courses in') . ' ' . $city;
+} else {
+	$title = $this->translate('List of') . ' ' . $this->translate('unassigned') . ' ' . $this->translate('courses in') . ' ' . $city;
+}
+
 $this->headTitle($title);
 ?>
 

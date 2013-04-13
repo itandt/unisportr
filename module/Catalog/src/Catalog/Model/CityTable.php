@@ -23,8 +23,10 @@ class CityTable {
 			->join('allproviders', 'allproviders.city_id = cities.id', array())
 			->join('courses', 'courses.provider_id = allproviders.providerid', array())
 		;
-		$where->notEqualTo('name', '');
-		$where->isNull('courses.status');
+		$where
+			->notEqualTo('name', '')
+			->isNull('courses.status')
+		;
 		$select->where($where, Predicate::OP_AND);
 		$select->quantifier(Select::QUANTIFIER_DISTINCT);
 		$select->order('cities.id');

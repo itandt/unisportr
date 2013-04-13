@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-12 19:55+0100\n"
-"PO-Revision-Date: 2013-04-12 19:56+0100\n"
+"POT-Creation-Date: 2013-04-13 08:03+0100\n"
+"PO-Revision-Date: 2013-04-13 08:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -17,6 +17,10 @@ msgstr ""
 "X-Poedit-SearchPath-1: M:\\workspace\\itt\\unisportr-zf\\module\n"
 "X-Poedit-SearchPath-2: M:\\workspace\\itt\\unisportr-zf\\public\n"
 "X-Poedit-SearchPath-3: M:\\workspace\\itt\\unisportr-zf\\config\n"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/src/Catalog/Model/SportTable.php:33
+msgid "Unassigned"
+msgstr "Nicht zugeordnet"
 
 #: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:38
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:87
@@ -210,21 +214,27 @@ msgstr "Die Hochschulsport-Plattform"
 msgid "List of cities with university sport courses"
 msgstr "Liste von Städten mit Hochschulsport-Kursen"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:5
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:7
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:9
 msgid "List of"
 msgstr "Liste der"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:5
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:7
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:9
 msgid "courses in"
 msgstr "Kurse in"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:9
+msgid "unassigned"
+msgstr "nicht zugeordneten"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:39
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:53
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
 msgid "course"
 msgstr "Kurs"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:33
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:39
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:53
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:31
 msgid "link"
