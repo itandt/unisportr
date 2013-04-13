@@ -48,11 +48,4 @@ class Module {
 		);
 	}
 	
-	public function getViewHelperConfig() {
-		return array(
-			'invokables' => array(
-				'FormMultiCheckboxViewHelper' => 'ITT\Form\View\Helper\FormMultiCheckbox()',
-			)
-		);
-	}
 }
