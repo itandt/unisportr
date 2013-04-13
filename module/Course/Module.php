@@ -9,11 +9,19 @@ use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\ResultSet\ResultSet;
 use Course\Model\CourseTable;
 use ITT\View\Helper\MakeAddressGMapsFriendlier;
+use Zend\Mvc\MvcEvent;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
-	public function getConfig()
-	{
+	public function onBootstrap(MvcEvent $mvcEvent) {
+		$application = $mvcEvent->getApplication();
+		$serviceManager = $application->getServiceManager();
+		
+		$viewHelperManager = $serviceManager->get('ViewHelperManager');
+		$viewHelperManager->setInvokableClass('makeaddressgmapsfriendlier', 'ITT\View\Helper\MakeAddressGMapsFriendlier');
+	}
+	
+	public function getConfig() {
 		return include __DIR__ . '/config/module.config.php';
 	}
 

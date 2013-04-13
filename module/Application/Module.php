@@ -16,10 +16,6 @@ use Zend\Validator\AbstractValidator;
 class Module {
 	
 	public function onBootstrap(MvcEvent $mvcEvent) {
-		$eventManager		= $mvcEvent->getApplication()->getEventManager();
-		$moduleRouteListener = new ModuleRouteListener();
-		$moduleRouteListener->attach($eventManager);
-		
 		$application = $mvcEvent->getApplication();
 		$serviceManager = $application->getServiceManager();
 		
@@ -27,7 +23,6 @@ class Module {
 		$viewHelperManager->setInvokableClass('formmulticheckbox', 'ITT\Form\View\Helper\FormMultiCheckbox');
 		$viewHelperManager->setInvokableClass('formradio', 'ITT\Form\View\Helper\FormRadio');
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
-		$viewHelperManager->setInvokableClass('makeaddressgmapsfriendlier', 'ITT\View\Helper\MakeAddressGMapsFriendlier');
 
 		$translator = $serviceManager->get('translator');
 		$translator->addTranslationFile(
