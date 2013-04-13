@@ -17,9 +17,9 @@ class MakeAddressGMapsFriendlier extends AbstractHelper {
 	protected function __invoke($address, $city) {
 		$address = str_replace('/', ' ', $address);
 		$address = strpos($address, $city) == false
-		? $address . ' ' . $city
-		: $address
-		;
+			? $address . ' ' . $city
+			: $address
+			;
 		return $address;
 	}
 	
