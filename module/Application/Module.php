@@ -16,6 +16,10 @@ use Zend\Validator\AbstractValidator;
 class Module {
 	
 	public function onBootstrap(MvcEvent $mvcEvent) {
+		$eventManager		= $mvcEvent->getApplication()->getEventManager();
+		$moduleRouteListener = new ModuleRouteListener();
+		$moduleRouteListener->attach($eventManager);
+		
 		$application = $mvcEvent->getApplication();
 		$serviceManager = $application->getServiceManager();
 		
