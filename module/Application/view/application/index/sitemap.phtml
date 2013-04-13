@@ -6,11 +6,41 @@ $this->headTitle($title);
 <h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
 <?php
-$this
-	->navigation()
-	->sitemap()
-	->setFormatOutput(true)
-	->setMaxDepth(10)
-;
-echo $this->navigation()->sitemap();
+$xmlFile = '/var/www/itt/unisportr-zf/public/sitemap.xml';
+
+if (!file_exists($xmlFile)) {
+	throw new \Exception("File does not exist");
+}
+
+$xml = simplexml_load_file($xmlFile);
+
+$level = 0;
+foreach($xml as $url) {
+	$aText = substr($url->loc, strrpos($url->loc, '/'));
+	$aText = ltrim($aText, '/');
+	$aText = urldecode($aText);
+	$currentItem = "<li>" . "<a href=\"" . $url->loc . "\">" . $aText . "</a>" . "</li>";
+	$currentItem = $aText == '/' ? '' : $currentItem;
+
+	$echoUL = '';
+	$echoLI = '';
+	if (substr_count($url->loc, '/') > $level) {
+		$echoUL .= $level == 0 ? "<ul id=\"sitemap\">" : "<ul>";
+		$echoLI .= $currentItem;
+	} else if (substr_count($url->loc, '/') == $level) {
+		$echoLI .= $currentItem;
+	} else {
+		$echoUL .= $currentItem;
+		$echoLI .= "</ul>";
+	}
+	
+	if ($aText == '' || $aText == 'stats?q=age' || $aText == 'stats?q=name') {
+		$echoLI = '';
+	}
+	
+	echo $echoUL . $echoLI;
+	
+	$level = substr_count($url->loc, '/');
+}
+echo "</ul>";
 ?>
