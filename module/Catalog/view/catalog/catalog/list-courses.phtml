@@ -52,23 +52,4 @@ $aText = $this->translate('course') . ' ' . $this->translate('link');
 	<div class="resultBlockCourseTime"><?php echo $courseTime; ?></div>
 	<!--div class="resultBlockSocial">[share]</div-->
 </div>
-<?php if(false): ?>
-<div>
-	<div><?php echo $courseLink; ?></div>
-	<div>id: <?php echo $this->escapeHtml($course->id); ?></div>
-	<div>title: <?php echo $this->escapeHtml($course->title); ?></div>
-	<div>startDate: <?php echo $this->escapeHtml($course->startDate); ?></div>
-	<div>endDate: <?php echo $this->escapeHtml($course->endDate); ?></div>
-	<div>startTime: <?php echo $this->escapeHtml($course->startTime); ?></div>
-	<div>endTime: <?php echo $this->escapeHtml($course->endTime); ?></div>
-	<div>providerName: <?php echo $this->escapeHtml($course->providerName); ?></div>
-	<div>providerType: <?php echo $this->escapeHtml($course->providerType); ?></div>
-	<div>weekday: <?php echo $this->escapeHtml($course->weekday); ?></div>
-	<div>usrLevelMin: <?php echo $this->escapeHtml($course->usrLevelMin); ?></div>
-	<div>usrLevelMax: <?php echo $this->escapeHtml($course->usrLevelMax); ?></div>
-	<div>uniLevelMin: <?php echo $this->escapeHtml($course->uniLevelMin); ?></div>
-	<div>uniLevelMax: <?php echo $this->escapeHtml($course->uniLevelMax); ?></div>
-</div>
-<br />
-<?php endif; ?>
 <?php endforeach; ?>
