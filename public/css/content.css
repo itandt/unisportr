@@ -83,15 +83,16 @@ h1#pageTitle {
 	position: absolute;
 	left: 0;
 	top: -25px;
-	height: 23px;
+	height: 24px;
 	margin: 0 10px;
-	padding: 10px;
+	padding: 5px 10px 10px 10px;
 	border: 1px solid #2172ff;
 	border-radius: 5px; /* CSS3 */
 	-moz-border-radius: 5px; /* Firefox */
 	-webkit-border-radius: 5px; /* Safari, Chrome */
 	-khtml-border-radius: 5px; /* Konqueror */
 	overflow: hidden;
+	line-height: 30px;
 }
 /* misc #stop# */
 
