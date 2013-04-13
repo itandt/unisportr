@@ -2,7 +2,19 @@
 use ITT\Util\Utility;
 ?>
 <?php
-$title = $course->title;
+$titleMaxLength = 40;
+$courseTitle = $this->escapeHtml($course->title);
+$courseTitle = !empty($courseTitle)
+	? $courseTitle
+	: $this->translate('Untitled')
+;
+$courseTitleShorted = strlen($courseTitle) > $titleMaxLength
+	? substr($this->escapeHtml($courseTitle), 0, $titleMaxLength) . '...'
+	: $this->escapeHtml($courseTitle)
+;
+?>
+<?php
+$title = $courseTitleShorted;
 $this->headTitle($title);
 ?>
 <?php
@@ -12,18 +24,10 @@ echo $this->headScript()
 	->appendFile($this->basePath() . '/js/GMap.js', 'text/javascript')
 ;
 ?>
-<?php
-$titleMaxLength = 40;
-$courseTitle = strlen($this->escapeHtml($course->title)) > $titleMaxLength
-	? substr($this->escapeHtml($course->title), 0, $titleMaxLength) . '...'
-	: $this->escapeHtml($course->title)
-;
-?>
 
-<h1 id="pageTitle"><?php echo $title; ?></h1>
+<h1 id="pageTitle"><?php echo $courseTitleShorted; ?></h1>
 
 <?php
-$courseTitle = $this->escapeHtml($course->title);
 $courseDescription = $this->escapeHtml($course->description);
 $courseLevel = Utility::getOneOrPair(
 	$this->escapeHtml($course->uniLevelMin),
@@ -48,9 +52,9 @@ $courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
 $courseLocation = $this->escapeHtml($course->location);
 ?>
 <?php
-$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
+$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($courseTitle));
 $aURL = $this->url('course',  $urlParams);
-$aText = $this->translate('course') . ' ' . $this->translate('link');
+$aText = $this->escapeHtml($courseTitle);
 ?>
 
 <script type="text/javascript">
@@ -66,8 +70,8 @@ jQuery('document').ready(function() {
 <div id="courseTitle">
 	<a
 		href="<?php echo $aURL; ?>"
-		title="<?php echo $this->escapeHtml($course->title); ?>"
-	><?php echo $courseTitle; ?></a>
+		title="<?php echo $aText; ?>"
+	><?php echo $aText; ?></a>
 </div>
 <div id="courseLevel"><?php echo $courseLevel; ?></div>
 <div class="clear"></div>

@@ -17,11 +17,17 @@ $this->headTitle($title);
 <?php foreach ($courses as $course) : ?>
 <?php
 $titleMaxLength = 40;
-$courseTitle = strlen($this->escapeHtml($course->title)) > 25
-	? substr($this->escapeHtml($course->title), 0, $titleMaxLength) . '...'
-	: $this->escapeHtml($course->title)
+$courseTitle = $this->escapeHtml($course->title);
+$courseTitle = !empty($courseTitle)
+	? $courseTitle
+	: $this->translate('Untitled')
 ;
-
+$courseTitleShorted = strlen($courseTitle) > $titleMaxLength
+	? substr($this->escapeHtml($courseTitle), 0, $titleMaxLength) . '...'
+	: $this->escapeHtml($courseTitle)
+;
+?>
+<?php
 $courseLevel = Utility::getOneOrPair(
 	$this->escapeHtml($course->uniLevelMin), $this->escapeHtml($course->uniLevelMax), ' - '
 );
