@@ -1,0 +1,16 @@
+<?php
+$title = $this->translate('Sitemap');
+$this->headTitle($title);
+?>
+
+<h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+$this
+	->navigation()
+	->sitemap()
+	->setFormatOutput(true)
+	->setMaxDepth(10)
+;
+echo $this->navigation()->sitemap();
+?>

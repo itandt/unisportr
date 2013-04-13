@@ -13,3 +13,5 @@ config/application.config.php.default
 dbdummydata.sql
 /module/*/test/report/
 /temp/*/mappingresult.txt
+
+sitemap*.xml

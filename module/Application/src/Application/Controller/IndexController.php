@@ -28,4 +28,8 @@ class IndexController extends AbstractActionController {
 		));
 	}
 	
+// 	public function sitemapAction() {
+// 		return new ViewModel();
+// 	}
+	
 }

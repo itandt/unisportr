@@ -50,6 +50,11 @@ return array(
 				'route' => 'application/default',
 				'action' => 'musthead'
 			),
+// 			array(
+// 				'label' => Utility::poedit('Sitemap'),
+// 				'route' => 'application/default',
+// 				'action' => 'sitemap'
+// 			),
 		),
 	),
 );
