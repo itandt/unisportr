@@ -62,13 +62,5 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
 			} while ($e = $e->getPrevious());
 		}
 	}
-	
-	public function getViewHelperConfig() {
-		return array(
-			'invokables' => array(
-				'MakeAddressGMapsFriendlierViewHelper' => 'ITT\View\Helper\MakeAddressGMapsFriendlier()',
-			)
-		);
-	}
 					
 }
