@@ -12,6 +12,7 @@ namespace Application;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\AbstractValidator;
+use Zend\Console\Console;
 
 class Module {
 	
@@ -27,7 +28,25 @@ class Module {
 		$viewHelperManager->setInvokableClass('formmulticheckbox', 'ITT\Form\View\Helper\FormMultiCheckbox');
 		$viewHelperManager->setInvokableClass('formradio', 'ITT\Form\View\Helper\FormRadio');
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
-
+		
+		// $viewHelperManager->setInvokableClass('url', 'ITT\View\Helper\Url'); doesn't work;
+		// factory must be set/overwritten instead.
+		$viewHelperManager->setFactory('url', function ($sm) use($serviceManager) {
+			$helper = new \ITT\View\Helper\Url;
+			$router = Console::isConsole() ? 'HttpRouter' : 'Router';
+			$helper->setRouter($serviceManager->get($router));
+			
+			$match = $serviceManager->get('application')
+			->getMvcEvent()
+			->getRouteMatch();
+			
+			if ($match instanceof RouteMatch) {
+				$helper->setRouteMatch($match);
+			}
+			
+			return $helper;
+		});
+		
 		$translator = $serviceManager->get('translator');
 		$translator->addTranslationFile(
 			'phpArray',
