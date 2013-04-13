@@ -17,7 +17,7 @@ UPDATE universities SET city_id = NULL, scrape = 0 WHERE id = 15;	--	Ruprecht-Ka
 UPDATE universities SET city_id = 2, scrape = 1 WHERE id = 16;		--	Friedrich-Alexander-Universität Erlangen-Nürnberg	--	www.uni-erlangen.de
 UPDATE universities SET city_id = 28, scrape = 1 WHERE id = 17;		--	Universität Leipzig	--	www.uni-leipzig.de
 UPDATE universities SET city_id = NULL, scrape = 0 WHERE id = 18;	--	Duale Hochschule Baden-Württemberg	--	www.dhbw.de
-UPDATE universities SET city_id = 1, scrape = 1 WHERE id = 19;		--	Eberhard Karls Universität Tübingen	--	www.uni-tuebingen.de
+UPDATE universities SET city_id = 9, scrape = 1 WHERE id = 19;		--	Eberhard Karls Universität Tübingen	--	www.uni-tuebingen.de
 UPDATE universities SET city_id = NULL, scrape = 0 WHERE id = 20;	--	Justus-Liebig-Universität Gießen	--	www.uni-giessen.de
 UPDATE universities SET city_id = 12, scrape = 0 WHERE id = 21;		--	Georg-August-Universität Göttingen	--	www.uni-goettingen.de
 UPDATE universities SET city_id = 13, scrape = 1 WHERE id = 22;		--	Christian-Albrechts-Universität zu Kiel	--	www.uni-kiel.de
