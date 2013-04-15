@@ -14,4 +14,8 @@ dbdummydata.sql
 /module/*/test/report/
 /temp/*/mappingresult.txt
 
+<<<<<<< HEAD
 sitemap*.xml
+=======
+sitemap*.xml
+>>>>>>> 0c8e54ebb6270f18de3afe3e70825a77ad7289ca
