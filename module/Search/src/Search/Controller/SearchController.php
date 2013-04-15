@@ -34,6 +34,7 @@ class SearchController extends AbstractActionController {
 			if ($form->isValid()) {
 				$courseSearchInput->exchangeArray($form->getData());
 				$courses = $this->getCourseTable()->findAllByCriteria($courseSearchInput);
+// 				$courses = $this->getCourseTable()->findAllByCriteria($courseSearchInput);
 			} else {
 				$courses = null;
 			}

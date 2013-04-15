@@ -77,6 +77,10 @@ class CourseTable {
 		$select->group(array('courses.id'));
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		
+// 		$adapter = new \Zend\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
+// 		$paginator = new \Zend\Paginator\Paginator($adapter);
+// 		return $paginator;
+		
 		$resultSet = $this->tableGateway->selectWith($select);
 		return $resultSet;
 	}
