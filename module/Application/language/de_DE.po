@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-13 17:58+0100\n"
-"PO-Revision-Date: 2013-04-13 17:58+0100\n"
+"POT-Creation-Date: 2013-04-15 17:55+0100\n"
+"PO-Revision-Date: 2013-04-15 17:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -93,6 +93,12 @@ msgstr "Über unisportr"
 msgid "Musthead"
 msgstr "Impressum"
 
+#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:54
+#: ../view/application/index/sitemap.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:2
+msgid "Sitemap"
+msgstr ""
+
 #: ../view/application/index/about.phtml:2
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/about.phtml:2
 msgid "University sports 2.0"
@@ -103,6 +109,21 @@ msgstr "Hochschulsport 2.0"
 #: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:52
 msgid "Home"
 msgstr "Startseite"
+
+#: ../view/application/index/sitemap.phtml:24
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:24
+msgid "about"
+msgstr "Über unisportr"
+
+#: ../view/application/index/sitemap.phtml:27
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:27
+msgid "catalog"
+msgstr "Katalog"
+
+#: ../view/application/index/sitemap.phtml:30
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:30
+msgid "musthead"
+msgstr "Impressum"
 
 #: ../view/error/404.phtml:1
 #: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:1
@@ -298,9 +319,6 @@ msgstr "Bitte fülle das Suchformular korrekt aus."
 
 #~ msgid "untitled"
 #~ msgstr "ohne Titel"
-
-#~ msgid "About"
-#~ msgstr "Über"
 
 #~ msgid "Course"
 #~ msgstr "Kurs"

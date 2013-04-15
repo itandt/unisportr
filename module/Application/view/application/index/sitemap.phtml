@@ -18,27 +18,44 @@ $level = 0;
 foreach($xml as $url) {
 	$aText = substr($url->loc, strrpos($url->loc, '/'));
 	$aText = ltrim($aText, '/');
+	$aText = rtrim($aText, '/');
 	$aText = urldecode($aText);
+	switch ($aText) {
+		case 'about' :
+			$aText = $this->translate('about');
+		break;
+		case 'catalog' :
+			$aText = $this->translate('catalog');
+		break;
+		case 'musthead' :
+			$aText = $this->translate('musthead');
+		break;
+	}
+	
 	$currentItem = "<li>" . "<a href=\"" . $url->loc . "\">" . $aText . "</a>" . "</li>";
 	$currentItem = $aText == '/' ? '' : $currentItem;
 
 	$echoUL = '';
 	$echoLI = '';
-	if (substr_count($url->loc, '/') > $level) {
-		$echoUL .= $level == 0 ? "<ul id=\"sitemap\">" : "<ul>";
-		$echoLI .= $currentItem;
-	} else if (substr_count($url->loc, '/') == $level) {
-		$echoLI .= $currentItem;
-	} else {
-		$echoUL .= $currentItem;
-		$echoLI .= "</ul>";
-	}
 	
 	if ($aText == '' || $aText == 'stats?q=age' || $aText == 'stats?q=name') {
-		$echoLI = '';
+		continue;
 	}
 	
-	echo $echoUL . $echoLI;
+	if (substr_count($url->loc, '/') > $level) {
+		$echoUL .= $level == 0 ? "<ul id=\"sitemap\">" : "<li><ul>";
+		$echoLI .= $currentItem;
+		$echo = $echoUL . $echoLI;
+	} else if (substr_count($url->loc, '/') == $level) {
+		$echoLI .= $currentItem;
+		$echo = $echoLI;
+	} else {
+		$echoLI .= "</ul></li>";
+		$echoUL .= $currentItem;
+		$echo = $echoLI . $echoUL;
+	}
+	
+	echo $echo;
 	
 	$level = substr_count($url->loc, '/');
 }
