@@ -19,15 +19,20 @@ return array(
 				'may_terminate' => true,
 			),
 			'search-courses' => array(
-				'type'	=> 'literal',
+				'type'	=> 'segment',
 				'options' => array(
-					'route'	=> '/search/courses',
+					'route'	=> '/search/courses[/page/:page]',
 					'defaults' => array(
 						'controller' => 'Search\Controller\Search',
 						'action'	 => 'search-courses',
 					),
 				),
 				'may_terminate' => true,
+				'child_routes'  => array(
+					'query' => array(
+						'type' => 'Query',
+					),
+				),
 			),
 		),
 	),

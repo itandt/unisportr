@@ -13,7 +13,7 @@ class CourseSearchForm extends Form {
 	public function __construct(array $cities) {
 		parent::__construct('courseSearch');
 		$this->setCities($cities);
-		$this->setAttribute('method', 'post');
+		$this->setAttribute('method', 'get');
 		$this->setAttribute('id', 'searchForm');
 		$this->add(array(
 			'name' => 'keyword',

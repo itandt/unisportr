@@ -3,10 +3,17 @@ use ITT\Util\Utility;
 ?>
 
 <div class="resultBlock" id="searchResultText">
-	<?php echo sprintf($this->translate('Your search returned %s results.'), $courses->count()); ?>
+	<?php echo sprintf($this->translate('Your search returned %s results.'), $paginator->getTotalItemCount()); ?>
 </div>
 
-<?php foreach ($courses as $course) : ?>
+<?php
+echo $this->paginationControl(
+	$paginator, 'Sliding', 'search/search/search-pagination',
+	array('route' => 'search-courses/query', 'formData' => $formData) 
+);
+?>
+
+<?php foreach ($paginator as $course) : ?>
 <?php
 $titleMaxLength = 40;
 $courseTitle = $this->escapeHtml($course->title);

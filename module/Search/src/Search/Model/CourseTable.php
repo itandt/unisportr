@@ -29,7 +29,7 @@ class CourseTable {
 		return $resultSet;
 	}
 	
-	public function findAllByCriteria(CourseSearchInput $input) {
+	public function findAllByCriteria(CourseSearchInput $input, $pageNumber) {
 		$concatDelimiter = self::CONCAT_DELIMITER;
 		$select = new Select();
 		$where = $this->buildWhereFromCriteria($input);
@@ -61,10 +61,10 @@ class CourseTable {
 			->join('coursedata', 'courses.id = coursedata.id', array(
 				'relevance' => $this->buildRelevanceExpressionFromCriteria($input)
 			))
-			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
+			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array())
 			->join('trainers', 'trainer_id = trainers.id', array(
 				'trainers' => new Expression("GROUP_CONCAT(trainers.name SEPARATOR '$concatDelimiter')")
-			), Select::JOIN_LEFT)
+			))
 		;
 		$where
 			->greaterThan('courses.enddate', new Expression('NOW()'))
@@ -77,12 +77,11 @@ class CourseTable {
 		$select->group(array('courses.id'));
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		
-// 		$adapter = new \Zend\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
-// 		$paginator = new \Zend\Paginator\Paginator($adapter);
-// 		return $paginator;
+		$adapter = new \ITT\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
+		$paginator = new \Zend\Paginator\Paginator($adapter);
+		$paginator->setCurrentPageNumber($pageNumber);
 		
-		$resultSet = $this->tableGateway->selectWith($select);
-		return $resultSet;
+		return $paginator;
 	}
 	
 	public function buildRelevanceExpressionFromCriteria(CourseSearchInput $input) {
