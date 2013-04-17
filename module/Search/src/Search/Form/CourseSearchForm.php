@@ -22,7 +22,7 @@ class CourseSearchForm extends Form {
 				'id'  => 'searchFormKeyword',
 			),
 			'options' => array(
-				'label' => 'Keyword',
+				'label' => Utility::poedit('Keyword'),
 				'label_attributes' => array(
 					// 'style' => 'display: none;' // works
 				)
@@ -32,7 +32,7 @@ class CourseSearchForm extends Form {
 			'name' => 'trainer',
 			'attributes' => array(
 				'type'  => 'text',
-				'id'  => 'formElementTrainer',
+				'id'  => 'searchFormTrainer',
 			),
 			'options' => array(
 				'label' => Utility::poedit('trainer'),

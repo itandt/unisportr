@@ -27,12 +27,12 @@ var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true
 				</div>
 
 				<div id="formElementTrainer" class="formElementSet">
-					<dt><label><?php echo $this->formlabel($form->get('trainer')); ?></label></dt>
+					<dt><?php echo $this->formlabel($form->get('trainer')); ?></dt>
 					<dd><?php echo $this->formRow($form->get('trainer'), null, false, false); ?>
 				</div>
 				
 				<div id="formElementCity" class="formElementSet">
-					<dt><label><?php echo $this->formlabel($form->get('city')); ?></label></dt>
+					<dt><?php echo $this->formlabel($form->get('city')); ?></dt>
 					<dd><?php echo $this->formRow($form->get('city'), null, false, false); ?></dd>
 				</div>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
