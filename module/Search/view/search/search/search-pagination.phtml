@@ -5,12 +5,12 @@
 		<!-- Previous page link -->
 		<?php if (isset($this->previous)) : ?>
 			<li class="pagination-start">
-				<a class="pagenav" href="<?php echo $this->url($this->route, array_merge(array('page' => $this->first), $formData)); ?>">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->first), array('query' => $formData)); ?>">
 					&lt;&lt;
 				</a>
 			</li>
 			<li class="pagination-prev">
-				<a class="pagenav" href="<?php echo $this->url($this->route, array_merge(array('page' => $this->previous), $formData)); ?>">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->previous), array('query' => $formData)); ?>">
 					&lt;
 				</a>
 			</li>
@@ -27,7 +27,7 @@
 		<?php foreach ($this->pagesInRange as $page) : ?>
 			<?php if ($page != $this->current) : ?>
 			<li class="pagination-common">
-				<a class="pagenav" href="<?php echo $this->url($this->route, array_merge(array('page' => $page), $formData)); ?>">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $page), array('query' => $formData)); ?>">
 					<?php echo $page; ?>
 				</a>
 			</li>
@@ -43,12 +43,12 @@
 		<!-- Next page link -->
 		<?php if (isset($this->next)) : ?>
 			<li class="pagination-next">
-				<a class="pagenav" href="<?php echo $this->url($this->route, array_merge(array('page' => $this->next), $formData)); ?>">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->next), array('query' => $formData)); ?>">
 					&gt;
 				</a>
 			</li>
 			<li class="pagination-end">
-				<a class="pagenav" href="<?php echo $this->url($this->route, array_merge(array('page' => $this->last), $formData)); ?>">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->last), array('query' => $formData)); ?>">
 					&gt;&gt;
 				</a>
 			</li>

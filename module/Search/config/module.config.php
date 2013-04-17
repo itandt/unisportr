@@ -26,13 +26,10 @@ return array(
 						'controller' => 'Search\Controller\Search',
 						'action'	 => 'search-courses',
 					),
+					// This option is not needed. Just as info.
+					'query' => array(),
 				),
 				'may_terminate' => true,
-				'child_routes'  => array(
-					'query' => array(
-						'type' => 'Query',
-					),
-				),
 			),
 		),
 	),
