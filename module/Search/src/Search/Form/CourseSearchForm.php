@@ -47,6 +47,8 @@ class CourseSearchForm extends Form {
 				'id'  => 'searchFormCity',
 			),
 		));
+		// Deactivated so far, since a lot of courses have no levels (NULL).
+		/*
 		$this->add(array(
 			'name' => 'level',
 			'type'  => 'Zend\Form\Element\Radio',
@@ -63,6 +65,7 @@ class CourseSearchForm extends Form {
 				),
 			),
 		));
+		*/
 		$this->add(array(
 			'name' => 'weekday',
 			'type'  => 'Zend\Form\Element\MultiCheckbox',

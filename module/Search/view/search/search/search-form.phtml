@@ -35,10 +35,13 @@ var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true
 					<dt><?php echo $this->formlabel($form->get('city')); ?></dt>
 					<dd><?php echo $this->formRow($form->get('city'), null, false, false); ?></dd>
 				</div>
+				<?php // Deactivated so far, since a lot of courses have no levels (NULL). ?>
+				<?php if(false) : ?>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
 					<dt><label><?php echo $this->formlabel($form->get('level')); ?></label></dt>
 					<dd><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></dd>
 				</div>
+				<?php endif; ?>
 				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
 					<dt><label><?php echo $this->formlabel($form->get('weekday')); ?></label></dt>
 					<dd><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></dd>

@@ -8,6 +8,7 @@ use Zend\Db\Sql\Expression;
 use Zend\Db\Sql\Predicate\Predicate;
 use Zend\Db\Sql\Platform\Platform;
 use Zend\Db\Sql\Having;
+use Zend\Db\Sql\Predicate\Operator;
 
 class CourseTable {
 	
@@ -103,6 +104,18 @@ SQL;
 		if (!empty($criteria['trainer'])) {
 			$where->like('trainers.name', '%' . $criteria['trainer'] . '%');
 		}
+		// Deactivated so far, since a lot of courses have no levels (NULL).
+		/*
+		if (!empty($criteria['level'])) {
+			$levelWhere = new Where(array(
+				new Operator('levelsmin.usrlevel', Operator::OPERATOR_LESS_THAN_OR_EQUAL_TO, $criteria['level']),
+				new Operator('levelsmax.usrlevel', Operator::OPERATOR_GREATER_THAN_OR_EQUAL_TO, $criteria['level'])
+			), Where::COMBINED_BY_AND);
+			$where->addPredicate(
+				$levelWhere
+			);
+		}
+		*/
 		return $where;
 	}
 	
