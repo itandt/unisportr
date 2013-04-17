@@ -51,8 +51,10 @@ class CourseTable {
 				'usrLevelMax' => 'usrlevel', 'uniLevelMax' => 'unilevel'
 			), Select::JOIN_LEFT)
 			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
-			->join('trainers', 'trainer_id = trainers.id', array(
-				'trainers' => new Expression('GROUP_CONCAT(DISTINCT trainers.name SEPARATOR "' . $concatDelimiter . '")')
+			->join(
+				'trainers',
+				new Expression('trainer_id = trainers.id AND trainers.name IS NOT NULL AND trainers.name != ""'),
+				array('trainers' => new Expression('GROUP_CONCAT(DISTINCT trainers.name SEPARATOR "' . $concatDelimiter . '")')
 			), Select::JOIN_LEFT)
 			->join('courses_sports', 'courses.id = courses_sports.course_id', array(), Select::JOIN_LEFT)
 			->join('sports', 'sport_id = sports.id', array('sport' => 'title'), Select::JOIN_LEFT)
