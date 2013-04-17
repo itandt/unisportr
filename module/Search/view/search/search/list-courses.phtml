@@ -39,7 +39,7 @@ $courseTime = Utility::getOneOrPair(
 );
 ?>
 <?php
-$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($course->title));
+$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $courseTitle);
 $aURL = $this->url('course',  $urlParams);
 $aText = $this->translate('course') . ' ' . $this->translate('link');
 ?>
@@ -48,7 +48,7 @@ $aText = $this->translate('course') . ' ' . $this->translate('link');
 	<div class="resultBlockCourseTitle">
 		<a
 			href="<?php echo $aURL; ?>"
-			title="<?php echo $this->escapeHtml($course->title); ?>"
+			title="<?php echo $courseTitle; ?>"
 		><?php echo $courseTitle; ?></a>
 	</div>
 	<div class="resultBlockCourseLevel"><?php echo $courseLevel; ?></div>
