@@ -85,11 +85,11 @@ jQuery('document').ready(function() {
 	</div>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseLocation; ?></div>
+		<div class="courseInfoData"><?php echo $courseLocation ?: '&nbsp;'; ?></div>
 	</div>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseTrainer; ?></div>
+		<div class="courseInfoData"><?php echo $courseTrainer ?: '&nbsp;'; ?></div>
 	</div>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $providerLabel; ?>:</div>
