@@ -73,7 +73,7 @@ jQuery('document').ready(function() {
 		title="<?php echo $aText; ?>"
 	><?php echo $aText; ?></a>
 </div>
-<div id="courseLevel"><?php echo $courseLevel; ?></div>
+<div id="courseLevel"><?php echo $courseLevel ? $this->translate('level') . ' ' . $courseLevel : '&nbsp;'; ?></div>
 <div class="clear"></div>
 <div id="courseData">
 	<div class="courseInfo" id="courseInfoTimeData">
