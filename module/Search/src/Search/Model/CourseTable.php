@@ -13,8 +13,8 @@ use Zend\Db\Sql\Predicate\Operator;
 class CourseTable {
 	
 	const CONCAT_DELIMITER = '|||';
-	const RELEVANCE_TITLE = 5;
-	const RELEVANCE_DESCRIPTION = 2;
+	const RELEVANCE_TITLE = 6;
+	const RELEVANCE_DESCRIPTION = 4;
 	const RELEVANCE_MIN = 3;
 	
 	protected $tableGateway;
@@ -76,7 +76,10 @@ class CourseTable {
 		$select->where($where, Predicate::OP_AND);
 		$select->having($having);
 		$select->group(array('courses.id'));
-		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
+		$select->order('relevance DESC, title');
+		
+		$test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
+		die($test);
 		
 		$adapter = new \ITT\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
 		$paginator = new \Zend\Paginator\Paginator($adapter);
@@ -90,8 +93,10 @@ class CourseTable {
 		$relevanceTitle = self::RELEVANCE_TITLE;
 		$relevanceDescription = self::RELEVANCE_DESCRIPTION;
 		$expressionSQL = <<<SQL
-MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}') * $relevanceTitle +
-MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}') * $relevanceDescription
+(
+	MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}') * $relevanceTitle +
+	MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}') * $relevanceDescription
+) / ({$relevanceTitle} + {$relevanceDescription})
 SQL;
 		return new Expression($expressionSQL);
 	}
