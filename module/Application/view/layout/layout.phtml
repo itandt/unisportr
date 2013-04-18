@@ -97,6 +97,6 @@ echo $this->doctype();
 		<!-- feedeebuzz /-->
 		<?php echo $this->partial('partials/feedeebuzz.phtml'); ?>
 		<!-- piwik -->
-		<?php echo $this->displayAnalytics(); ?>
+		<?php echo $this->contentForEnvironment('partials/piwik.phtml', ['live']); ?>
 	</body>
 </html>
