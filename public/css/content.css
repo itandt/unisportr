@@ -81,7 +81,7 @@ h2#pageSubTitleHomeWelcome {
 }
 
 h1#pageTitle {
-	background: #ffffff;
+	background: #1b88d4;
 	display: inline-block;
 	position: absolute;
 	left: 0;
@@ -89,13 +89,14 @@ h1#pageTitle {
 	height: 24px;
 	margin: 0 10px;
 	padding: 5px 10px 10px 10px;
-	border: 1px solid #d9d9d9;
-	border-radius: 5px; /* CSS3 */
-	-moz-border-radius: 5px; /* Firefox */
-	-webkit-border-radius: 5px; /* Safari, Chrome */
-	-khtml-border-radius: 5px; /* Konqueror */
+	border: 0px solid #d9d9d9;
+	border-radius: 7px; /* CSS3 */
+	-moz-border-radius: 7px; /* Firefox */
+	-webkit-border-radius: 7px; /* Safari, Chrome */
+	-khtml-border-radius: 7px; /* Konqueror */
 	overflow: hidden;
 	line-height: 30px;
+	color: #ffffff;
 }
 /* misc #stop# */
 
