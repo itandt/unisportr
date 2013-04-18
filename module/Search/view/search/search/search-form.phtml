@@ -3,13 +3,12 @@ use Zend\Form\View\Helper\FormMultiCheckbox;
 use Zend\Form\View\Helper\FormRadio;
 ?>
 <?php
-$form = $this->form;
 $form->setAttribute('action', $this->url('search-courses'));
 $form->prepare();
 ?>
 <script type="text/javascript">
 <!--
-var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true'; ?>;
+var formMaximized = <?php echo !($form->hasValidated() && $form->isValid()) ? 'false' : 'true'; ?>;
 //-->
 </script>
 <?php
