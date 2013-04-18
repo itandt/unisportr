@@ -75,8 +75,8 @@ class Module {
 	public function getViewHelperConfig() {
 		return array(
 			'factories' => array(
-				'config' => function($serviceManager) {
-					$helper = new \ITT\View\Helper\Config($serviceManager);
+				'displayAnalytics' => function($serviceManager) {
+					$helper = new \ITT\View\Helper\DisplayAnalytics($serviceManager);
 					return $helper;
 				}
 			)

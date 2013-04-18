@@ -97,10 +97,6 @@ echo $this->doctype();
 		<!-- feedeebuzz /-->
 		<?php echo $this->partial('partials/feedeebuzz.phtml'); ?>
 		<!-- piwik -->
-		<?php
-		if ($this->config()['environment'] == 'development') {
-			echo $this->partial('partials/piwik.phtml');
-		}
-		?>
+		<?php echo $this->displayAnalytics(); ?>
 	</body>
 </html>
