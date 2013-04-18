@@ -72,4 +72,15 @@ class Module {
 		);
 	}
 	
+	public function getViewHelperConfig() {
+		return array(
+			'factories' => array(
+				'config' => function($serviceManager) {
+					$helper = new \ITT\View\Helper\Config($serviceManager);
+					return $helper;
+				}
+			)
+		);
+	}
+	
 }
