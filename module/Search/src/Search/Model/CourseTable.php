@@ -62,10 +62,10 @@ class CourseTable {
 			->join('coursedata', 'courses.id = coursedata.id', array(
 				'relevance' => $this->buildRelevanceExpressionFromCriteria($input)
 			))
-			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array())
+			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
 			->join('trainers', 'trainer_id = trainers.id', array(
 				'trainers' => new Expression("GROUP_CONCAT(trainers.name SEPARATOR '$concatDelimiter')")
-			))
+			), Select::JOIN_LEFT)
 		;
 		$where
 			->greaterThan('courses.enddate', new Expression('NOW()'))
