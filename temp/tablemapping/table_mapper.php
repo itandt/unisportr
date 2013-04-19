@@ -46,4 +46,4 @@ foreach($sports as $sport)
 // return the response as JSON
 // echo json_encode($sportsStats);
 
-file_put_contents('mappingresult.txt', json_encode($sportsStats));
+file_put_contents('temp/mappingresult.txt', json_encode($sportsStats));
