@@ -43,15 +43,13 @@ return array(
 				'may_terminate' => true,
 				'child_routes' => array(
 					'courses' => array(
-						'type'	=> 'segment',
+					'type'	=> 'segment',
 						'options' => array(
 							'route'	=> '[/page/:page]',
 							'defaults' => array(
 								'controller' => 'Catalog\Controller\Catalog',
 								'action'	 => 'list-courses',
 							),
-							// This option is not needed. Just as info.
-							'query' => array(),
 						),
 						'may_terminate' => true,
 					),
