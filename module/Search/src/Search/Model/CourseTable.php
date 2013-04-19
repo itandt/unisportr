@@ -8,18 +8,20 @@ use Zend\Db\Sql\Expression;
 use Zend\Db\Sql\Predicate\Predicate;
 use Zend\Db\Sql\Platform\Platform;
 use Zend\Db\Sql\Having;
+use Zend\Db\Sql\Predicate\Operator;
 
 class CourseTable {
 	
 	const CONCAT_DELIMITER = '|||';
-	const RELEVANCE_TITLE = 5;
-	const RELEVANCE_DESCRIPTION = 2;
-	const RELEVANCE_MIN = 3;
+	const RELEVANCE_TITLE = 6;
+	const RELEVANCE_DESCRIPTION = 4;
 	
 	protected $tableGateway;
+	protected $relevanceMin;
 	
-	public function __construct(TableGateway $tableGateway) {
+	public function __construct(TableGateway $tableGateway, $relevanceMin) {
 		$this->tableGateway = $tableGateway;
+		$this->relevanceMin = $relevanceMin;
 	}
 	
 	public function fetchAll() {
@@ -29,7 +31,7 @@ class CourseTable {
 		return $resultSet;
 	}
 	
-	public function findAllByCriteria(CourseSearchInput $input) {
+	public function findAllByCriteria(CourseSearchInput $input, $pageNumber) {
 		$concatDelimiter = self::CONCAT_DELIMITER;
 		$select = new Select();
 		$where = $this->buildWhereFromCriteria($input);
@@ -61,23 +63,28 @@ class CourseTable {
 			->join('coursedata', 'courses.id = coursedata.id', array(
 				'relevance' => $this->buildRelevanceExpressionFromCriteria($input)
 			))
-			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array())
+			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
 			->join('trainers', 'trainer_id = trainers.id', array(
 				'trainers' => new Expression("GROUP_CONCAT(trainers.name SEPARATOR '$concatDelimiter')")
-			))
+			), Select::JOIN_LEFT)
 		;
 		$where
 			->greaterThan('courses.enddate', new Expression('NOW()'))
 		;
 		$having
-			->greaterThanOrEqualTo('relevance', self::RELEVANCE_MIN);
+			->greaterThanOrEqualTo('relevance', $this->relevanceMin);
 		;
 		$select->where($where, Predicate::OP_AND);
 		$select->having($having);
 		$select->group(array('courses.id'));
+		$select->order('relevance DESC, title');
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
-		$resultSet = $this->tableGateway->selectWith($select);
-		return $resultSet;
+		
+		$adapter = new \ITT\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
+		$paginator = new \Zend\Paginator\Paginator($adapter);
+		$paginator->setCurrentPageNumber($pageNumber);
+		
+		return $paginator;
 	}
 	
 	public function buildRelevanceExpressionFromCriteria(CourseSearchInput $input) {
@@ -85,8 +92,10 @@ class CourseTable {
 		$relevanceTitle = self::RELEVANCE_TITLE;
 		$relevanceDescription = self::RELEVANCE_DESCRIPTION;
 		$expressionSQL = <<<SQL
-MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}') * $relevanceTitle +
-MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}') * $relevanceDescription
+(
+	MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}') * $relevanceTitle +
+	MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}') * $relevanceDescription
+) / ({$relevanceTitle} + {$relevanceDescription})
 SQL;
 		return new Expression($expressionSQL);
 	}
@@ -99,6 +108,18 @@ SQL;
 		if (!empty($criteria['trainer'])) {
 			$where->like('trainers.name', '%' . $criteria['trainer'] . '%');
 		}
+		// Deactivated so far, since a lot of courses have no levels (NULL).
+		/*
+		if (!empty($criteria['level'])) {
+			$levelWhere = new Where(array(
+				new Operator('levelsmin.usrlevel', Operator::OPERATOR_LESS_THAN_OR_EQUAL_TO, $criteria['level']),
+				new Operator('levelsmax.usrlevel', Operator::OPERATOR_GREATER_THAN_OR_EQUAL_TO, $criteria['level'])
+			), Where::COMBINED_BY_AND);
+			$where->addPredicate(
+				$levelWhere
+			);
+		}
+		*/
 		return $where;
 	}
 	

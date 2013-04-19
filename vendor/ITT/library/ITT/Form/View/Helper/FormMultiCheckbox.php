@@ -74,7 +74,10 @@ class FormMultiCheckbox extends ZendFormMultiCheckbox {
 			$inputAttributes['value']    = $value;
 			$inputAttributes['checked']  = $selected;
 			$inputAttributes['disabled'] = $disabled;
-	
+			
+			$additionalInputAttributes = array('id' => $inputAttributes['name'] . $optionSpec['value']);
+			$inputAttributes = array_merge($inputAttributes, $additionalInputAttributes);
+			
 			$input = sprintf(
 					'<input %s%s',
 					$this->createAttributesString($inputAttributes),
@@ -86,7 +89,13 @@ class FormMultiCheckbox extends ZendFormMultiCheckbox {
 						$label, $this->getTranslatorTextDomain()
 				);
 			}
-	
+			
+			$additionalLabelAttributes = array('for' => $additionalInputAttributes['id']);
+			$labelAttributes = is_array($labelAttributes)
+				? array_merge($labelAttributes, $additionalLabelAttributes)
+				: $additionalLabelAttributes
+			;
+
 			$label     = $escapeHtmlHelper($label);
 			$labelOpen = $labelHelper->openTag($labelAttributes);
 			switch ($labelPosition) {

@@ -13,7 +13,7 @@ class CourseSearchForm extends Form {
 	public function __construct(array $cities) {
 		parent::__construct('courseSearch');
 		$this->setCities($cities);
-		$this->setAttribute('method', 'post');
+		$this->setAttribute('method', 'get');
 		$this->setAttribute('id', 'searchForm');
 		$this->add(array(
 			'name' => 'keyword',
@@ -22,7 +22,7 @@ class CourseSearchForm extends Form {
 				'id'  => 'searchFormKeyword',
 			),
 			'options' => array(
-				'label' => 'Keyword',
+				'label' => Utility::poedit('Keyword'),
 				'label_attributes' => array(
 					// 'style' => 'display: none;' // works
 				)
@@ -32,7 +32,7 @@ class CourseSearchForm extends Form {
 			'name' => 'trainer',
 			'attributes' => array(
 				'type'  => 'text',
-				'id'  => 'formElementTrainer',
+				'id'  => 'searchFormTrainer',
 			),
 			'options' => array(
 				'label' => Utility::poedit('trainer'),
@@ -47,6 +47,8 @@ class CourseSearchForm extends Form {
 				'id'  => 'searchFormCity',
 			),
 		));
+		// Deactivated so far, since a lot of courses have no levels (NULL).
+		/*
 		$this->add(array(
 			'name' => 'level',
 			'type'  => 'Zend\Form\Element\Radio',
@@ -63,6 +65,7 @@ class CourseSearchForm extends Form {
 				),
 			),
 		));
+		*/
 		$this->add(array(
 			'name' => 'weekday',
 			'type'  => 'Zend\Form\Element\MultiCheckbox',

@@ -1,0 +1,66 @@
+<?php if ($this->pageCount) : ?>
+<div id="paginationContainer" class="paginationControl resultBlock">
+	<ul>
+		
+		<!-- Previous page link -->
+		<?php if (isset($this->previous)) : ?>
+			<li class="pagination-start">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->first, 'city' => $city, 'sport' => $sport)); ?>">
+					&lt;&lt;
+				</a>
+			</li>
+			<li class="pagination-prev">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->previous, 'city' => $city, 'sport' => $sport)); ?>">
+					&lt;
+				</a>
+			</li>
+		<?php else : ?>
+			<li>
+				<span class="pagenav">&lt;&lt;</span>
+			</li>
+			<li>
+				<span class="pagenav">&lt;</span>
+			</li>
+		<?php endif; ?>
+		
+		<!-- Numbered page links -->
+		<?php foreach ($this->pagesInRange as $page) : ?>
+			<?php if ($page != $this->current) : ?>
+			<li class="pagination-common">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $page, 'city' => $city, 'sport' => $sport)); ?>">
+					<?php echo $page; ?>
+				</a>
+			</li>
+			<?php else : ?>
+			<li class="pagination-current">
+				<span class="pagenav">
+					<?php echo $page; ?>
+				</span>
+			</li>
+			<?php endif; ?>
+		<?php endforeach; ?>
+		
+		<!-- Next page link -->
+		<?php if (isset($this->next)) : ?>
+			<li class="pagination-next">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->next, 'city' => $city, 'sport' => $sport)); ?>">
+					&gt;
+				</a>
+			</li>
+			<li class="pagination-end">
+				<a class="pagenav" href="<?php echo $this->url($this->route, array('page' => $this->last, 'city' => $city, 'sport' => $sport)); ?>">
+					&gt;&gt;
+				</a>
+			</li>
+		<?php else : ?>
+			<li>
+				<span class="pagenav">&gt;</span>
+			</li>
+			<li>
+				<span class="pagenav">&gt;&gt;</span>
+			</li>
+		<?php endif; ?>
+		
+	</ul>
+</div>
+<?php endif; ?>

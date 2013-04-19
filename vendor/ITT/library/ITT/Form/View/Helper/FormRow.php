@@ -81,11 +81,11 @@ class FormRow extends ZendFormRow
                 
                 switch ($this->labelPosition) {
                     case self::LABEL_PREPEND:
-                        $markup = $labelOpen . $label . $elementString . $labelClose;
+                        $markup = $label . $elementString;
                         break;
                     case self::LABEL_APPEND:
                     default:
-                        $markup = $labelOpen . $elementString . $label . $labelClose;
+                        $markup = $elementString . $label;
                         break;
                 }
             }

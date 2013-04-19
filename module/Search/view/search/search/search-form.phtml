@@ -3,13 +3,25 @@ use Zend\Form\View\Helper\FormMultiCheckbox;
 use Zend\Form\View\Helper\FormRadio;
 ?>
 <?php
-$form = $this->form;
 $form->setAttribute('action', $this->url('search-courses'));
 $form->prepare();
 ?>
+<?php
+if (
+	// current page is search
+	$this->currentRoute() == 'search-courses' &&
+	// form has not been validated (user has just opened the page an not sent a search reeust yet) or
+	// for is invalid
+	!($form->hasValidated() && $form->isValid())
+) {
+	$formMaximized = 'false';
+} else {
+	$formMaximized = 'true';
+}
+?>
 <script type="text/javascript">
 <!--
-var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true'; ?>;
+var formMaximized = <?php echo $formMaximized; ?>;
 //-->
 </script>
 <?php
@@ -27,18 +39,21 @@ var formMaximized = <?php echo count($form->getMessages()) > 0 ? 'false' : 'true
 				</div>
 
 				<div id="formElementTrainer" class="formElementSet">
-					<dt><label><?php echo $this->formlabel($form->get('trainer')); ?></label></dt>
+					<dt><?php echo $this->formlabel($form->get('trainer')); ?></dt>
 					<dd><?php echo $this->formRow($form->get('trainer'), null, false, false); ?>
 				</div>
 				
 				<div id="formElementCity" class="formElementSet">
-					<dt><label><?php echo $this->formlabel($form->get('city')); ?></label></dt>
+					<dt><?php echo $this->formlabel($form->get('city')); ?></dt>
 					<dd><?php echo $this->formRow($form->get('city'), null, false, false); ?></dd>
 				</div>
+				<?php // Deactivated so far, since a lot of courses have no levels (NULL). ?>
+				<?php if(false) : ?>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
 					<dt><label><?php echo $this->formlabel($form->get('level')); ?></label></dt>
 					<dd><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></dd>
 				</div>
+				<?php endif; ?>
 				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
 					<dt><label><?php echo $this->formlabel($form->get('weekday')); ?></label></dt>
 					<dd><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></dd>

@@ -20,23 +20,25 @@ echo $this->doctype();
 		?>
 		<?php
 		echo $this->headLink()
-			->appendStylesheet($this->basePath() . '/css/default.css')
-			->appendStylesheet($this->basePath() . '/css/tags.css')
-			->appendStylesheet($this->basePath() . '/css/main.css')
-			->appendStylesheet($this->basePath() . '/css/navi.css')
-			->appendStylesheet($this->basePath() . '/css/forms.css')
-			->appendStylesheet($this->basePath() . '/css/content.css')
-			->appendStylesheet($this->basePath() . '/css/parts.css')
-			->appendStylesheet($this->basePath() . '/css/last.css')
+			->prependStylesheet($this->basePath() . '/css/last.css')
+			->prependStylesheet($this->basePath() . '/css/parts.css')
+			->prependStylesheet($this->basePath() . '/css/content.css')
+			->prependStylesheet($this->basePath() . '/css/forms.css')
+			->prependStylesheet($this->basePath() . '/css/navi.css')
+			->prependStylesheet($this->basePath() . '/css/main.css')
+			->prependStylesheet($this->basePath() . '/css/tags.css')
+			->prependStylesheet($this->basePath() . '/css/default.css')
 		;
 		?>
 		<?php
 		echo $this->headScript()
-			->appendFile($this->basePath() . '/js/jQuery/jquery.min.js', 'text/javascript')
-			->appendFile($this->basePath() . '/js/jQuery-Validation/jquery.validate.min.js', 'text/javascript')
-			->appendFile($this->basePath() . '/js/jQuery-Form/jquery.form.js', 'text/javascript')
-			->appendFile($this->basePath() . '/js/search-form.js', 'text/javascript')
 			->appendFile($this->basePath() . '/js/dev.js', 'text/javascript')
+			// Since the Feedeebuzz trigger JS is not working, the include is staying disabled so far.
+			// ->prependFile($this->basePath() . '/js/feedeebuzz-trigger.js', 'text/javascript')
+			->prependFile($this->basePath() . '/js/search-form.js', 'text/javascript')
+			->prependFile($this->basePath() . '/js/jQuery-Form/jquery.form.js', 'text/javascript')
+			->prependFile($this->basePath() . '/js/jQuery-Validation/jquery.validate.min.js', 'text/javascript')
+			->prependFile($this->basePath() . '/js/jQuery/jquery.min.js', 'text/javascript')
 		;
 		?>
 	</head>
@@ -94,7 +96,9 @@ echo $this->doctype();
 				</div>
 			</div>
 		</div>
-		<!--jdoc:include type="modules" name="piwik" style="none" /-->
-		<script type="text/javascript" id="fbzScript" src="http://feedeebuzz.de/widget/js/feedeebuzz.js?to=unisportr%40it-and-t.com&amp;p=r&amp;c=bl&amp;l=de"></script>
+		<!-- feedeebuzz /-->
+		<?php echo $this->partial('partials/feedeebuzz.phtml'); ?>
+		<!-- piwik -->
+		<?php echo $this->contentForEnvironment('partials/piwik.phtml', ['live']); ?>
 	</body>
 </html>

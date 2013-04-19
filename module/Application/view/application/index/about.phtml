@@ -5,12 +5,29 @@ $this->headTitle($title);
 
 <h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
-<h2 id="pageSubTitleHomeWelcome" class="pageSubTitle">Willkommen bei unisport<em>r</em>!</h2>
-<p>unisport<em>r</em> ist die erste Suchmaschine für Hochschulsportkurse an allen größ<em>r</em>en Universitäten in Deutschland.</p>
-<p>unisport<em>r</em> ist erst am Anfang. Wenn Ihr Ideen habt od<em>r</em> eine weitere Uni vorschlagen wollt, schreibt uns einfach.</p>
-<p>unisport<em>r</em> wird noch viel meh<em>r</em>. Es erwarten euch viele zusätzliche Funktionen rund um den Hochschulsport. Also schaut wied<em>r</em> rein.</p>
-<p>Euer unisport<em>r</em> Team</p>
-<p>Bisher unterstützte Universitäten:</p>
+<h2 id="pageSubTitleHomeWelcome" class="pageSubTitle">Willkommen bei unisport<span class="rStyle">r</span>!</h2>
+
+<p>unisport<span class="rStyle">r</span> ist die erste zentrale bundesweite Plattform für Hochschulsport.
+Hier findest Du Kurse an derzeit
+<?php echo count($universities); ?> größ<span class="rStyle">r</span>en Universitäten
+in <?php echo count($cities); ?> Städten.</p>
+
+<p>Finde Deinen Kurs mit uns<span class="rStyle">r</span>m
+<a href="<?php echo $this->url('search'); ?>">Kurs-Find<span class="rStyle">r</span></a>
+od<span class="rStyle">r</span> im <a href="<?php echo $this->url('catalog'); ?>">Katalog</a>,
+wo alle Kurse schön nach Stadt und (soweit möglich) Sportart soriert sind.</p>
+
+<p>Ist Deine Stadt &mdash; also Deine Uni &mdash; nicht dabei?
+Ode<span class="rStyle">r</span> wünscht Du dir eine Funktionalität,
+die <p>unisport<span class="rStyle">r</span> (noch?) nicht bietet?
+(Sportpartnerbörse? Kursempfehlungen? Meh<span class="rStyle">r</span> Infos rund um die Kurse?)
+Ode<span class="rStyle">r</span> magst Du uns Dein Feedback geben, was Dir an der Seite gefallen oder nicht gefallen hat?</p>
+
+<p>Schreibt uns einfach!</p>
+
+<p>Eu<span class="rStyle">r</span> unisport<span class="rStyle">r</span> Team</p>
+
+<p>Bisher unt<span class="rStyle">r</span>stützte Universitäten:</p>
 
 <ul id="catalogListUniversities" class="catalogList">
 <?php foreach ($universities as $university) : ?>

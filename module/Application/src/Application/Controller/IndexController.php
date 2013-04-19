@@ -25,6 +25,7 @@ class IndexController extends AbstractActionController {
 	public function aboutAction() {
 		return new ViewModel(array(
 			'universities' => $this->getServiceLocator()->get('Cache\Model\UniversityStorage')->getUniversities(),
+			'cities' => $this->getServiceLocator()->get('Cache\Model\CityStorage')->getCities(),
 		));
 	}
 	

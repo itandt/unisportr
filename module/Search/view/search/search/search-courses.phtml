@@ -6,9 +6,10 @@ $this->headTitle($title);
 <h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
 <?php
-if ($courses instanceof Zend\Db\ResultSet\ResultSetInterface) {
+if ($paginator instanceof Zend\Paginator\Paginator) {
 	echo $this->render('search/search/list-courses.phtml', array(
-		'courses' => $courses
+		'paginator' => $paginator,
+		'formData' => $formData
 	));
 }
 ?>

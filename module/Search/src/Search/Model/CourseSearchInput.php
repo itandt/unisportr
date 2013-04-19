@@ -17,7 +17,8 @@ class CourseSearchInput implements ArraySerializableInterface {
 			'keyword'	=> null,
 			'trainer'	=> null,
 			'city'		=> null,
-			'level'		=> null,
+			// Deactivated so far, since a lot of courses have no levels (NULL).
+			// 'level'		=> null,
 			'weekday'	=> null,
 		);
 	}
@@ -92,10 +93,13 @@ class CourseSearchInput implements ArraySerializableInterface {
 				),
 			)));
 			
+			// Deactivated so far, since a lot of courses have no levels (NULL).
+			/*
 			$inputFilter->add($factory->createInput(array(
 				'name'     => 'level',
 				'required' => true,
 			)));
+			*/
 			
 			$inputFilter->add($factory->createInput(array(
 				'name'     => 'weekday',

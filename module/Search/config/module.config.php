@@ -1,4 +1,5 @@
 <?php
+$breakpoint = null;
 return array(
 	'controllers' => array(
 		'invokables' => array(
@@ -19,7 +20,7 @@ return array(
 				'may_terminate' => true,
 			),
 			'search-courses' => array(
-				'type'	=> 'literal',
+				'type'	=> 'segment',
 				'options' => array(
 					'route'	=> '/search/courses',
 					'defaults' => array(
@@ -28,6 +29,19 @@ return array(
 					),
 				),
 				'may_terminate' => true,
+				'child_routes' => array(
+					'results' => array(
+					'type'	=> 'segment',
+						'options' => array(
+							'route'	=> '[/page/:page]',
+							'defaults' => array(
+								'controller' => 'Search\Controller\Search',
+								'action'	 => 'search-courses',
+							),
+						),
+						'may_terminate' => true,
+					),
+				)
 			),
 		),
 	),
@@ -36,4 +50,5 @@ return array(
 			'search' => __DIR__ . '/../view',
 		),
 	),
+	'relevance_min' => 3,
 );

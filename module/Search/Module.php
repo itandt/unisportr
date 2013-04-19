@@ -40,7 +40,7 @@ class Module implements
 				'factories' => array(
 					'Search\Model\CourseTable' => function($serviceManager) {
 						$tableGateway = $serviceManager->get('Search\Model\CourseTableGateway');
-						$table = new CourseTable($tableGateway);
+						$table = new CourseTable($tableGateway, $serviceManager->get('Config')['relevance_min']);
 						return $table;
 					},
 					'Search\Model\CourseTableGateway' => function($serviceManager) {

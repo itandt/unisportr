@@ -9,8 +9,8 @@ $courseTitle = !empty($courseTitle)
 	: $this->translate('Untitled')
 ;
 $courseTitleShorted = strlen($courseTitle) > $titleMaxLength
-	? substr($this->escapeHtml($courseTitle), 0, $titleMaxLength) . '...'
-	: $this->escapeHtml($courseTitle)
+	? substr($courseTitle, 0, $titleMaxLength) . '...'
+	: $courseTitle
 ;
 ?>
 <?php
@@ -52,9 +52,9 @@ $courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
 $courseLocation = $this->escapeHtml($course->location);
 ?>
 <?php
-$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($courseTitle));
+$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $courseTitle);
 $aURL = $this->url('course',  $urlParams);
-$aText = $this->escapeHtml($courseTitle);
+$aText = $courseTitle;
 ?>
 
 <script type="text/javascript">
@@ -73,7 +73,7 @@ jQuery('document').ready(function() {
 		title="<?php echo $aText; ?>"
 	><?php echo $aText; ?></a>
 </div>
-<div id="courseLevel"><?php echo $courseLevel; ?></div>
+<div id="courseLevel"><?php echo $courseLevel ? $this->translate('level') . ' ' . $courseLevel : '&nbsp;'; ?></div>
 <div class="clear"></div>
 <div id="courseData">
 	<div class="courseInfo" id="courseInfoTimeData">
@@ -85,11 +85,11 @@ jQuery('document').ready(function() {
 	</div>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseLocation; ?></div>
+		<div class="courseInfoData"><?php echo $courseLocation ?: '&nbsp;'; ?></div>
 	</div>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseTrainer; ?></div>
+		<div class="courseInfoData"><?php echo $courseTrainer ?: '&nbsp;'; ?></div>
 	</div>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $providerLabel; ?>:</div>
@@ -102,7 +102,7 @@ jQuery('document').ready(function() {
 </div>
 <div class="clear"></div>
 <div id="courseDescription">
-	<div id="courseDescriptionLabel"><?php echo $this->translate('description'); ?></div>
+	<div id="courseDescriptionLabel">&nbsp;</div>
 	<div id="courseDescriptionData"><?php echo $courseDescription; ?></div>
 </div>
 <!--div id="courseSocial">[share]</div-->

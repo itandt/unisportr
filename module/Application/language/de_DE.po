@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-13 17:58+0100\n"
-"PO-Revision-Date: 2013-04-13 17:58+0100\n"
+"POT-Creation-Date: 2013-04-19 13:17+0100\n"
+"PO-Revision-Date: 2013-04-19 13:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -18,6 +18,10 @@ msgstr ""
 "X-Poedit-SearchPath-2: M:\\workspace\\itt\\unisportr-zf\\public\n"
 "X-Poedit-SearchPath-3: M:\\workspace\\itt\\unisportr-zf\\config\n"
 
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:25
+msgid "Keyword"
+msgstr "Suchbegriff"
+
 #: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:38
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:91
 msgid "trainer"
@@ -27,59 +31,43 @@ msgstr "Trainer"
 msgid "city"
 msgstr "Stadt"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:58
-msgid "level"
-msgstr "Level"
-
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:60
-msgid "Beginner"
-msgstr "Anfänger"
-
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:61
-msgid "Intermediate"
-msgstr "Mittelstufe"
-
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:62
-msgid "Advanced"
-msgstr "Fortgeschrittene"
-
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:74
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:77
 msgid "weekday"
 msgstr "Wochentag"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:76
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:79
 msgid "Mo"
 msgstr "Mo"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:77
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:80
 msgid "Tu"
 msgstr "Di"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:78
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:81
 msgid "We"
 msgstr "Mi"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:79
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:82
 msgid "Th"
 msgstr "Do"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:80
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:83
 msgid "Fr"
 msgstr "Fr"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:81
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:84
 msgid "Sa"
 msgstr "Sa"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:82
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:85
 msgid "Su"
 msgstr "So"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:90
+#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:93
 msgid "Find courses!"
 msgstr "Kurse finden!"
 
-#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:40
+#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:36
 msgid "Catalog"
 msgstr "Katalog"
 
@@ -93,16 +81,37 @@ msgstr "Über unisportr"
 msgid "Musthead"
 msgstr "Impressum"
 
+#: M:\workspace\itt\unisportr-zf\config/autoload/global.php:54
+#: ../view/application/index/sitemap.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:2
+msgid "Sitemap"
+msgstr "Sitemap"
+
 #: ../view/application/index/about.phtml:2
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/about.phtml:2
 msgid "University sports 2.0"
 msgstr "Hochschulsport 2.0"
 
-#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:52
+#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:54
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:2
-#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:52
+#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:54
 msgid "Home"
 msgstr "Startseite"
+
+#: ../view/application/index/sitemap.phtml:25
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:25
+msgid "about"
+msgstr "Über unisportr"
+
+#: ../view/application/index/sitemap.phtml:28
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:28
+msgid "catalog"
+msgstr "Katalog"
+
+#: ../view/application/index/sitemap.phtml:31
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:31
+msgid "musthead"
+msgstr "Impressum"
 
 #: ../view/error/404.phtml:1
 #: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:1
@@ -210,23 +219,38 @@ msgstr "Die Hochschulsport-Plattform"
 msgid "List of cities with university sport courses"
 msgstr "Liste von Städten mit Hochschulsport-Kursen"
 
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:8
+#, php-format
+msgid "%s in %s"
+msgstr "%s in %s"
+
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:9
+#, php-format
+msgid "%s %s courses in %s"
+msgstr "%s %s Kurse in %s"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:11
 msgid "List of unassigned courses in"
 msgstr "Nicht zugeordnete Kurse in"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:22
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:12
+#, php-format
+msgid "%s unassigned courses in %s"
+msgstr "%s nicht zugeordnete Kurse in %s"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:36
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:9
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:15
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:22
 msgid "Untitled"
 msgstr "Ohne Titel"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:44
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:37
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:58
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:44
 msgid "course"
 msgstr "Kurs"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:44
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:37
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:58
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:44
 msgid "link"
 msgstr "Link"
 
@@ -258,6 +282,10 @@ msgstr "Universität"
 msgid "partner"
 msgstr "Partner"
 
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:76
+msgid "level"
+msgstr "Level"
+
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:80
 msgid "date and time"
 msgstr "Termine"
@@ -265,10 +293,6 @@ msgstr "Termine"
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:87
 msgid "location"
 msgstr "Ort"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:105
-msgid "description"
-msgstr "Beschreibung"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:114
 msgid "Course on the website of"
@@ -283,9 +307,25 @@ msgstr "Deine Suche ergab %s Treffer."
 msgid "Course search"
 msgstr "Hochschulsportkurssuche"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:49
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:64
 msgid "Please fill out the search form correctly."
 msgstr "Bitte fülle das Suchformular korrekt aus."
+
+#, fuzzy
+#~ msgid "%s nicht zugeordnete courses in %s"
+#~ msgstr "%s Kurse %s in %s"
+
+#~ msgid "description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Beginner"
+#~ msgstr "Anfänger"
+
+#~ msgid "Intermediate"
+#~ msgstr "Mittelstufe"
+
+#~ msgid "Advanced"
+#~ msgstr "Fortgeschrittene"
 
 #~ msgid "unassigned"
 #~ msgstr "nicht zugeordneten"
@@ -293,14 +333,8 @@ msgstr "Bitte fülle das Suchformular korrekt aus."
 #~ msgid "List of"
 #~ msgstr "Liste der"
 
-#~ msgid "courses in"
-#~ msgstr "Kurse in"
-
 #~ msgid "untitled"
 #~ msgstr "ohne Titel"
-
-#~ msgid "About"
-#~ msgstr "Über"
 
 #~ msgid "Course"
 #~ msgstr "Kurs"

@@ -27,23 +27,26 @@ class SearchController extends AbstractActionController {
 	public function searchCoursesAction() {
 		$form = $this->getServiceLocator()->get('Search\Form\CourseSearchForm');
 		$request = $this->getRequest();
-		if ($request->isPost()) {
+		$formData = $request->getQuery()->getArrayCopy();
+		if (!empty($formData)) {
 			$courseSearchInput = new CourseSearchInput();
 			$form->setInputFilter($courseSearchInput->getInputFilter());
-			$form->setData($request->getPost());
+			$form->setData($formData);
 			if ($form->isValid()) {
 				$courseSearchInput->exchangeArray($form->getData());
-				$courses = $this->getCourseTable()->findAllByCriteria($courseSearchInput);
+				$page = $this->params()->fromRoute('page');
+				$paginator = $this->getCourseTable()->findAllByCriteria($courseSearchInput, $page);
 			} else {
-				$courses = null;
+				$paginator = null;
 			}
 		} else {
-			$courses = null;
+			$paginator = null;
 		}
 		return new ViewModel(array(
 			'form' => $form,
-			'courses' => $courses,
+			'paginator' => $paginator,
 			'cities' => $this->getServiceLocator()->get('Cache\Model\CityStorage')->getCities(),
+			'formData' => $formData
 		));
 	}
 	

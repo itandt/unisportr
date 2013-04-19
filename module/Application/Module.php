@@ -66,8 +66,24 @@ class Module {
 			'Zend\Loader\StandardAutoloader' => array(
 				'namespaces' => array(
 					__NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+					'ITT' => __DIR__ . '/../../vendor/ITT/library/ITT',
 				),
 			),
+		);
+	}
+	
+	public function getViewHelperConfig() {
+		return array(
+			'factories' => array(
+				'contentForEnvironment' => function($serviceManager) {
+					$helper = new \ITT\View\Helper\ContentForEnvironment($serviceManager);
+					return $helper;
+				},
+				'currentRoute' => function($serviceManager) {
+					$helper = new \ITT\View\Helper\CurrentRouteName($serviceManager);
+					return $helper;
+				},
+			)
 		);
 	}
 	

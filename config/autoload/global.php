@@ -30,15 +30,15 @@ return array(
 	),
 	'navigation' => array(
 		'default' => array(
-// 			array(
-// 				'label' => 'Search',
-// 				'route' => 'search-courses',
-// 			),
 		),
 		'secondary' => array(
 			array(
 				'label' => Utility::poedit('Catalog'),
 				'route' => 'catalog',
+			),
+			array(
+				'label' => 'Search',
+				'route' => 'search-courses',
 			),
 			array(
 				'label' => Utility::poedit('About unisportr'),
