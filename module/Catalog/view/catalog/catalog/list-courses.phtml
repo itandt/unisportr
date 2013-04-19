@@ -2,18 +2,32 @@
 use ITT\Util\Utility;
 use Catalog\Model\CourseTable;
 ?>
+
 <?php
 if (strcasecmp($sport, CourseTable::SPORT_TITLE_UNASSIGNED)) {
-	$title = $sport . ' ' . $city;
+	$title = sprintf($this->translate('%s in %s'), $sport, $city);
+	$resultText = sprintf($this->translate('%s %s courses in %s'), $paginator->getTotalItemCount(), $sport, $city);
 } else {
 	$title = $this->translate('List of unassigned courses in') . ' ' . $city;
+	$resultText = sprintf($this->translate('%s unassigned courses in %s'), $paginator->getTotalItemCount(), $city);
 }
 $this->headTitle($title);
 ?>
 
 <h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
-<?php foreach ($courses as $course) : ?>
+<div class="resultBlock" id="searchResultText">
+	<?php echo $resultText; ?>
+</div>
+
+<?php
+echo $this->paginationControl(
+	$paginator, 'Sliding', 'catalog/catalog/catalog-pagination',
+	array('route' => 'sport/courses', 'city' => $city, 'sport' => $sport) 
+);
+?>
+
+<?php foreach ($paginator as $course) : ?>
 <?php
 $titleMaxLength = 40;
 $courseTitle = $this->escapeHtml($course->title);

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-18 00:21+0100\n"
-"PO-Revision-Date: 2013-04-18 00:21+0100\n"
+"POT-Creation-Date: 2013-04-19 04:00+0100\n"
+"PO-Revision-Date: 2013-04-19 04:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -92,9 +92,9 @@ msgstr "Sitemap"
 msgid "University sports 2.0"
 msgstr "Hochschulsport 2.0"
 
-#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:52
+#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:54
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:2
-#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:52
+#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:54
 msgid "Home"
 msgstr "Startseite"
 
@@ -219,22 +219,37 @@ msgstr "Die Hochschulsport-Plattform"
 msgid "List of cities with university sport courses"
 msgstr "Liste von Städten mit Hochschulsport-Kursen"
 
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:8
+#, php-format
+msgid "%s in %s"
+msgstr "%s in %s"
+
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:9
+#, php-format
+msgid "%s %s courses in %s"
+msgstr "%s %s Kurse in %s"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:11
 msgid "List of unassigned courses in"
 msgstr "Nicht zugeordnete Kurse in"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:22
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:12
+#, php-format
+msgid "%s unassigned courses in %s"
+msgstr "%s nicht zugeordnete Kurse in %s"
+
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:36
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:9
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:22
 msgid "Untitled"
 msgstr "Ohne Titel"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:44
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:58
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:44
 msgid "course"
 msgstr "Kurs"
 
-#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:44
+#: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:58
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:44
 msgid "link"
 msgstr "Link"
@@ -292,9 +307,13 @@ msgstr "Deine Suche ergab %s Treffer."
 msgid "Course search"
 msgstr "Hochschulsportkurssuche"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:52
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:64
 msgid "Please fill out the search form correctly."
 msgstr "Bitte fülle das Suchformular korrekt aus."
+
+#, fuzzy
+#~ msgid "%s nicht zugeordnete courses in %s"
+#~ msgstr "%s Kurse %s in %s"
 
 #~ msgid "description"
 #~ msgstr "Beschreibung"
@@ -313,9 +332,6 @@ msgstr "Bitte fülle das Suchformular korrekt aus."
 
 #~ msgid "List of"
 #~ msgstr "Liste der"
-
-#~ msgid "courses in"
-#~ msgstr "Kurse in"
 
 #~ msgid "untitled"
 #~ msgstr "ohne Titel"

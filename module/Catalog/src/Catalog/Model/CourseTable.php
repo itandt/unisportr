@@ -25,7 +25,7 @@ class CourseTable {
 		return $resultSet;
 	}
 	
-	public function findAllByCityNameAndSportTitle($cityName, $sportTitle) {
+	public function findAllByCityNameAndSportTitle($cityName, $sportTitle, $pageNumber) {
 		$select = new Select();
 		$where = new Where();
 		$select->columns(array(
@@ -68,8 +68,12 @@ class CourseTable {
 		$select->where($where, Predicate::OP_AND);
 		$select->group(array('courses.id'));
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
-		$resultSet = $this->tableGateway->selectWith($select);
-		return $resultSet;
+
+		$adapter = new \ITT\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
+		$paginator = new \Zend\Paginator\Paginator($adapter);
+		$paginator->setCurrentPageNumber($pageNumber);
+		
+		return $paginator;
 	}
 	
 }

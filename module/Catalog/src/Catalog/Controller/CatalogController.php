@@ -36,10 +36,12 @@ class CatalogController extends AbstractActionController {
 	public function listCoursesAction() {
 		$cityName = $this->params()->fromRoute('city', null);
 		$sportTitle = $this->params()->fromRoute('sport', null);
+		$page = $this->params()->fromRoute('page');
+		$paginator = $this->getCourseTable()->findAllByCityNameAndSportTitle($cityName, $sportTitle, $page);
 		return new ViewModel(array(
 			'city' => $cityName,
 			'sport' => $sportTitle,
-			'courses' => $this->getCourseTable()->findAllByCityNameAndSportTitle($cityName, $sportTitle)
+			'paginator' => $paginator
 		));
 	}
 	
