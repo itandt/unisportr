@@ -57,4 +57,7 @@ return array(
 			),
 		),
 	),
+	// ...
+	// Environment. Allowed values: development, staging, live.
+	'environment' => 'live'
 );
