@@ -1,0 +1,4 @@
+config.xml
+config*.xml
+spider.sh
+spider*.sh

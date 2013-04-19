@@ -2,7 +2,6 @@
 # and must be copied and (if necessary) adapt.
 /*/tablemapping/base/database.config.php
 /*/simpledbmigration/config.php
-/*/sitemapgenerator/config*.xml
 
 # Usually needed for every working project instance
 # and must be generated.
