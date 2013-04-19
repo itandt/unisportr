@@ -1,3 +1,16 @@
+# Usually needed for every working project instance
+# and must be copied and (if necessary) adapt.
+/*/tablemapping/base/database.config.php
+/*/simpledbmigration/config.php
+/*/sitemapgenerator/config*.xml
+
+# Usually needed for every working project instance
+# and must be generated.
+composer.lock
+/public/sitemap*.xml
+/*/tablemapping/mappingresult.txt
+
+# Usually not needed for a working project instance.
 nbproject
 ._*
 .~lock.*
@@ -6,16 +19,9 @@ nbproject
 .idea
 .project
 .settings
-composer.lock
 .idea
-config/application.config.php.default
 
+# Other (e.g just for info).
+config/application.config.php.default
 dbdummydata.sql
 /module/*/test/report/
-
-/public/sitemap*.xml
-
-/*/tablemapping/base/database.config.php
-/*/tablemapping/mappingresult.txt
-/*/simpledbmigration/config.php
-/*/sitemapgenerator/config*.xml
