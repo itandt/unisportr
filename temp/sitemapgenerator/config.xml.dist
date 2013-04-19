@@ -3,6 +3,7 @@
 %base_url%
 - examples
 http://unisportr-zf.itt.loc
+
 %store_into%
 /var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_local.xml
 /var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_google.xml
