@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--
+%base_url%
+- examples
+http://unisportr-zf.itt.loc
+%store_into%
+/var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_local.xml
+/var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_google.xml
+-->
 <site
-	base_url="http://unisportr-zf.itt.loc"
-	store_into="/var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_rl1.xml"
+	base_url="%base_url%"
+	store_into="%store_into%"
 	verbose="1"
 >
 	
-	<url href="http://unisportr-zf.itt.loc/stats?q=name" />
+	<url href="%base_url%/stats?q=name" />
 	<url
-		href="http://unisportr-zf.itt.loc/stats?q=age"
+		href="%base_url%/stats?q=age"
 		lastmod="2004-11-14T01:00:00-07:00"
 		changefreq="yearly"
 		priority="0.3"
 	/>
 	
-	<urllist path="urllist_rl1.txt" encoding="UTF-8"  />
+	<urllist path="urllist_r.txt" encoding="UTF-8"  />
 	
 	<!-- Exclude URLs that end with a '~' (IE: emacs backup files) -->
 	<filter action="drop" type="wildcard"  pattern="*~" />
