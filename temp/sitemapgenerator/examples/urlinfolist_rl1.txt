@@ -1,0 +1,650 @@
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:15--  http://unisportr-zf.itt.loc/
+Resolving unisportr-zf.itt.loc... 192.168.56.101
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:03:20--  http://unisportr-zf.itt.loc/
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/index.html”
+
+     0K ........                                                814K=0.01s
+
+2013-04-12 23:03:24 (814 KB/s) - “unisportr-zf.itt.loc/index.html” saved [9039]
+
+Loading robots.txt; please ignore errors.
+--2013-04-12 23:03:24--  http://unisportr-zf.itt.loc/robots.txt
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2013-04-12 23:03:27 ERROR 404: Not Found.
+
+Removing unisportr-zf.itt.loc/index.html.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/favicon.ico
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7886 (7.7K) [image/x-icon]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/favicon.ico.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/default.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3754 (3.7K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/default.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/tags.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3381 (3.3K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/tags.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/main.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3231 (3.2K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/main.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/navi.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2593 (2.5K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/navi.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/forms.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 7756 (7.6K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/forms.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/content.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2174 (2.1K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/content.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/parts.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 4564 (4.5K) [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/parts.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/css/last.css
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 603 [text/css]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/css/last.css.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/js/jQuery/jquery.min.js
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 93871 (92K) [application/x-javascript]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/js/jQuery/jquery.min.js.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/js/jQuery-Validation/jquery.validate.min.js
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 21652 (21K) [application/x-javascript]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/js/jQuery-Validation/jquery.validate.min.js.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/js/jQuery-Form/jquery.form.js
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 29120 (28K) [application/x-javascript]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/js/jQuery-Form/jquery.form.js.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/js/search-form.js
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 807 [application/x-javascript]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/js/search-form.js.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/js/dev.js
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 593 [application/x-javascript]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/js/dev.js.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/images/logo.png
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 5555 (5.4K) [image/png]
+Remote file exists but does not contain any link -- not retrieving.
+
+Removing unisportr-zf.itt.loc/images/logo.png.
+unlink: No such file or directory
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:27--  http://unisportr-zf.itt.loc/catalog/Kiel
+Reusing existing connection to unisportr-zf.itt.loc:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:03:30--  http://unisportr-zf.itt.loc/catalog/Kiel
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Kiel.1”
+
+     0K .......... ....                                        1.14M=0.01s
+
+2013-04-12 23:03:34 (1.14 MB/s) - “unisportr-zf.itt.loc/catalog/Kiel.1” saved [15033]
+
+Removing unisportr-zf.itt.loc/catalog/Kiel.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:34--  http://unisportr-zf.itt.loc/catalog/Berlin
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:03:38--  http://unisportr-zf.itt.loc/catalog/Berlin
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Berlin.1”
+
+     0K .......... ..                                           854K=0.01s
+
+2013-04-12 23:03:42 (854 KB/s) - “unisportr-zf.itt.loc/catalog/Berlin.1” saved [12725]
+
+Removing unisportr-zf.itt.loc/catalog/Berlin.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:42--  http://unisportr-zf.itt.loc/catalog/Erlangen
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:03:46--  http://unisportr-zf.itt.loc/catalog/Erlangen
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Erlangen.1”
+
+     0K ......                                                  303M=0s
+
+2013-04-12 23:03:50 (303 MB/s) - “unisportr-zf.itt.loc/catalog/Erlangen.1” saved [6556]
+
+Removing unisportr-zf.itt.loc/catalog/Erlangen.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:50--  http://unisportr-zf.itt.loc/catalog/Jena
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:03:54--  http://unisportr-zf.itt.loc/catalog/Jena
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Jena.1”
+
+     0K .......                                                 542M=0s
+
+2013-04-12 23:03:57 (542 MB/s) - “unisportr-zf.itt.loc/catalog/Jena.1” saved [8047]
+
+Removing unisportr-zf.itt.loc/catalog/Jena.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:03:57--  http://unisportr-zf.itt.loc/catalog/Hannover
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:01--  http://unisportr-zf.itt.loc/catalog/Hannover
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Hannover.1”
+
+     0K .......... .....                                       1007K=0.02s
+
+2013-04-12 23:04:05 (1007 KB/s) - “unisportr-zf.itt.loc/catalog/Hannover.1” saved [15641]
+
+Removing unisportr-zf.itt.loc/catalog/Hannover.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:05--  http://unisportr-zf.itt.loc/catalog/Frankfurt%20am%20Main
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 404 Not Found
+Remote file does not exist -- broken link!!!
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:09--  http://unisportr-zf.itt.loc/catalog/W%C3%BCrzburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:12--  http://unisportr-zf.itt.loc/catalog/W%C3%BCrzburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Würzburg”
+
+     0K ......                                                  417M=0s
+
+2013-04-12 23:04:17 (417 MB/s) - “unisportr-zf.itt.loc/catalog/Würzburg” saved [6222]
+
+Removing unisportr-zf.itt.loc/catalog/Würzburg.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:17--  http://unisportr-zf.itt.loc/catalog/Karlsruhe
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:21--  http://unisportr-zf.itt.loc/catalog/Karlsruhe
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Karlsruhe.1”
+
+     0K ........                                                482K=0.02s
+
+2013-04-12 23:04:25 (482 KB/s) - “unisportr-zf.itt.loc/catalog/Karlsruhe.1” saved [9212]
+
+Removing unisportr-zf.itt.loc/catalog/Karlsruhe.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:25--  http://unisportr-zf.itt.loc/catalog/M%C3%BCnchen
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:28--  http://unisportr-zf.itt.loc/catalog/M%C3%BCnchen
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/München.1”
+
+     0K ........                                                869K=0.01s
+
+2013-04-12 23:04:32 (869 KB/s) - “unisportr-zf.itt.loc/catalog/München.1” saved [9052]
+
+Removing unisportr-zf.itt.loc/catalog/München.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:32--  http://unisportr-zf.itt.loc/catalog/Marburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:36--  http://unisportr-zf.itt.loc/catalog/Marburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Marburg.1”
+
+     0K ......                                                  445M=0s
+
+2013-04-12 23:04:40 (445 MB/s) - “unisportr-zf.itt.loc/catalog/Marburg.1” saved [6393]
+
+Removing unisportr-zf.itt.loc/catalog/Marburg.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:40--  http://unisportr-zf.itt.loc/catalog/Bonn
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:45--  http://unisportr-zf.itt.loc/catalog/Bonn
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Bonn.1”
+
+     0K .......                                                 430M=0s
+
+2013-04-12 23:04:49 (430 MB/s) - “unisportr-zf.itt.loc/catalog/Bonn.1” saved [7168]
+
+Removing unisportr-zf.itt.loc/catalog/Bonn.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:49--  http://unisportr-zf.itt.loc/catalog/Bochum
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:04:53--  http://unisportr-zf.itt.loc/catalog/Bochum
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Bochum.1”
+
+     0K ......                                                  479M=0s
+
+2013-04-12 23:04:57 (479 MB/s) - “unisportr-zf.itt.loc/catalog/Bochum.1” saved [6570]
+
+Removing unisportr-zf.itt.loc/catalog/Bochum.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:04:57--  http://unisportr-zf.itt.loc/catalog/Aachen
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:00--  http://unisportr-zf.itt.loc/catalog/Aachen
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Aachen.1”
+
+     0K ..........                                              722K=0.01s
+
+2013-04-12 23:05:04 (722 KB/s) - “unisportr-zf.itt.loc/catalog/Aachen.1” saved [10627]
+
+Removing unisportr-zf.itt.loc/catalog/Aachen.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:04--  http://unisportr-zf.itt.loc/catalog/Darmstadt
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:08--  http://unisportr-zf.itt.loc/catalog/Darmstadt
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Darmstadt.1”
+
+     0K ..........                                             1.66M=0.006s
+
+2013-04-12 23:05:11 (1.66 MB/s) - “unisportr-zf.itt.loc/catalog/Darmstadt.1” saved [10312]
+
+Removing unisportr-zf.itt.loc/catalog/Darmstadt.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:12--  http://unisportr-zf.itt.loc/catalog/Dresden
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:16--  http://unisportr-zf.itt.loc/catalog/Dresden
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Dresden”
+
+     0K ......                                                  534M=0s
+
+2013-04-12 23:05:20 (534 MB/s) - “unisportr-zf.itt.loc/catalog/Dresden” saved [6218]
+
+Removing unisportr-zf.itt.loc/catalog/Dresden.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:20--  http://unisportr-zf.itt.loc/catalog/K%C3%B6ln
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:24--  http://unisportr-zf.itt.loc/catalog/K%C3%B6ln
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Köln”
+
+     0K ......                                                  448M=0s
+
+2013-04-12 23:05:28 (448 MB/s) - “unisportr-zf.itt.loc/catalog/Köln” saved [6214]
+
+Removing unisportr-zf.itt.loc/catalog/Köln.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:28--  http://unisportr-zf.itt.loc/catalog/Potsdam
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:32--  http://unisportr-zf.itt.loc/catalog/Potsdam
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Potsdam.1”
+
+     0K ......                                                  451M=0s
+
+2013-04-12 23:05:36 (451 MB/s) - “unisportr-zf.itt.loc/catalog/Potsdam.1” saved [6385]
+
+Removing unisportr-zf.itt.loc/catalog/Potsdam.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:36--  http://unisportr-zf.itt.loc/catalog/Duisburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:40--  http://unisportr-zf.itt.loc/catalog/Duisburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Duisburg.1”
+
+     0K .......                                                 511M=0s
+
+2013-04-12 23:05:43 (511 MB/s) - “unisportr-zf.itt.loc/catalog/Duisburg.1” saved [7228]
+
+Removing unisportr-zf.itt.loc/catalog/Duisburg.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:43--  http://unisportr-zf.itt.loc/catalog/Hamburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:47--  http://unisportr-zf.itt.loc/catalog/Hamburg
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Hamburg.1”
+
+     0K .......                                                 610M=0s
+
+2013-04-12 23:05:51 (610 MB/s) - “unisportr-zf.itt.loc/catalog/Hamburg.1” saved [7267]
+
+Removing unisportr-zf.itt.loc/catalog/Hamburg.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:51--  http://unisportr-zf.itt.loc/catalog/Leipzig
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:05:55--  http://unisportr-zf.itt.loc/catalog/Leipzig
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Leipzig”
+
+     0K ......                                                  529M=0s
+
+2013-04-12 23:05:59 (529 MB/s) - “unisportr-zf.itt.loc/catalog/Leipzig” saved [6218]
+
+Removing unisportr-zf.itt.loc/catalog/Leipzig.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:05:59--  http://unisportr-zf.itt.loc/catalog/M%C3%BCnster
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:06:02--  http://unisportr-zf.itt.loc/catalog/M%C3%BCnster
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog/Münster.1”
+
+     0K .......                                                 472M=0s
+
+2013-04-12 23:06:06 (472 MB/s) - “unisportr-zf.itt.loc/catalog/Münster.1” saved [7960]
+
+Removing unisportr-zf.itt.loc/catalog/Münster.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:06:06--  http://unisportr-zf.itt.loc/catalog
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:06:09--  http://unisportr-zf.itt.loc/catalog
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/catalog.1”
+
+     0K .......                                                 436M=0s
+
+2013-04-12 23:06:13 (436 MB/s) - “unisportr-zf.itt.loc/catalog.1” saved [7737]
+
+Removing unisportr-zf.itt.loc/catalog.1.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:06:13--  http://unisportr-zf.itt.loc/about
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:06:17--  http://unisportr-zf.itt.loc/about
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/about”
+
+     0K ........                                                149K=0.06s
+
+2013-04-12 23:06:21 (149 KB/s) - “unisportr-zf.itt.loc/about” saved [9054]
+
+Removing unisportr-zf.itt.loc/about.
+
+Spider mode enabled. Check if remote file exists.
+--2013-04-12 23:06:21--  http://unisportr-zf.itt.loc/musthead
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Last-modified header missing -- time-stamps turned off.
+Remote file exists and could contain links to other resources -- retrieving.
+
+--2013-04-12 23:06:25--  http://unisportr-zf.itt.loc/musthead
+Connecting to unisportr-zf.itt.loc|192.168.56.101|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: “unisportr-zf.itt.loc/musthead”
+
+     0K .......... .......                                     1.59M=0.01s
+
+2013-04-12 23:06:29 (1.59 MB/s) - “unisportr-zf.itt.loc/musthead” saved [18112]
+
+Removing unisportr-zf.itt.loc/musthead.
+
+Found 1 broken link.
+
+http://unisportr-zf.itt.loc/catalog/Frankfurt%20am%20Main
+
+FINISHED --2013-04-12 23:06:29--
+Downloaded: 24 files, 210K in 0.2s (1.19 MB/s)
+Converted 0 files in 0 seconds.
