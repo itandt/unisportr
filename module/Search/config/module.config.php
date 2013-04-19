@@ -1,4 +1,5 @@
 <?php
+$breakpoint = null;
 return array(
 	'controllers' => array(
 		'invokables' => array(
@@ -49,4 +50,5 @@ return array(
 			'search' => __DIR__ . '/../view',
 		),
 	),
+	'relevance_min' => 3,
 );

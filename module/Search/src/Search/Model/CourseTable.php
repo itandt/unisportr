@@ -15,12 +15,13 @@ class CourseTable {
 	const CONCAT_DELIMITER = '|||';
 	const RELEVANCE_TITLE = 6;
 	const RELEVANCE_DESCRIPTION = 4;
-	const RELEVANCE_MIN = 3;
 	
 	protected $tableGateway;
+	protected $relevanceMin;
 	
-	public function __construct(TableGateway $tableGateway) {
+	public function __construct(TableGateway $tableGateway, $relevanceMin) {
 		$this->tableGateway = $tableGateway;
+		$this->relevanceMin = $relevanceMin;
 	}
 	
 	public function fetchAll() {
@@ -71,7 +72,7 @@ class CourseTable {
 			->greaterThan('courses.enddate', new Expression('NOW()'))
 		;
 		$having
-			->greaterThanOrEqualTo('relevance', self::RELEVANCE_MIN);
+			->greaterThanOrEqualTo('relevance', $this->relevanceMin);
 		;
 		$select->where($where, Predicate::OP_AND);
 		$select->having($having);
