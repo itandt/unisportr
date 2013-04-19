@@ -1,9 +1,28 @@
 # To use this script
-# set URL and
-# (un-)set LEVEL
-wget --spider --force-html -r -l$LEVEL http://$URL 2>&1 \
+# set %base_url%,
+# %domain% and
+# 
+# %base_url%
+# - examples
+# 
+# http://unisportr-zf.itt.loc
+# 
+# %domain%
+# - examples
+# unisportr-zf.itt.loc
+# 
+# %level%
+# - examples
+# emptty for full recursitivy
+# -l%n% for recursitivy of level %n%
+# 
+# %store_into%
+# - examples
+# /var/www/itt/unisportr-zf/temp/googlesitemapgen/urllist_local.txt
+# /var/www/itt/unisportr-zf/temp/googlesitemapgen/urllist_google.txt
+wget --spider --force-html -r %level% http://%base_url% 2>&1 \
   | grep '^--' | awk '{ print $1 "\t" $2 "\t" $3 }' \
   | grep -v '\.\(css\|js\|png\|gif\|jpg\|ico\|txt\)$' \
   | sort | uniq \
-  > urllist_rl$LEVEL.txt
-rm -rf ./$URL
+  > %store_into%
+rm -rf ./%domain%
