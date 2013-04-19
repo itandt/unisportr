@@ -21,15 +21,26 @@ return array(
 			'search-courses' => array(
 				'type'	=> 'segment',
 				'options' => array(
-					'route'	=> '/search/courses[/page/:page]',
+					'route'	=> '/search/courses',
 					'defaults' => array(
 						'controller' => 'Search\Controller\Search',
 						'action'	 => 'search-courses',
 					),
-					// This option is not needed. Just as info.
-					'query' => array(),
 				),
 				'may_terminate' => true,
+				'child_routes' => array(
+					'results' => array(
+					'type'	=> 'segment',
+						'options' => array(
+							'route'	=> '[/page/:page]',
+							'defaults' => array(
+								'controller' => 'Search\Controller\Search',
+								'action'	 => 'search-courses',
+							),
+						),
+						'may_terminate' => true,
+					),
+				)
 			),
 		),
 	),
