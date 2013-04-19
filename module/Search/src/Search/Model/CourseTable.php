@@ -77,9 +77,7 @@ class CourseTable {
 		$select->having($having);
 		$select->group(array('courses.id'));
 		$select->order('relevance DESC, title');
-		
-		$test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
-		die($test);
+		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		
 		$adapter = new \ITT\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
 		$paginator = new \Zend\Paginator\Paginator($adapter);
