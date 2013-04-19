@@ -78,7 +78,11 @@ class Module {
 				'contentForEnvironment' => function($serviceManager) {
 					$helper = new \ITT\View\Helper\ContentForEnvironment($serviceManager);
 					return $helper;
-				}
+				},
+				'currentRoute' => function($serviceManager) {
+					$helper = new \ITT\View\Helper\CurrentRouteName($serviceManager);
+					return $helper;
+				},
 			)
 		);
 	}
