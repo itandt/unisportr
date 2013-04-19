@@ -9,8 +9,8 @@ $courseTitle = !empty($courseTitle)
 	: $this->translate('Untitled')
 ;
 $courseTitleShorted = strlen($courseTitle) > $titleMaxLength
-	? substr($this->escapeHtml($courseTitle), 0, $titleMaxLength) . '...'
-	: $this->escapeHtml($courseTitle)
+	? substr($courseTitle, 0, $titleMaxLength) . '...'
+	: $courseTitle
 ;
 ?>
 <?php
@@ -52,9 +52,9 @@ $courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
 $courseLocation = $this->escapeHtml($course->location);
 ?>
 <?php
-$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $this->escapeHtml($courseTitle));
+$urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $courseTitle);
 $aURL = $this->url('course',  $urlParams);
-$aText = $this->escapeHtml($courseTitle);
+$aText = $courseTitle;
 ?>
 
 <script type="text/javascript">
