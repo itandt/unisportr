@@ -12,9 +12,10 @@ config/application.config.php.default
 
 dbdummydata.sql
 /module/*/test/report/
-/temp/*/mappingresult.txt
 
-sitemap*.xml
+/public/sitemap*.xml
 
-/temp/tablemapping/base/database.config.php
-/temp/simpledbmigration/config.php
+/*/tablemapping/base/database.config.php
+/*/tablemapping/mappingresult.txt
+/*/simpledbmigration/config.php
+/*/sitemapgenerator/config*.xml
