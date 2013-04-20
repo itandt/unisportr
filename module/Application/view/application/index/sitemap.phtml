@@ -22,12 +22,22 @@ foreach($xml as $url) {
 	$aText = urldecode($aText);
 	switch ($aText) {
 		case 'about' :
+			$aText = $this->translate('about');
+		break;
 		case 'catalog' :
+			$aText = $this->translate('catalog');
+		break;
 		case 'musthead' :
+			$aText = $this->translate('musthead');
+		break;
 		case 'search' :
+			$aText = $this->translate('search');
+		break;
 		case 'courses' :
+			$aText = $this->translate('courses');
+		break;
 		case 'sitemap' :
-			$aText = $this->translate($aText);
+			$aText = $this->translate('sitemap');
 		break;
 	}
 	
