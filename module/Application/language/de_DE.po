@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-19 13:17+0100\n"
-"PO-Revision-Date: 2013-04-19 13:17+0100\n"
+"POT-Creation-Date: 2013-04-20 18:16+0100\n"
+"PO-Revision-Date: 2013-04-20 18:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -112,6 +112,21 @@ msgstr "Katalog"
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:31
 msgid "musthead"
 msgstr "Impressum"
+
+#: ../view/application/index/sitemap.phtml:34
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:34
+msgid "search"
+msgstr "Hochschulsportkurssuche"
+
+#: ../view/application/index/sitemap.phtml:37
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:37
+msgid "courses"
+msgstr "Kurse"
+
+#: ../view/application/index/sitemap.phtml:40
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:40
+msgid "sitemap"
+msgstr "Sitemap"
 
 #: ../view/error/404.phtml:1
 #: M:\workspace\itt\unisportr-zf\module/Application/view/error/404.phtml:1
