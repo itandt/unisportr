@@ -17,7 +17,7 @@
 # - examples
 # /var/www/itt/unisportr-zf/temp/googlesitemapgen/temp/urllist_local.txt
 # /var/www/itt/unisportr-zf/temp/googlesitemapgen/temp/urllist_google.txt
-wget --spider --force-html -r %level% http://%base_url% 2>&1 \
+wget --spider --force-html -r %level% %base_url% 2>&1 \
   | grep '^--' | awk '{ print $1 "\t" $2 "\t" $3 }' \
   | grep -v '\.\(css\|js\|png\|gif\|jpg\|ico\|txt\)$' \
   | sort | uniq \
