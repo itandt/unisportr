@@ -21,12 +21,13 @@ function executeSQLFiles(array $dbOptions, array $dbFiles) {
 					var_dump($result);
 					echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
 				} else {
-					// echo $listItem['file'] . ' ' . 'OK' . PHP_EOL;
+					echo 'query' . ' ' . 'OK' . PHP_EOL;
 				}
 				if (mysqli_more_results($dbConnection)) {
-					// echo '-----------------' . PHP_EOL;
+					echo '-----------------' . PHP_EOL;
 				}
 			} while (mysqli_next_result($dbConnection));
+			echo $listItem['file'] . ' ' . 'OK' . PHP_EOL;
 		} else {
 			echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
 		}
