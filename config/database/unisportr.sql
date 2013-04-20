@@ -224,6 +224,7 @@ SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `courses_sports` (
   `course_id` INT NOT NULL ,
   `sport_id` INT NOT NULL ,
+  `relevance` FLOAT DEFAULT NULL,
   PRIMARY KEY (`course_id`, `sport_id`) ,
   INDEX `fk_coursesport_sport` (`sport_id` ASC) ,
   CONSTRAINT `fk_coursesport_course`

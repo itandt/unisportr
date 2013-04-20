@@ -60,7 +60,7 @@ class CourseTable {
 			->join(array('levelsmax' =>'levels'), 'courses.levelmax_id = levelsmax.id', array(
 				'usrLevelMax' => 'usrlevel', 'uniLevelMax' => 'unilevel'
 			), Select::JOIN_LEFT)
-			->join('coursedata', 'courses.id = coursedata.id', array(
+			->join('coursedata', 'courses.coursedata_id = coursedata.id', array(
 				'relevance' => $this->buildRelevanceExpressionFromCriteria($input)
 			))
 			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
