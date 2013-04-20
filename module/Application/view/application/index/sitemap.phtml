@@ -6,7 +6,7 @@ $this->headTitle($title);
 <h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
 <?php
-$xmlFile = '/var/www/itt/unisportr-zf/public/sitemap.xml';
+$xmlFile = '/var/www/vhosts/it-and-t.com/domains/unisportr.com/public/sitemap_local.xml';
 
 if (!file_exists($xmlFile)) {
 	throw new \Exception("File does not exist");
@@ -22,13 +22,12 @@ foreach($xml as $url) {
 	$aText = urldecode($aText);
 	switch ($aText) {
 		case 'about' :
-			$aText = $this->translate('about');
-		break;
 		case 'catalog' :
-			$aText = $this->translate('catalog');
-		break;
 		case 'musthead' :
-			$aText = $this->translate('musthead');
+		case 'search' :
+		case 'courses' :
+		case 'sitemap' :
+			$aText = $this->translate($aText);
 		break;
 	}
 	

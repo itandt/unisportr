@@ -5,8 +5,12 @@
 http://unisportr-zf.itt.loc
 
 %store_into%
-/var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_local.xml
-/var/www/itt/unisportr-zf/temp/googlesitemapgen/sitemap_google.xml
+/var/www/vhosts/it-and-t.com/domains/unisportr.com/public/sitemap_local.xml
+/var/www/vhosts/it-and-t.com/domains/unisportr.com/data/sitemap/sitemap_google.xml
+
+%urllist%
+temp/urllist_local.txt
+temp/urllist_google.txt
 -->
 <site
 	base_url="%base_url%"
@@ -22,7 +26,7 @@ http://unisportr-zf.itt.loc
 		priority="0.3"
 	/>
 	
-	<urllist path="urllist_r.txt" encoding="UTF-8"  />
+	<urllist path="%urllist%" encoding="UTF-8"  />
 	
 	<!-- Exclude URLs that end with a '~' (IE: emacs backup files) -->
 	<filter action="drop" type="wildcard"  pattern="*~" />
