@@ -65,7 +65,7 @@ var formMaximized = <?php echo $formMaximized; ?>;
 				<ul>
 				<?php foreach ($form->getMessages() as $elementName => $messages): ?>
 					 <li>
-					 	<span><?php echo $form->get($elementName)->getLabel(); ?></span>
+					 	<span><?php echo $this->translate($form->get($elementName)->getLabel()); ?></span>
 					 	<ul>
 					 		<?php foreach ($messages as $message): ?>
 					 		<li><?php echo $this->escapeHtml($message); ?></li>

@@ -18,4 +18,6 @@ return array (
 	array ('file' => 'unisportr-basicdata_sports_sport.sql', 'comment' => ''),
 	array ('file' => 'unisportr-basicdata_sports_dance.sql', 'comment' => ''),
 	array ('file' => 'unisportr-basicdata_levels.sql', 'comment' => ''),
+	array ('file' => 'mapCoursesToSport.sql', 'comment' => 'Truncates the courses_sports table and maps sports to courses.'),
+	array ('file' => 'mapCoursesToSports.sql', 'comment' => 'Maps sports to a course.'),
 );
