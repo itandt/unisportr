@@ -1,5 +1,6 @@
-DELIMITER $$
-DROP PROCEDURE IF EXISTS mapCoursesToSport$$
+-- DELIMITER $$
+-- DROP PROCEDURE IF EXISTS mapCoursesToSport$$
+DROP PROCEDURE IF EXISTS mapCoursesToSport;
 CREATE PROCEDURE mapCoursesToSport(sport VARCHAR(255))
 	BEGIN
 	DECLARE relevanceMin FLOAT;
@@ -34,6 +35,7 @@ CREATE PROCEDURE mapCoursesToSport(sport VARCHAR(255))
 	FROM
 		relevantcourses
 	;
-	
-END$$
-DELIMITER ;
+
+END
+-- END$$
+-- DELIMITER ;

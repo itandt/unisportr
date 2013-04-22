@@ -1,5 +1,6 @@
-DELIMITER $$
-DROP PROCEDURE IF EXISTS mapCoursesToSports$$
+-- DELIMITER $$
+-- DROP PROCEDURE IF EXISTS mapCoursesToSports$$
+DROP PROCEDURE IF EXISTS mapCoursesToSports;
 CREATE PROCEDURE mapCoursesToSports()
 	BEGIN
 	DECLARE sportTitle VARCHAR(255);
@@ -24,6 +25,7 @@ CREATE PROCEDURE mapCoursesToSports()
 	CLOSE cursorSports;
 	
 	-- SELECT test;
-	
-END$$
-DELIMITER ;
+
+END
+-- END$$
+-- DELIMITER ;
