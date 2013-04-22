@@ -28,6 +28,7 @@ function executeSQLFiles(array $dbOptions, array $dbFiles) {
 				}
 			} while (mysqli_next_result($dbConnection));
 			echo $listItem['file'] . ' ' . 'OK' . PHP_EOL;
+			echo '=================' . PHP_EOL;
 		} else {
 			echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
 		}

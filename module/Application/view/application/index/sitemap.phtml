@@ -6,7 +6,7 @@ $this->headTitle($title);
 <h1 id="pageTitle"><?php echo $this->escapeHtml($title); ?></h1>
 
 <?php
-$xmlFile = '/var/www/vhosts/it-and-t.com/domains/unisportr.com/public/sitemap_local.xml';
+$xmlFile = __DIR__ . '/../../../../../public/sitemap_local.xml';
 
 if (!file_exists($xmlFile)) {
 	throw new \Exception("File does not exist");
