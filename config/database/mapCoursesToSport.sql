@@ -1,4 +1,4 @@
--- DELIMITER $$
+DELIMITER $$
 DROP PROCEDURE IF EXISTS mapCoursesToSport$$
 CREATE PROCEDURE mapCoursesToSport(sport VARCHAR(255))
 	BEGIN
@@ -35,5 +35,5 @@ CREATE PROCEDURE mapCoursesToSport(sport VARCHAR(255))
 		relevantcourses
 	;
 	
--- 	END$$
--- DELIMITER ;
+END$$
+DELIMITER ;
