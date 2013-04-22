@@ -8,4 +8,5 @@
  */
 return array (
 	// array ('module' => '%required_module%', 'file' => '%required_SQL-or-PHP-file%', 'comment' => 'optional_comment'),
+	array ('file' => 'migration_levelsmap.sql', 'comment' => ''),
 );
