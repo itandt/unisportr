@@ -1,4 +1,4 @@
--- DELIMITER $$
+DELIMITER $$
 DROP PROCEDURE IF EXISTS mapCoursesToSports$$
 CREATE PROCEDURE mapCoursesToSports()
 	BEGIN
@@ -25,5 +25,5 @@ CREATE PROCEDURE mapCoursesToSports()
 	
 	-- SELECT test;
 	
--- 	END$$
--- DELIMITER ;
+END$$
+DELIMITER ;
