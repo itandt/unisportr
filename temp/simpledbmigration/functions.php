@@ -12,7 +12,17 @@ function executeSQLFiles(array $dbOptions, array $dbFiles) {
 		// printf("Current character set: %s\n", mysqli_character_set_name($dbConnection));
 	}
 	// db setup
-	foreach ($dbFiles['setup'] as $listItem) {
+	executeSQLFileList($dbConnection, $dbFiles['setup']);
+	// db dummy data
+	executeSQLFileList($dbConnection, $dbFiles['dummydata']);
+	// db migration
+	executeSQLFileList($dbConnection, $dbFiles['migration']);
+	// close connection
+	mysqli_close($dbConnection);
+}
+
+function executeSQLFileList($dbConnection, array $dbFileList) {
+	foreach ($dbFileList as $listItem) {
 		$query = file_get_contents(__DIR__ . '/../../config/database/' . $listItem['file']);
 		if (mysqli_multi_query($dbConnection, $query)) {
 			do {
@@ -33,27 +43,4 @@ function executeSQLFiles(array $dbOptions, array $dbFiles) {
 			echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
 		}
 	}
-	// db dummy data
-	foreach ($dbFiles['dummydata'] as $listItem) {
-		$query = file_get_contents(__DIR__ . '/../../data/dumps/' . $listItem['file']);
-		if (mysqli_multi_query($dbConnection, $query)) {
-			do {
-				$result = mysqli_store_result($dbConnection);
-				if (mysqli_connect_error($dbConnection)) {
-					var_dump($result);
-					echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
-				} else {
-					// echo $listItem['file'] . ' ' . 'OK' . PHP_EOL;
-				}
-				if (mysqli_more_results($dbConnection)) {
-					// echo '-----------------' . PHP_EOL;
-				}
-			} while (mysqli_next_result($dbConnection));
-		} else {
-			echo $listItem['file'] . ': ' . mysqli_error($dbConnection) . PHP_EOL;
-		}
-	}
-	// db migration
-	// close connection
-	mysqli_close($dbConnection);
 }
