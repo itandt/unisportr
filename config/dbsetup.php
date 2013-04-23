@@ -10,7 +10,7 @@
 return array (
 	// array ('file' => '%required_SQL-or-PHP-file%', 'comment' => 'optional_comment'),
 	// Main DB structure (not working yet / to do manually)
-	array ('file' => 'unisportr.sql', 'comment' => 'main data structure'),
+	// array ('file' => 'unisportr.sql', 'comment' => 'main data structure'),
 	// Basic data
 	array ('file' => 'unisportr-basicdata_cities.sql', 'comment' => ''),
 	array ('file' => 'unisportr-basicdata_universities.sql', 'comment' => ''),
