@@ -3,14 +3,5 @@ return array(
 	'host'		=> 'localhost',
 	'user'		=> 'root',
 	'password'	=> 'pwd',
-	// always reset this option after migration
 	'database'	=> 'unisportr_zf',
 );
-/*
-$dbOptions = array(
-	'host'		=> 'localhost',
-	'user'		=> 'root',
-	'password'	=> 'pwd',
-	'database'	=> 'unisportr_zf',
-);
-*/
