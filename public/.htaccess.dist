@@ -21,7 +21,11 @@ RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
 RewriteRule ^(.*) - [E=BASE:%1]
 RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L]
 
-
-# TODO
-# www.* -> .*
-# */ -> *
+# password protection
+AuthUserFile /var/www/vhosts/it-and-t.com/domains/unisportr.com/public/.htpasswd
+AuthGroupFile /dev/null
+AuthName "IT&T"
+AuthType Basic
+<Limit GET>
+require valid-user
+</Limit>
