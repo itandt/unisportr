@@ -9,6 +9,8 @@ class Url extends ZendUrl {
 		$link = parent::__invoke($name, $params, $options, $reuseMatchedParams);
 		// replace new line chaacters with whitespaces
 		$link = str_replace('%0A', '%20', $link);
+		// replace slashes with hyphens
+		$link = str_replace('%2F', '-', $link);
 		return $link;
 	}
 	
