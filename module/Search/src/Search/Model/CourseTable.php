@@ -13,15 +13,26 @@ use Zend\Db\Sql\Predicate\Operator;
 class CourseTable {
 	
 	const CONCAT_DELIMITER = '|||';
-	const RELEVANCE_TITLE = 6;
-	const RELEVANCE_DESCRIPTION = 4;
 	
 	protected $tableGateway;
 	protected $relevanceMin;
+	protected $relevanceMinTitle;
+	protected $relevanceMinDescription;
+	protected $relevanceMinWeightageTitle;
+	protected $relevanceMinWeightageDescription;
 	
-	public function __construct(TableGateway $tableGateway, $relevanceMin) {
+	public function __construct(
+		TableGateway $tableGateway,
+		$relevanceMin,
+		$relevanceMinTitle, $relevanceMinDescription,
+		$relevanceMinWeightageTitle, $relevanceMinWeightageDescription
+	) {
 		$this->tableGateway = $tableGateway;
 		$this->relevanceMin = $relevanceMin;
+		$this->relevanceMinTitle = $relevanceMinTitle;
+		$this->relevanceMinDescription = $relevanceMinDescription;
+		$this->relevanceMinWeightageTitle = $relevanceMinWeightageTitle;
+		$this->relevanceMinWeightageDescription = $relevanceMinWeightageDescription;
 	}
 	
 	public function fetchAll() {
@@ -61,7 +72,9 @@ class CourseTable {
 				'usrLevelMax' => 'usrlevel', 'uniLevelMax' => 'unilevel'
 			), Select::JOIN_LEFT)
 			->join('coursedata', 'courses.coursedata_id = coursedata.id', array(
-				'relevance' => $this->buildRelevanceExpressionFromCriteria($input)
+				'relevanceAggregated' => $this->buildrelevanceAggregatedExpressionFromCriteria($input),
+				'relevanceTitle' => $this->buildRelevanceTitleExpressionFromCriteria($input),
+				'relevanceDescription' => $this->buildRelevanceDescriptionExpressionFromCriteria($input)
 			))
 			->join('courses_trainers', 'courses.id = courses_trainers.course_id', array(), Select::JOIN_LEFT)
 			->join('trainers', 'trainer_id = trainers.id', array(
@@ -72,12 +85,12 @@ class CourseTable {
 			->greaterThan('courses.enddate', new Expression('NOW()'))
 		;
 		$having
-			->greaterThanOrEqualTo('relevance', $this->relevanceMin);
+			->greaterThanOrEqualTo('relevanceAggregated', $this->calculateRelevanceMinAggregated());
 		;
 		$select->where($where, Predicate::OP_AND);
 		$select->having($having);
 		$select->group(array('courses.id'));
-		$select->order('relevance DESC, title');
+		$select->order('relevanceAggregated DESC, title');
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		
 		$adapter = new \ITT\Paginator\Adapter\DbSelect($select, $this->tableGateway->getAdapter());
@@ -87,17 +100,48 @@ class CourseTable {
 		return $paginator;
 	}
 	
-	public function buildRelevanceExpressionFromCriteria(CourseSearchInput $input) {
+	public function buildrelevanceAggregatedExpressionFromCriteria(CourseSearchInput $input) {
 		$criteria = $input->getArrayCopy();
-		$relevanceTitle = self::RELEVANCE_TITLE;
-		$relevanceDescription = self::RELEVANCE_DESCRIPTION;
+		$relevanceTitle = $this->relevanceMinWeightageTitle;
+		$relevanceDescription = $this->relevanceMinWeightageDescription;
 		$expressionSQL = <<<SQL
 (
-	MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}') * $relevanceTitle +
-	MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}') * $relevanceDescription
-) / ({$relevanceTitle} + {$relevanceDescription})
+	MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}') * {$this->relevanceMinWeightageTitle} +
+	MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}') * {$this->relevanceMinWeightageDescription}
+) / ({$this->relevanceMinWeightageTitle} + {$this->relevanceMinWeightageDescription})
 SQL;
 		return new Expression($expressionSQL);
+	}
+	
+	public function buildRelevanceTitleExpressionFromCriteria(CourseSearchInput $input) {
+		$criteria = $input->getArrayCopy();
+		$expressionSQL = <<<SQL
+MATCH (coursedata.title) AGAINST ('{$criteria['keyword']}')
+SQL;
+		return new Expression($expressionSQL);
+	}
+	
+	public function buildRelevanceDescriptionExpressionFromCriteria(CourseSearchInput $input) {
+		$criteria = $input->getArrayCopy();
+		$expressionSQL = <<<SQL
+MATCH (coursedata.description) AGAINST ('{$criteria['keyword']}')
+SQL;
+		return new Expression($expressionSQL);
+	}
+	
+	/**
+	 * Calculates the aggregated min relevance from
+	 * 	the relevances of single parts (title and description)
+	 * 	and their weightages
+	 * .
+	 * @return float
+	 */
+	protected function calculateRelevanceMinAggregated() {
+		$minrelevanceAggregated =
+			($this->relevanceMinTitle * $this->relevanceMinWeightageTitle + $this->relevanceMinDescription * $this->relevanceMinWeightageDescription) /
+			($this->relevanceMinWeightageTitle + $this->relevanceMinWeightageDescription)
+		;
+		return $minrelevanceAggregated;
 	}
 	
 	function buildWhereFromCriteria(CourseSearchInput $input) {
