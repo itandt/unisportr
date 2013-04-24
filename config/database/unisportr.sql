@@ -222,10 +222,13 @@ DROP TABLE IF EXISTS `courses_sports` ;
 
 SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `courses_sports` (
-  `course_id` INT NOT NULL ,
   `sport_id` INT NOT NULL ,
+  `course_id` INT NOT NULL ,
   `relevance` FLOAT NULL DEFAULT NULL ,
-  PRIMARY KEY (`course_id`, `sport_id`) ,
+  `sport_title` VARCHAR(50) NULL ,
+  `course_title` VARCHAR(100) NULL ,
+  `course_description` VARCHAR(1000) NULL ,
+  PRIMARY KEY (`sport_id`, `course_id`) ,
   INDEX `fk_coursesport_sport` (`sport_id` ASC) ,
   CONSTRAINT `fk_coursesport_course`
     FOREIGN KEY (`course_id` )
