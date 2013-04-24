@@ -34,7 +34,6 @@ class UniversityTable {
 			), array())
 			->join('courses', 'courses.provider_id = allproviders.providerid', array())
 		;
-		$where->equalTo('scrape', 1);
 		$select->where($where);
 		$select->quantifier(Select::QUANTIFIER_DISTINCT);
 		$select->order('displayedname');
