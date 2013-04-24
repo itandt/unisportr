@@ -33,7 +33,7 @@ return array(
 			'sport' => array(
 				'type'	=> 'ITT\Mvc\Router\Http\UnicodeRegex',
 				'options' => array(
-					'regex'	=> '/catalog/(?<city>[\p{L}\p{Zs}]*)/(?<sport>[\p{L}\p{Zs}]*)',
+					'regex'	=> '/catalog/(?<city>[\p{L}\p{Zs}]*)/(?<sport>[\p{L}\p{Zs}\p{P}]*)',
 					'defaults' => array(
 						'controller' => 'Catalog\Controller\Catalog',
 						'action'	 => 'list-courses',
