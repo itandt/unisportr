@@ -27,7 +27,7 @@ class UniversityTable {
 		));
 		$select->from($this->tableGateway->getTable());
 		$select
-			->join('cities', 'cities.id = universities.city_id', array('cityName' => 'name'))
+			->join('cities', 'cities.id = universities.city_id', array('cityName' => 'name'), Select::JOIN_LEFT)
 		;
 		$where->equalTo('scrape', 1);
 		$select->where($where);
