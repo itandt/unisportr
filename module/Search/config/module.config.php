@@ -50,5 +50,9 @@ return array(
 			'search' => __DIR__ . '/../view',
 		),
 	),
-	'relevance_min' => 3,
+	'relevance_min' => 2,
+	'relevance_min_title' => 1,
+	'relevance_min_description' => 5,
+	'relevance_min_weightage_title' => 9,
+	'relevance_min_weightage_description' => 1,
 );

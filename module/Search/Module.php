@@ -40,7 +40,14 @@ class Module implements
 				'factories' => array(
 					'Search\Model\CourseTable' => function($serviceManager) {
 						$tableGateway = $serviceManager->get('Search\Model\CourseTableGateway');
-						$table = new CourseTable($tableGateway, $serviceManager->get('Config')['relevance_min']);
+						$table = new CourseTable(
+							$tableGateway,
+							$serviceManager->get('Config')['relevance_min'],
+							$serviceManager->get('Config')['relevance_min_title'],
+							$serviceManager->get('Config')['relevance_min_description'],
+							$serviceManager->get('Config')['relevance_min_weightage_title'],
+							$serviceManager->get('Config')['relevance_min_weightage_description']
+						);
 						return $table;
 					},
 					'Search\Model\CourseTableGateway' => function($serviceManager) {
