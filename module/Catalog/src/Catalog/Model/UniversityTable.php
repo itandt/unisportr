@@ -5,6 +5,7 @@ use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Where;
 use Zend\Db\Sql\Select;
 use Zend\Db\Sql\Predicate\Predicate;
+use Zend\Db\Sql\Expression;
 
 class UniversityTable {
 	
@@ -28,9 +29,14 @@ class UniversityTable {
 		$select->from($this->tableGateway->getTable());
 		$select
 			->join('cities', 'cities.id = universities.city_id', array('cityName' => 'name'), Select::JOIN_LEFT)
+			->join('allproviders', new Expression(
+				'allproviders.providertype = \'university\'' . ' AND ' . 'allproviders.providerid = universities.id'
+			), array())
+			->join('courses', 'courses.provider_id = allproviders.providerid', array())
 		;
 		$where->equalTo('scrape', 1);
 		$select->where($where);
+		$select->quantifier(Select::QUANTIFIER_DISTINCT);
 		$select->order('displayedname');
 		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		$resultSet = $this->tableGateway->selectWith($select);
