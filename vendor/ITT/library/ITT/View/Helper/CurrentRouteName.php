@@ -3,6 +3,7 @@ namespace ITT\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 use Zend\View\HelperPluginManager;
+use Zend\Mvc\Router\RouteMatch;
 
 class CurrentRouteName extends AbstractHelper {
 	
@@ -13,8 +14,12 @@ class CurrentRouteName extends AbstractHelper {
 	}
 	
 	public function __invoke() {
-		$serviceLocator =  $this->helperPluginManager->getServiceLocator();
-		$currentRouteName = $serviceLocator->get('Application')->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+		$serviceLocator = $this->helperPluginManager->getServiceLocator();
+		if($serviceLocator->get('Application')->getMvcEvent()->getRouteMatch() instanceof RouteMatch) {
+			$currentRouteName = $serviceLocator->get('Application')->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+		} else {
+			$currentRouteName = null;
+		}
 		return $currentRouteName;
 	}
 	
