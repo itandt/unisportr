@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-20 18:16+0100\n"
-"PO-Revision-Date: 2013-04-20 18:17+0100\n"
+"POT-Creation-Date: 2013-04-24 13:26+0100\n"
+"PO-Revision-Date: 2013-04-24 13:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -23,7 +23,7 @@ msgid "Keyword"
 msgstr "Suchbegriff"
 
 #: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:38
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:91
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:101
 msgid "trainer"
 msgstr "Trainer"
 
@@ -297,20 +297,24 @@ msgstr "Universität"
 msgid "partner"
 msgstr "Partner"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:76
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:86
 msgid "level"
 msgstr "Level"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:80
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:90
 msgid "date and time"
 msgstr "Termine"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:87
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:97
 msgid "location"
 msgstr "Ort"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:114
-msgid "Course on the website of"
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:124
+msgid "Course"
+msgstr "Kurs"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:124
+msgid "on the website of"
 msgstr "Kurs auf der Website von"
 
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:6
@@ -350,9 +354,6 @@ msgstr "Bitte fülle das Suchformular korrekt aus."
 
 #~ msgid "untitled"
 #~ msgstr "ohne Titel"
-
-#~ msgid "Course"
-#~ msgstr "Kurs"
 
 #~ msgid "in"
 #~ msgstr "in"

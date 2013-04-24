@@ -52,6 +52,16 @@ $courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
 $courseLocation = $this->escapeHtml($course->location);
 ?>
 <?php
+if (!empty($course->courseID01)) {
+	$courseID = $course->courseID01;
+} else if (!empty($course->courseID02)) {
+	$courseID = $course->courseID02;
+} else {
+	$courseID = null;
+}
+$courseIDText = $courseID . ' ';
+?>
+<?php
 $urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $courseTitle);
 $aURL = $this->url('course',  $urlParams);
 $aText = $courseTitle;
@@ -111,5 +121,5 @@ jQuery('document').ready(function() {
 		href="<?php echo $courseUrl; ?>"
 		title="<?php echo $courseProvider; ?>"
 		rel="nofollow"
-	><?php echo $this->translate('Course on the website of') . ' ' . $courseProvider; ?></a>
+	><?php echo $this->translate('Course') . ' ' . $courseIDText . $this->translate('on the website of') . ' ' . $courseProvider; ?></a>
 </div>
