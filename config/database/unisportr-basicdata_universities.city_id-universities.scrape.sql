@@ -31,6 +31,6 @@ UPDATE universities SET city_id = 17, scrape = 1 WHERE id = 29;		--	Gottfried Wi
 UPDATE universities SET city_id = 18, scrape = 1 WHERE id = 30;		--	Friedrich-Schiller-Universität Jena	--	www.uni-jena.de
 UPDATE universities SET city_id = 30, scrape = 1 WHERE id = 31;		--	Uni Potsdam	--	www.uni-potsdam.de
 UPDATE universities SET city_id = 19, scrape = 1 WHERE id = 32;		--	Karlsruher Institut für Technologie	--	www.kit.edu
-UPDATE universities SET city_id = NULL, scrape = 1 WHERE id = 62;	--	Hochschule für Technik und Wirtschaft Berlin	--	www.htw-berlin.de
-UPDATE universities SET city_id = NULL, scrape = 1 WHERE id = 65;	--	Beuth-Hochschule für Technik Berlin	--	www.beuth-hochschule.de
-UPDATE universities SET city_id = NULL, scrape = 1 WHERE id = 102;	--	Hochschule für Wirtschaft und Recht Berlin	--	www.hwr-berlin.de
+UPDATE universities SET city_id = 1, scrape = 1 WHERE id = 62;		--	Hochschule für Technik und Wirtschaft Berlin	--	www.htw-berlin.de
+UPDATE universities SET city_id = 1, scrape = 1 WHERE id = 65;		--	Beuth-Hochschule für Technik Berlin	--	www.beuth-hochschule.de
+UPDATE universities SET city_id = 1, scrape = 1 WHERE id = 102;		--	Hochschule für Wirtschaft und Recht Berlin	--	www.hwr-berlin.de
