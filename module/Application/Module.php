@@ -28,6 +28,7 @@ class Module {
 		$viewHelperManager->setInvokableClass('formmulticheckbox', 'ITT\Form\View\Helper\FormMultiCheckbox');
 		$viewHelperManager->setInvokableClass('formradio', 'ITT\Form\View\Helper\FormRadio');
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
+		$viewHelperManager->setInvokableClass('formlabel', 'ITT\Form\View\Helper\FormLabel');
 		
 		// $viewHelperManager->setInvokableClass('url', 'ITT\View\Helper\Url'); doesn't work;
 		// factory must be set/overwritten instead.

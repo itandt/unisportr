@@ -72,11 +72,14 @@ class CourseSearchForm extends Form {
 			'name' => 'weekday',
 			'type'  => 'Zend\Form\Element\MultiCheckbox',
 			'attributes' => array(
-				'id'  => '',
+				'id'  => 'searchFormWeekday',
 				'value' => array(1, 2, 3, 4, 5, 6, 7)
 			),
 			'options' => array(
 				'label' => Utility::poedit('weekday'),
+				'label_attributes' => array(
+					'for' => false
+				),
 				'value_options' => array(
 					'1' => Utility::poedit('Mo'),
 					'2' => Utility::poedit('Tu'),
