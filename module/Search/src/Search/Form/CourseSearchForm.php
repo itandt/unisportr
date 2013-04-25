@@ -44,6 +44,8 @@ class CourseSearchForm extends Form {
 			'options' => array(
 				'label' => Utility::poedit('city'),
 				'value_options' => $this->cities,
+			),
+			'attributes' => array(
 				'id'  => 'searchFormCity',
 			),
 		));
@@ -53,8 +55,8 @@ class CourseSearchForm extends Form {
 			'name' => 'level',
 			'type'  => 'Zend\Form\Element\Radio',
 			'attributes' => array(
-				'id'  => '',
-				'value' => 2
+				'value' => 2,
+				'id'  => 'searchFormLevel',
 			),
 			'options' => array(
 				'label' => Utility::poedit('level'),
