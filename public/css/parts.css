@@ -53,7 +53,7 @@ ul#catalogListSports li span.aTextCountCourses {
 	background: #fefefe;
 }
 .resultBlock#searchResultText {
-	background: linear-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e9e9e9)); /* CSS3 */
+	background: linear-gradient(to bottom, #ffffff, #e9e9e9); /* CSS3 */
 	background: -moz-linear-gradient(top, #ffffff, #e9e9e9); /* Firefox */
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e9e9e9)); /* Safari, Chrome */
 	background: -o-linear-gradient(top, #ffffff, #e9e9e9); /* Opera */

@@ -48,7 +48,7 @@ form .input-error {
 
 /* search #start# */
 div#searchFormArea {
-	background: linear-gradient(linear, 0 0, 0 100%, from(#91c6ea), to(#007acf)); /* CSS3 */
+	background: linear-gradient(to bottom, #91c6ea, #007acf); /* CSS3 */
 	background: -moz-linear-gradient(top, #91c6ea, #007acf); /* Firefox */
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#91c6ea), to(#007acf)); /* Safari, Chrome */
 	background: -o-linear-gradient(top, #91c6ea, #007acf); /* Opera */
