@@ -187,12 +187,11 @@ form#searchForm .formElementSet#formElementSubmit dd {
 }
 form#searchForm .formElementSet#formElementSubmit dd input[type="button"],
 form#searchForm .formElementSet#formElementSubmit dd input[type="submit"] {
-	background: linear-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* CSS3 */
+	background: linear-gradient(to bottom, #ffd760, #efb300); /* CSS3 */
 	background: -moz-linear-gradient(top, #ffd760, #efb300); /* Firefox */
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* Safari, Chrome */
 	background: -o-linear-gradient(#ffd760, #efb300); /* Opera */
-	background: -ms-linear-gradient(top, #ffd760 0%, #efb300 100%); /* IE */
-	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ffd760', EndColorStr='#efb300'); /* IE */				
+	background: -ms-linear-gradient(top, #ffd760 0%, #efb300 100%); /* IE */				
 	width: 148px;
 	min-height: 10px;				
 	height: 27px;
