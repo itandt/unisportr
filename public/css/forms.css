@@ -219,7 +219,7 @@ form#searchForm .formElementSet#formElementSubmit dd input[type="submit"] {
 	font-size: 12px;
 }
 #paginationContainer {
-	background: tranparent;
+	background: transparent;
 	/*background: #ff9900;*/
 	/*
 	position: absolute;
@@ -228,7 +228,7 @@ form#searchForm .formElementSet#formElementSubmit dd input[type="submit"] {
 	height: 30px;
 	margin: 0 0 20px 50px;
 	padding: 10px 0;
-	border: 1px solid tranparent;
+	border: 1px solid transparent;
 	border-color: transparent;
 	font-size: 16px;
 }
