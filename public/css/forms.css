@@ -53,7 +53,6 @@ div#searchFormArea {
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#91c6ea), to(#007acf)); /* Safari, Chrome */
 	background: -o-linear-gradient(top, #91c6ea, #007acf); /* Opera */
 	background: -ms-linear-gradient(top, #91c6ea 0%, #007acf 100%); /* IE */
-	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#91c6ea', EndColorStr='#007acf'); /* IE */
 	/*background: #00cc99;*/
 	z-index: 100;
 	position: absolute;
