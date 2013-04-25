@@ -30,35 +30,35 @@ var formMaximized = <?php echo $formMaximized; ?>;
 <?php echo $this->form()->openTag($form); ?>
 	<div id="searchFormArea">
 		<div id="searchFormContainer">
-			<dl>
+			<div class="dl">
 				<div id="formElementKeyword" class="formElementSet">
-					<dd><?php echo $this->formRow($form->get('keyword'), null, false, false); ?></dd>
+					<div class="dd"><?php echo $this->formRow($form->get('keyword'), null, false, false); ?></div>
 				</div>
 				<div id="formElementSubmit" class="formElementSet">
-					<dd><?php echo $this->formSubmit($form->get('submit')); ?></dd>
+					<div class="dd"><?php echo $this->formSubmit($form->get('submit')); ?></div>
 				</div>
 
 				<div id="formElementTrainer" class="formElementSet">
-					<dt><?php echo $this->formlabel($form->get('trainer')); ?></dt>
-					<dd><?php echo $this->formRow($form->get('trainer'), null, false, false); ?>
+					<div class="dt"><?php echo $this->formlabel($form->get('trainer')); ?></div>
+					<div class="dd"><?php echo $this->formRow($form->get('trainer'), null, false, false); ?></div>
 				</div>
 				
 				<div id="formElementCity" class="formElementSet">
-					<dt><?php echo $this->formlabel($form->get('city')); ?></dt>
-					<dd><?php echo $this->formRow($form->get('city'), null, false, false); ?></dd>
+					<div class="dt"><?php echo $this->formlabel($form->get('city')); ?></div>
+					<div class="dd"><?php echo $this->formRow($form->get('city'), null, false, false); ?></div>
 				</div>
 				<?php // Deactivated so far, since a lot of courses have no levels (NULL). ?>
 				<?php if(false) : ?>
 				<div id="formElementLevel" class="formElementSet formRadioSet">
-					<dt><?php echo $this->formlabel($form->get('level')); ?></dt>
-					<dd><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></dd>
+					<div class="dt"><?php echo $this->formlabel($form->get('level')); ?></div>
+					<div class="dd"><?php echo $this->formRadio($form->get('level'), FormRadio::LABEL_PREPEND); ?></div>
 				</div>
 				<?php endif; ?>
 				<div id="formElementWeekday" class="formElementSet formCheckboxSet">
-					<dt><?php echo $this->formlabel($form->get('weekday')); ?></dt>
-					<dd><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></dd>
+					<div class="dt"><?php echo $this->formlabel($form->get('weekday')); ?></div>
+					<div class="dd"><?php echo $this->formMultiCheckbox($form->get('weekday'), FormMultiCheckbox::LABEL_PREPEND); ?></div>
 				</div>
-			</dl>
+			</div>
 			<?php if(count($form->getMessages()) > 0): ?>
 			<div id="searchFormMessagesContainer">
 				<span id="searchFormMessagesHeader"><?php echo $this->translate('Please fill out the search form correctly.') ?></span>
