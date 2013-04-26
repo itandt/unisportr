@@ -2,7 +2,7 @@
 # 
 # %base_url%
 # - examples
-# http://unisportr-zf.itt.loc
+# http://project.tld
 # 
 # %domain%
 # - examples
@@ -15,8 +15,8 @@
 # 
 # %store_into_urllist%
 # - examples
-# ./temp/urllist_local.txt
-# ./temp/urllist_google.txt
+# ./temp/urllist_users.txt
+# ./temp/urllist_robots.txt
 wget --spider --force-html -r %level% %base_url% 2>&1 \
   | grep '^--' | awk '{ print $3 }' \
   | grep -v '\.\(css\|js\|png\|gif\|jpg\|ico\|txt\)$' \
