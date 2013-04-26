@@ -43,7 +43,7 @@ class CourseTable {
 			))
 			->join('weekdays', 'courses.weekday_id = weekdays.id', array(
 				'weekday' => 'labelde'
-			))
+			), Select::JOIN_LEFT)
 			->join(array('levelsmin' => 'levels'), 'courses.levelmin_id = levelsmin.id', array(
 				'usrLevelMin' => 'usrlevel', 'uniLevelMin' => 'unilevel'
 			), Select::JOIN_LEFT)
