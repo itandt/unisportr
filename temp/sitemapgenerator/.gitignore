@@ -1,8 +1,8 @@
 config.xml
-config_google.xml
-config_local.xml
-urllist_gen_a_google.sh
-urllist_gen_a_local.sh
-urllist_gen_b_google.sh
-urllist_gen_b_local.sh
+config_robots.xml
+config_users.xml
+urllist_gen_a_robots.sh
+urllist_gen_a_users.sh
+urllist_gen_b_robots.sh
+urllist_gen_b_users.sh
 temp
