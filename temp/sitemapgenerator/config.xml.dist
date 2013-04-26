@@ -2,15 +2,15 @@
 <!--
 %base_url%
 - examples
-http://unisportr-zf.itt.loc
+http://project.tld
 
 %store_into%
-/var/www/vhosts/it-and-t.com/domains/unisportr.com/public/sitemap_local.xml
-/var/www/vhosts/it-and-t.com/domains/unisportr.com/data/sitemap/sitemap_google.xml
+/var/www/path/to/project/data/sitemap/sitemap_users.xml
+/var/www/path/to/project/public/sitemap_robots.xml
 
 %urllist%
-temp/urllist_local.txt
-temp/urllist_google.txt
+temp/urllist_users.txt
+temp/urllist_robots.txt
 -->
 <site
 	base_url="%base_url%"
