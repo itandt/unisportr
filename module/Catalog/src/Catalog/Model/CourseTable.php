@@ -49,7 +49,7 @@ class CourseTable {
 			), Select::JOIN_LEFT)
 			->join('weekdays', 'courses.weekday_id = weekdays.id', array(
 				'weekday' => 'labelde'
-			))
+			), Select::JOIN_LEFT)
 			->join(array('levelsmin' => 'levels'), 'courses.levelmin_id = levelsmin.id', array(
 				'usrLevelMin' => 'usrlevel', 'uniLevelMin' => 'unilevel'
 			), Select::JOIN_LEFT)
@@ -62,8 +62,10 @@ class CourseTable {
 			->equalTo('cities.name', $cityName)
 		;
 		// Filter by sports.title only if the passed sport title != self::SPORT_TITLE_UNASSIGNED
-		if (strcasecmp($sportTitle, self::SPORT_TITLE_UNASSIGNED)) {
+		if (strcasecmp($sportTitle, self::SPORT_TITLE_UNASSIGNED) !== 0) {
 			$where->equalTo('sports.title', $sportTitle);
+		} else {
+			$where->isNull('sports.title');
 		}
 		$select->where($where, Predicate::OP_AND);
 		$select->group(array('courses.id'));
