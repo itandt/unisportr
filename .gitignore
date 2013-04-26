@@ -7,9 +7,9 @@ public/.htpasswd
 # Usually needed for every working project instance
 # and must be generated.
 composer.lock
+/public/robots.txt
 /public/sitemap*.xml
 /data/sitemap/sitemap*.xml
-/*/tablemapping/mappingresult.txt
 
 # Usually not needed for a working project instance.
 nbproject
