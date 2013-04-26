@@ -125,6 +125,54 @@ ul#catalogListSports li span.aTextCountCourses {
 }
 /* search result list #stop# */
 
+/* pagination #start# */
+#paginationContainer {
+	background: transparent;
+	/*background: #ff9900;*/
+	/*
+	position: absolute;
+	top: 90px;
+	*/
+	height: auto;
+	margin: 0 0 20px 50px;
+	padding: 0;
+	border: 1px solid transparent;
+	border-color: transparent;
+	font-size: 16px;
+}
+#paginationContainer ul {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+#paginationContainer ul li {
+	display: inline-block;
+	margin: 5px 0;
+}
+#paginationContainer ul li a,
+#paginationContainer ul li span {
+	display: block;
+	margin: 1px 5px;
+	padding: 2px 7px;
+	border: 1px solid #007acf;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	font-weight: bold;
+}
+#paginationContainer ul li span {
+	border-color: #999999;
+	color: #999999;
+	cursor: default;
+}
+#paginationContainer ul li.pagination-current span {
+	background: #007acf;
+	border: 1px solid #007acf;
+	color: #ffffff;
+}
+/* pagination #stop# */
+
 /* course page #start# */
 #courseTitle {
 	/*background: #000000;*/
