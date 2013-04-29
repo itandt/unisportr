@@ -18,14 +18,6 @@ temp/urllist_robots.txt
 	verbose="1"
 >
 	
-	<url href="%base_url%/stats?q=name" />
-	<url
-		href="%base_url%/stats?q=age"
-		lastmod="2004-11-14T01:00:00-07:00"
-		changefreq="yearly"
-		priority="0.3"
-	/>
-	
 	<urllist path="%urllist%" encoding="UTF-8"  />
 	
 	<!-- Exclude URLs that end with a '~' (IE: emacs backup files) -->
