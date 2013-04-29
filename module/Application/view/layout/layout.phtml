@@ -5,6 +5,7 @@ echo $this->doctype();
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<?php echo $this->contentForEnvironment('partials/google-site-verification.phtml', ['live']); ?>
 		<?php
 		echo $this->headTitle(
 			'unisportr' . ' ' .
