@@ -4,6 +4,15 @@ use Zend\Form\View\Helper\FormRadio;
 ?>
 <?php
 $form->setAttribute('action', $this->url('search-courses'));
+
+/*
+$cityElement = $form->getInputFilter()->get('city');
+$validatorChain = $cityElement->getValidatorChain();
+$validatorChainPluginManager = $validatorChain->getPluginManager();
+$validators = $validatorChain->getValidators();
+$breakpoint = null;
+*/
+
 $form->prepare();
 ?>
 <?php
