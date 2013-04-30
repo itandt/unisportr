@@ -5,12 +5,28 @@ echo $this->doctype();
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<?php
+		$this->headMeta()->appendName(
+			'description',
+			'unisportr' . ' - ' . $this->translate('The university sports resource')
+		);
+		$this->headMeta()->appendName(
+			'keywords',
+			implode(', ', array(
+				$this->translate('sports'),
+				$this->translate('universty sports'),
+				$this->translate('courses'),
+				$this->translate('courses search'),
+				$this->translate('courses catalog')
+			))
+		);
+		echo $this->headMeta();
+		?>
 		<?php echo $this->contentForEnvironment('partials/google-site-verification.phtml', ['live']); ?>
 		<?php
 		echo $this->headTitle(
-			'unisportr' . ' ' .
-			$this->translate('The university sports resource'))->setSeparator(' - ')->setAutoEscape(false)
-		;
+			'unisportr' . ' - ' . $this->translate('The university sports resource')
+		)->setSeparator(' - ')->setAutoEscape(false);
 		?>
 		<?php
 		echo $this->headLink(array(

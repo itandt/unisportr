@@ -11,6 +11,19 @@ if (strcasecmp($sport, CourseTable::SPORT_TITLE_UNASSIGNED)) {
 	$title = $this->translate('List of unassigned courses in') . ' ' . $city;
 	$resultText = sprintf($this->translate('%s unassigned courses in %s'), $paginator->getTotalItemCount(), $city);
 }
+?>
+
+<?php
+$keywordsArray = array(
+	$this->translate('courses'),
+	$this->translate('list'),
+	$city
+);
+if (strcasecmp($sport, CourseTable::SPORT_TITLE_UNASSIGNED)) {
+	array_unshift($keywordsArray, $sport);
+}
+$this->headMeta()->setName('keywords', implode(', ', $keywordsArray));
+$this->headMeta()->setName('description', $title);
 $this->headTitle($title);
 ?>
 

@@ -14,11 +14,7 @@ $courseTitleShorted = strlen($courseTitle) > $titleMaxLength
 ;
 ?>
 <?php
-$title = $courseTitleShorted;
-$this->headTitle($title);
-?>
-<?php
-echo $this->headScript()
+$this->headScript()
 	->appendFile($this->basePath() . 'http://maps.googleapis.com/maps/api/js?key=' . $gMapsKey . '&sensor=false', 'text/javascript')
 	->appendFile($this->basePath() . '/js/Log.js', 'text/javascript')
 	->appendFile($this->basePath() . '/js/GMap.js', 'text/javascript')
@@ -49,8 +45,37 @@ $providerLabel = $this->escapeHtml($course->providerType) == 'university'
 ;
 $courseProvider = $this->escapeHtml($course->providerName);
 $courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
+
+if(strrpos($courseTrainer, ', ') !== false) {
+	$courseTrainer = substr_replace(
+		$courseTrainer, ' ' . $this->translate('and') . ' ', strrpos($courseTrainer, ', '), strlen(', ')
+	);
+}
 $courseLocation = $this->escapeHtml($course->location);
 ?>
+
+<?php
+$title = $courseTitleShorted;
+$this->headMeta()->setName('keywords', implode(
+	', ',
+	array(
+		$this->translate('course'),
+		$courseTitleShorted,
+		$courseProvider,
+		$courseCity,
+	)
+));
+$metaDescriptionText = $this->translate('Course') . ' ' . $courseTitleShorted;
+$metaDescriptionText .= !empty($courseTrainer)
+	? ' ' . $this->translate('by') . ' ' . $courseTrainer
+	: ''
+;
+$metaDescriptionText .= ' ' . $this->translate('at') . ' ' . $courseProvider;
+$metaDescriptionText .= ' ' . $this->translate('in') . ' ' . $courseCity;
+$this->headMeta()->setName('description', $metaDescriptionText);
+$this->headTitle($title . ' ' . $this->translate('at') . ' ' . $courseProvider);
+?>
+
 <?php
 if (!empty($course->courseID01)) {
 	$courseID = $course->courseID01;
