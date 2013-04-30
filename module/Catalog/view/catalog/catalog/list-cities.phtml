@@ -1,5 +1,13 @@
 <?php
 $title = $this->translate('List of cities with university sport courses');
+$this->headMeta()->setName('keywords', implode(
+	', ',
+	array(
+		$this->translate('cities'),
+		$this->translate('list')
+	)
+));
+$this->headMeta()->setName('description', $title);
 $this->headTitle($title);
 ?>
 

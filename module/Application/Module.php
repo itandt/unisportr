@@ -29,6 +29,7 @@ class Module {
 		$viewHelperManager->setInvokableClass('formradio', 'ITT\Form\View\Helper\FormRadio');
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
 		$viewHelperManager->setInvokableClass('formlabel', 'ITT\Form\View\Helper\FormLabel');
+		$viewHelperManager->setInvokableClass('headmeta', 'ITT\View\Helper\HeadMeta');
 		
 		// $viewHelperManager->setInvokableClass('url', 'ITT\View\Helper\Url'); doesn't work;
 		// factory must be set/overwritten instead.

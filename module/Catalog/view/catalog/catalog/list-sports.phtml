@@ -3,6 +3,16 @@ use Catalog\Model\CourseTable;
 ?>
 <?php
 $title = $this->translate('List of sports in') . ' ' . $city;
+?>
+
+<?php
+$keywordsArray = array(
+	$this->translate('sports'),
+	$this->translate('list'),
+	$city
+);
+$this->headMeta()->setName('keywords', implode(', ', $keywordsArray));
+$this->headMeta()->setName('description', $title);
 $this->headTitle($title);
 ?>
 
