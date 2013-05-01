@@ -118,10 +118,12 @@ jQuery('document').ready(function() {
 		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
 		<div class="courseInfoData"><?php echo $courseLocation ?: '&nbsp;'; ?></div>
 	</div>
+	<?php if (!empty($courseTrainer)) : ?>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseTrainer ?: '&nbsp;'; ?></div>
+		<div class="courseInfoData"><?php echo $courseTrainer; ?></div>
 	</div>
+	<?php endif; ?>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $providerLabel; ?>:</div>
 		<div class="courseInfoData"><?php echo $courseProvider; ?></div>
