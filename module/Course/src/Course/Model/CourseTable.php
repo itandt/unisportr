@@ -68,7 +68,7 @@ class CourseTable {
 		;
 		$select->where($where, Predicate::OP_AND);
 		$select->group('courses.id');
-// 		$test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
+		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
 		$resultSet = $this->tableGateway->selectWith($select);
 		return $resultSet;
 	}
