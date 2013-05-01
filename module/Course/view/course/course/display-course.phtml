@@ -114,10 +114,12 @@ jQuery('document').ready(function() {
 			<div><?php echo $courseWeekday; ?> <?php echo $courseTime; ?></div>
 		</div>
 	</div>
+	<?php if (!empty($courseLocation)) : ?>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseLocation ?: '&nbsp;'; ?></div>
+		<div class="courseInfoData"><?php echo $courseLocation; ?></div>
 	</div>
+	<?php endif; ?>
 	<?php if (!empty($courseTrainer)) : ?>
 	<div class="courseInfo">
 		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
