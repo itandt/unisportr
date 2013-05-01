@@ -191,7 +191,8 @@ form#searchForm .formElementSet#formElementSubmit div.dd input[type="submit"] {
 	background: -moz-linear-gradient(top, #ffd760, #efb300); /* Firefox */
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd760), to(#efb300)); /* Safari, Chrome */
 	background: -o-linear-gradient(#ffd760, #efb300); /* Opera */
-	background: -ms-linear-gradient(top, #ffd760 0%, #efb300 100%); /* IE */				
+	background: -ms-linear-gradient(top, #ffd760 0%, #efb300 100%); /* IE */
+	/*background: #cc0000;*/
 	width: 148px;
 	min-height: 10px;				
 	height: 27px;
