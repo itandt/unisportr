@@ -1,5 +1,6 @@
 <?php
 use ITT\Util\Utility;
+use Catalog\Model\CourseTable;
 ?>
 <?php
 $titleMaxLength = 40;
@@ -22,7 +23,6 @@ $this->headScript()
 ?>
 
 <h1 id="pageTitle"><?php echo $courseTitleShorted; ?></h1>
-
 <?php
 $courseDescription = $this->escapeHtml($course->description);
 $courseLevel = Utility::getOneOrPair(
@@ -45,26 +45,22 @@ $providerLabel = $this->escapeHtml($course->providerType) == 'university'
 ;
 $courseProvider = $this->escapeHtml($course->providerName);
 $courseTrainer = str_replace('|||', ', ', $this->escapeHtml($course->trainers));
-
-if(strrpos($courseTrainer, ', ') !== false) {
+if (strrpos($courseTrainer, ', ') !== false) {
 	$courseTrainer = substr_replace(
 		$courseTrainer, ' ' . $this->translate('and') . ' ', strrpos($courseTrainer, ', '), strlen(', ')
 	);
 }
+$courseSports = str_replace('|||', ', ', $this->escapeHtml($course->sports));
 $courseLocation = $this->escapeHtml($course->location);
 ?>
 
 <?php
 $title = $courseTitleShorted;
-$this->headMeta()->setName('keywords', implode(
-	', ',
-	array(
-		$this->translate('course'),
-		$courseTitleShorted,
-		$courseProvider,
-		$courseCity,
-	)
-));
+$keywordsArray = array($this->translate('course'), $courseTitleShorted, $courseProvider, $courseCity,);
+if (strcasecmp($courseSports, CourseTable::SPORT_TITLE_UNASSIGNED)) {
+	array_unshift($keywordsArray, $courseSports);
+}
+$this->headMeta()->setName('keywords', implode(', ', $keywordsArray));
 $metaDescriptionText = $this->translate('Course') . ' ' . $courseTitleShorted;
 $metaDescriptionText .= !empty($courseTrainer)
 	? ' ' . $this->translate('by') . ' ' . $courseTrainer
@@ -88,7 +84,7 @@ $courseIDText = $courseID . ' ';
 ?>
 <?php
 $urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $courseTitle);
-$aURL = $this->url('course',  $urlParams);
+$aURL = $this->url('course', $urlParams);
 $aText = $courseTitle;
 ?>
 

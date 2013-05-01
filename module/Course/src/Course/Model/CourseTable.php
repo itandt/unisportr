@@ -54,17 +54,24 @@ class CourseTable {
 			->join(
 				'trainers',
 				new Expression('trainer_id = trainers.id AND trainers.name IS NOT NULL AND trainers.name != ""'),
-				array('trainers' => new Expression('GROUP_CONCAT(DISTINCT trainers.name SEPARATOR "' . $concatDelimiter . '")')
-			), Select::JOIN_LEFT)
+				array('trainers' => new Expression('GROUP_CONCAT(DISTINCT trainers.name SEPARATOR "' . $concatDelimiter . '")')),
+				Select::JOIN_LEFT
+			)
 			->join('courses_sports', 'courses.id = courses_sports.course_id', array(), Select::JOIN_LEFT)
-			->join('sports', 'sport_id = sports.id', array('sport' => 'title'), Select::JOIN_LEFT)
+			->join('sports', 'sport_id = sports.id', array(
+				'sport' => 'title',
+				'sports' => new Expression('GROUP_CONCAT(DISTINCT sports.title SEPARATOR "' . $concatDelimiter . '")')
+			), Select::JOIN_LEFT)
 		;
 		$where
 			->equalTo('courses.id', $id)
 		;
 		$select->where($where, Predicate::OP_AND);
 		$select->group('courses.id');
-		// $test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
+		
+// 		$test = $select->getSqlString($this->tableGateway->getAdapter()->getPlatform());
+// 		die($test);
+		
 		$resultSet = $this->tableGateway->selectWith($select);
 		return $resultSet;
 	}
