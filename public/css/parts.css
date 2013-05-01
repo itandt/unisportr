@@ -112,14 +112,14 @@ ul#catalogListSports li span.aTextCountCourses {
 .resultBlock .resultBlockCourseWeekday {
 	/*background: #00aa00;*/
 	position: absolute;
-	left: 150px;
+	left: 180px;
 	bottom: 5px;
 	font-size: 12px;
 }
 .resultBlock .resultBlockCourseTime {
 	/*background: #00aa00;*/
 	position: absolute;
-	left: 220px;
+	left: 250px;
 	bottom: 5px;
 	font-size: 12px;
 }
