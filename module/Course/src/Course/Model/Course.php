@@ -32,6 +32,7 @@ class Course implements ArraySerializableInterface {
 	public $providerName;
 	public $providerURL;
 	public $sport; // +
+	public $sports; // +
 	
 	public function exchangeArray(array $data) {		
 		$this->id				= (isset($data['id'])) ? $data['id'] : null;
@@ -61,6 +62,7 @@ class Course implements ArraySerializableInterface {
 		$this->providerName		= (isset($data['providerName'])) ? $data['providerName'] : null;
 		$this->providerURL		= (isset($data['providerURL'])) ? $data['providerURL'] : null;
 		$this->sport			= (isset($data['sport'])) ? $data['sport'] : null;
+		$this->sports			= (isset($data['sports'])) ? $data['sports'] : null;
 	}
 	
 	public function getArrayCopy() {
