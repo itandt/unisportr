@@ -29,6 +29,7 @@ class Module implements
 			'Zend\Loader\StandardAutoloader' => array(
 				'namespaces' => array(
 					__NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+					'ITT' => __DIR__ . '/../../vendor/ITT/library/ITT',
 				),
 			),
 		);
