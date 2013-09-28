@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-01 23:49+0100\n"
-"PO-Revision-Date: 2013-05-01 23:49+0100\n"
+"POT-Creation-Date: 2013-09-28 22:06+0100\n"
+"PO-Revision-Date: 2013-09-28 22:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -92,9 +92,9 @@ msgstr "Sitemap"
 msgid "University sports 2.0"
 msgstr "Hochschulsport 2.0"
 
-#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:71
+#: ../view/application/index/index.phtml:2 ../view/layout/layout.phtml:73
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/index.phtml:2
-#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:71
+#: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:73
 msgid "Home"
 msgstr "Startseite"
 
@@ -342,7 +342,7 @@ msgid "and"
 msgstr "und"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:64
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:149
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:157
 msgid "Course"
 msgstr "Kurs"
 
@@ -371,9 +371,13 @@ msgstr "Termine"
 msgid "location"
 msgstr "Ort"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:149
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:157
 msgid "on the website of"
 msgstr "auf der Website von"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:157
+msgid "visit"
+msgstr "besuchen"
 
 #: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:6
 #, php-format
@@ -384,7 +388,7 @@ msgstr "Deine Suche ergab %s Treffer."
 msgid "Course search"
 msgstr "Hochschulsportkurssuche"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:81
+#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:73
 msgid "Please fill out the search form correctly."
 msgstr "Bitte fülle das Suchformular korrekt aus."
 
