@@ -33,12 +33,12 @@ class CourseController extends AbstractActionController {
 			$interval->format('%d') . ' || '
 		;
 		*/
-		
 		if ($dateTimeCourseEndDate > $dateTimeNow) {
 			$result = new ViewModel(array(
 				'id' => $id,
 				'course' => $course,
 				'gMapsKey' => $this->getServiceLocator()->get('Config')['gMapsKey'],
+				'uri' => $this->getRequest()->getUri(),
 			));
 		} else {
 			$result = $this->forward()->dispatch('Course\Controller\Course', array(

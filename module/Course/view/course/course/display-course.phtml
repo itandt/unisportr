@@ -148,3 +148,11 @@ jQuery('document').ready(function() {
 		rel="nofollow"
 	><?php echo $this->translate('Course') . ' ' . $courseIDText . $this->translate('on the website of') . ' ' . $courseProvider; ?></a>
 </div>
+<div>
+	<!-- Facebook Like Button -->
+	<?php
+	echo $this->render('/partials/facebook-like-button.phtml', array(
+		'url' => $uri,
+	));
+	?>
+</div>
