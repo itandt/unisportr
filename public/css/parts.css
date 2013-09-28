@@ -203,10 +203,23 @@ ul#catalogListSports li span.aTextCountCourses {
 }
 #courseLink {
 	/*background: #00aa00;*/
+	width: 638px;
 	position: absolute;
 	right: 5px;
 	bottom: 5px;
-	font-size: 12px;
+	font-size: 16px;
+	text-align: center;
+}
+#courseLink a {
+	background: #2172ff;
+	display: block;
+	padding: 10px;
+	border: 0px solid transparent;
+	border-radius: 5px; /* CSS3 */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	color: #ffffff;
 }
 #courseDescription #courseDescriptionLabel {
 	margin: 0 0 20px -4px;

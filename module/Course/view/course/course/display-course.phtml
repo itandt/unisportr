@@ -141,13 +141,6 @@ jQuery('document').ready(function() {
 	<div id="courseDescriptionData"><?php echo $courseDescription; ?></div>
 </div>
 <!--div id="courseSocial">[share]</div-->
-<div id="courseLink">
-	<a
-		href="<?php echo $courseUrl; ?>"
-		title="<?php echo $courseProvider; ?>"
-		rel="nofollow"
-	><?php echo $this->translate('Course') . ' ' . $courseIDText . $this->translate('on the website of') . ' ' . $courseProvider; ?></a>
-</div>
 <div>
 	<!-- Facebook Like Button -->
 	<?php
@@ -155,4 +148,11 @@ jQuery('document').ready(function() {
 		'url' => $uri,
 	));
 	?>
+</div>
+<div id="courseLink">
+	<a
+		href="<?php echo $courseUrl; ?>"
+		title="<?php echo $courseProvider; ?>"
+		rel="nofollow"
+	><?php echo $this->translate('Course') . ' ' . $courseIDText . $this->translate('on the website of') . ' ' . $courseProvider . ' ' . $this->translate('visit'); ?></a>
 </div>
