@@ -156,3 +156,11 @@ jQuery('document').ready(function() {
 		rel="nofollow"
 	><?php echo $this->translate('Course') . ' ' . $courseIDText . $this->translate('on the website of') . ' ' . $courseProvider . ' ' . $this->translate('visit'); ?></a>
 </div>
+<div>
+	<!-- AddThis Panel -->
+	<?php
+	echo $this->render('/partials/addthis-panel.phtml', array(
+		'url' => $uri,
+	));
+	?>
+</div>
