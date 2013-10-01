@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-28 22:06+0100\n"
-"PO-Revision-Date: 2013-09-28 22:06+0100\n"
+"POT-Creation-Date: 2013-10-01 22:39+0100\n"
+"PO-Revision-Date: 2013-10-01 22:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -258,6 +258,37 @@ msgstr "Kurskatalog"
 #: M:\workspace\itt\unisportr-zf\module/Application/view/layout/layout.phtml:28
 msgid "The university sports resource"
 msgstr "Die Hochschulsport-Plattform"
+
+#: ../view/partials/addthis-welcome-bar.phtml:13
+#: ../view/partials/addthis-welcome-bar.phtml:26
+#: ../view/partials/addthis-welcome-bar.phtml:39
+#: ../view/partials/addthis-welcome-bar.phtml:52
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:13
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:26
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:39
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:52
+msgid "If you find this page usepful, tell your friends about it!"
+msgstr "Wenn Du die Seite nützlich findest, erzähl Deinen Freunden über sie!"
+
+#: ../view/partials/addthis-welcome-bar.phtml:16
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:16
+msgid "Share this page!"
+msgstr "Jetzt teilen!"
+
+#: ../view/partials/addthis-welcome-bar.phtml:29
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:29
+msgid "Twitter now!"
+msgstr "Jetzt twittern!"
+
+#: ../view/partials/addthis-welcome-bar.phtml:42
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:42
+msgid "Share on Facebook!"
+msgstr "Auf Facebook teilen!"
+
+#: ../view/partials/addthis-welcome-bar.phtml:55
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:55
+msgid "Share on Google!"
+msgstr "Auf Google+ teilen!"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-cities.phtml:2
 msgid "List of cities with university sport courses"
