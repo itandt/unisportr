@@ -1,0 +1,61 @@
+<!-- AddThis Welcome BEGIN -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e2d40ec6e2cb8b0"></script>
+<script type='text/javascript'>
+addthis.bar.initialize({'default':{
+	"backgroundColor": "#FCFCFC",
+	"buttonColor": "#2172FF",
+	"textColor": "#2172FF",
+	"buttonTextColor": "#FFFFFF"
+},rules:[
+	{
+		"name": "AnyOther",
+		"message": "<?php echo $this->translate('If you find this page usepful, tell your friends about it!'); ?>",
+		"action": {
+			"type": "button",
+			"text": "<?php echo $this->translate('Share this page!'); ?>",
+			"verb": "share",
+			"service": "preferred"
+		}
+	},
+	{
+		"name": "Twitter",
+		"match": {
+			"referringService": "twitter"
+		},
+		"message": "<?php echo $this->translate('If you find this page usepful, tell your friends about it!'); ?>",
+		"action": {
+			"type": "button",
+			"text": "<?php echo $this->translate('Twitter now!'); ?>",
+			"verb": "share",
+			"service": "twitter"
+		}
+	},
+	{
+		"name": "Facebook",
+		"match": {
+			"referringService": "facebook"
+		},
+		"message": "<?php echo $this->translate('If you find this page usepful, tell your friends about it!'); ?>",
+		"action": {
+			"type": "button",
+			"text": "<?php echo $this->translate('Share on Facebook!'); ?>",
+			"verb": "share",
+			"service": "facebook"
+		}
+	},
+	{
+		"name": "Google",
+		"match": {
+			"referrer": "google.com"
+		},
+		"message": "<?php echo $this->translate('If you find this page usepful, tell your friends about it!'); ?>",
+		"action": {
+			"type": "button",
+			"text": "<?php echo $this->translate('Share on Google!'); ?>",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	}
+]});
+</script>
+<!-- AddThis Welcome END -->
