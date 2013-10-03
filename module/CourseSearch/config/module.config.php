@@ -49,7 +49,7 @@ return array(
 	),
 	'view_manager' => array(
 		'template_path_stack' => array(
-			'search' => __DIR__ . '/../view',
+			'course-search' => __DIR__ . '/../view',
 		),
 	),
 	'relevance_min' => 2,
