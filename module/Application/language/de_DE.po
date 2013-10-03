@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-01 22:39+0100\n"
-"PO-Revision-Date: 2013-10-01 22:57+0100\n"
+"POT-Creation-Date: 2013-10-03 21:40+0100\n"
+"PO-Revision-Date: 2013-10-03 21:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -12,58 +12,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: translate;poedit\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: M:\\workspace\\itt\\unisportr-zf\\module\n"
 "X-Poedit-SearchPath-2: M:\\workspace\\itt\\unisportr-zf\\public\n"
 "X-Poedit-SearchPath-3: M:\\workspace\\itt\\unisportr-zf\\config\n"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:25
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:25
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:25
 msgid "Keyword"
 msgstr "Suchbegriff"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:38
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:38
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:38
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:125
 msgid "trainer"
 msgstr "Trainer"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:45
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:45
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:45
 msgid "city"
 msgstr "Stadt"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:79
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:79
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:79
 msgid "weekday"
 msgstr "Wochentag"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:84
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:84
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:84
 msgid "Mo"
 msgstr "Mo"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:85
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:85
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:85
 msgid "Tu"
 msgstr "Di"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:86
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:86
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:86
 msgid "We"
 msgstr "Mi"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:87
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:87
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:87
 msgid "Th"
 msgstr "Do"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:88
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:88
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:88
 msgid "Fr"
 msgstr "Fr"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:89
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:89
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:89
 msgid "Sa"
 msgstr "Sa"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:90
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:90
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:90
 msgid "Su"
 msgstr "So"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/src/Search/Form/CourseSearchForm.php:98
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:98
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SearchForm.php:98
 msgid "Find courses!"
 msgstr "Kurse finden!"
 
@@ -115,8 +127,9 @@ msgstr "Impressum"
 
 #: ../view/application/index/sitemap.phtml:34
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:34
-msgid "search"
-msgstr "Hochschulsportkurssuche"
+#, fuzzy
+msgid "course search"
+msgstr "Kurssuche"
 
 #: ../view/application/index/sitemap.phtml:37 ../view/layout/layout.phtml:18
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:37
@@ -259,34 +272,34 @@ msgstr "Kurskatalog"
 msgid "The university sports resource"
 msgstr "Die Hochschulsport-Plattform"
 
-#: ../view/partials/addthis-welcome-bar.phtml:13
-#: ../view/partials/addthis-welcome-bar.phtml:26
-#: ../view/partials/addthis-welcome-bar.phtml:39
-#: ../view/partials/addthis-welcome-bar.phtml:52
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:13
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:26
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:39
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:52
+#: ../view/partials/addthis-welcome-bar.phtml:12
+#: ../view/partials/addthis-welcome-bar.phtml:25
+#: ../view/partials/addthis-welcome-bar.phtml:38
+#: ../view/partials/addthis-welcome-bar.phtml:51
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:12
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:25
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:38
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:51
 msgid "If you find this page usepful, tell your friends about it!"
 msgstr "Wenn Du die Seite nützlich findest, erzähl Deinen Freunden über sie!"
 
-#: ../view/partials/addthis-welcome-bar.phtml:16
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:16
+#: ../view/partials/addthis-welcome-bar.phtml:15
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:15
 msgid "Share this page!"
 msgstr "Jetzt teilen!"
 
-#: ../view/partials/addthis-welcome-bar.phtml:29
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:29
+#: ../view/partials/addthis-welcome-bar.phtml:28
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:28
 msgid "Twitter now!"
 msgstr "Jetzt twittern!"
 
-#: ../view/partials/addthis-welcome-bar.phtml:42
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:42
+#: ../view/partials/addthis-welcome-bar.phtml:41
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:41
 msgid "Share on Facebook!"
 msgstr "Auf Facebook teilen!"
 
-#: ../view/partials/addthis-welcome-bar.phtml:55
-#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:55
+#: ../view/partials/addthis-welcome-bar.phtml:54
+#: M:\workspace\itt\unisportr-zf\module/Application/view/partials/addthis-welcome-bar.phtml:54
 msgid "Share on Google!"
 msgstr "Auf Google+ teilen!"
 
@@ -325,18 +338,21 @@ msgstr "%s nicht zugeordnete Kurse in %s"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:49
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:10
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:22
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/list-courses.phtml:22
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partners-search/search/list-sports-partners.phtml:22
 msgid "Untitled"
 msgstr "Ohne Titel"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:71
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:59
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:44
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/list-courses.phtml:44
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partners-search/search/list-sports-partners.phtml:44
 msgid "course"
 msgstr "Kurs"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:71
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:44
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/list-courses.phtml:44
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partners-search/search/list-sports-partners.phtml:44
 msgid "link"
 msgstr "Link"
 
@@ -410,18 +426,28 @@ msgstr "auf der Website von"
 msgid "visit"
 msgstr "besuchen"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/list-courses.phtml:6
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/course-search-form.phtml:73
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partners-search/search/sports-partners-search-form.phtml:73
+msgid "Please fill out the search form correctly."
+msgstr "Bitte fülle das Suchformular korrekt aus."
+
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/list-courses.phtml:6
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partners-search/search/list-sports-partners.phtml:6
 #, php-format
 msgid "Your search returned %s results."
 msgstr "Deine Suche ergab %s Treffer."
 
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-courses.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/search-courses.phtml:2
+#: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partners-search/search/search-sports-partners.phtml:2
 msgid "Course search"
 msgstr "Hochschulsportkurssuche"
 
-#: M:\workspace\itt\unisportr-zf\module/Search/view/search/search/search-form.phtml:73
-msgid "Please fill out the search form correctly."
-msgstr "Bitte fülle das Suchformular korrekt aus."
+#, fuzzy
+#~ msgid "course-search"
+#~ msgstr "Kurssuche"
+
+#~ msgid "search"
+#~ msgstr "Hochschulsportkurssuche"
 
 #, fuzzy
 #~ msgid "List of cities with university sports courses"
