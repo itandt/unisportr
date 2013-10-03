@@ -3,7 +3,7 @@ use Zend\Form\View\Helper\FormMultiCheckbox;
 use Zend\Form\View\Helper\FormRadio;
 ?>
 <?php
-$form->setAttribute('action', $this->url('search-courses'));
+$form->setAttribute('action', $this->url('course-search'));
 
 /*
 $cityElement = $form->getInputFilter()->get('city');
@@ -18,7 +18,7 @@ $form->prepare();
 <?php
 if (
 	// current page is search
-	$this->currentRoute() == 'search-courses' &&
+	$this->currentRoute() == 'course-search' &&
 	// form has not been validated (user has just opened the page an not sent a search reeust yet) or
 	// for is invalid
 	!($form->hasValidated() && $form->isValid())

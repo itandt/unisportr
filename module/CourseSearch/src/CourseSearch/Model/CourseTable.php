@@ -1,5 +1,5 @@
 <?php
-namespace Search\Model;
+namespace CourseSearch\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Where;

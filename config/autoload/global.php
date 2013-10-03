@@ -38,7 +38,7 @@ return array(
 			),
 			array(
 				'label' => 'Search',
-				'route' => 'search-courses',
+				'route' => 'course-search',
 			),
 			array(
 				'label' => Utility::poedit('About unisportr'),

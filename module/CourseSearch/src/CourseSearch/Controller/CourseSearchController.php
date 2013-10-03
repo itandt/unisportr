@@ -1,41 +1,41 @@
 <?php
-namespace Search\Controller;
+namespace CourseSearch\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Db\ResultSet\ResultSet;
-use Search\Form\CourseSearchForm;
-use Search\Model\Course;
-use Search\Model\CourseSearchInput;
+use CourseSearch\Form\CourseSearchForm;
+use CourseSearch\Model\Course;
+use CourseSearch\Model\CourseSearchInput;
 
 /**
- * SearchController
+ * CourseSearchController
  * 
  * @author automatix
  */
-class SearchController extends AbstractActionController {
+class CourseSearchController extends AbstractActionController {
 
 	/**
-	 * @var Search\Model\CourseTable
+	 * @var CourseSearch\Model\CourseTable
 	 */
 	protected $courseTable;
 	
 	public function searchAction() {
-		return $this->redirect()->toRoute('search-courses');
+		return $this->redirect()->toRoute('course-search');
 	}
 	
 	public function searchCoursesAction() {
-		$form = $this->getServiceLocator()->get('Search\Form\CourseSearchForm');
+		$form = $this->getServiceLocator()->get('CourseSearch\Form\CourseSearchForm');
 		$request = $this->getRequest();
 		$formData = $request->getQuery()->getArrayCopy();
 		if (!empty($formData)) {
-			$courseSearchInput = new CourseSearchInput();
-			$form->setInputFilter($courseSearchInput->getInputFilter());
+			$courseCourseSearchInput = new CourseSearchInput();
+			$form->setInputFilter($courseCourseSearchInput->getInputFilter());
 			$form->setData($formData);
 			if ($form->isValid()) {
-				$courseSearchInput->exchangeArray($form->getData());
+				$courseCourseSearchInput->exchangeArray($form->getData());
 				$page = $this->params()->fromRoute('page');
-				$paginator = $this->getCourseTable()->findAllByCriteria($courseSearchInput, $page);
+				$paginator = $this->getCourseTable()->findAllByCriteria($courseCourseSearchInput, $page);
 			} else {
 				$paginator = null;
 			}
@@ -52,12 +52,12 @@ class SearchController extends AbstractActionController {
 	
 	/**
 	 * Gets a CourseTable object.
-	 * @return Search\Model\CourseTable
+	 * @return CourseSearch\Model\CourseTable
 	 */
 	function getCourseTable() {
 		if (!$this->courseTable) {
 			$serviceLocator = $this->getServiceLocator();
-			$this->courseTable = $serviceLocator->get('Search\Model\CourseTable');
+			$this->courseTable = $serviceLocator->get('CourseSearch\Model\CourseTable');
 		}
 		return $this->courseTable;
 	}
