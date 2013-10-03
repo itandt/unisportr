@@ -11,8 +11,8 @@ return array(
         'Application',
         'Catalog',
         'Course',
-        'Search',
-        'Cache'
+        'CourseSearch',
+        'Cache',
         ),
     'module_listener_options' => array(
         'module_paths' => array(

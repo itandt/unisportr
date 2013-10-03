@@ -3,28 +3,30 @@ $breakpoint = null;
 return array(
 	'controllers' => array(
 		'invokables' => array(
-			'Search\Controller\Search' => 'Search\Controller\SearchController',
+			'CourseSearch\Controller\CourseSearch' => 'CourseSearch\Controller\CourseSearchController',
 		),
 	),
 	'router' => array(
 		'routes' => array(
+			/*
 			'search' => array(
 				'type'	=> 'literal',
 				'options' => array(
 					'route'	=> '/search',
 					'defaults' => array(
-						'controller' => 'Search\Controller\Search',
+						'controller' => 'CourseSearch\Controller\CourseSearch',
 						'action'	 => 'search',
 					),
 				),
 				'may_terminate' => true,
 			),
-			'search-courses' => array(
+			*/
+			'course-search' => array(
 				'type'	=> 'segment',
 				'options' => array(
-					'route'	=> '/search/courses',
+					'route'	=> '/course-search',
 					'defaults' => array(
-						'controller' => 'Search\Controller\Search',
+						'controller' => 'CourseSearch\Controller\CourseSearch',
 						'action'	 => 'search-courses',
 					),
 				),
@@ -35,7 +37,7 @@ return array(
 						'options' => array(
 							'route'	=> '[/page/:page]',
 							'defaults' => array(
-								'controller' => 'Search\Controller\Search',
+								'controller' => 'CourseSearch\Controller\CourseSearch',
 								'action'	 => 'search-courses',
 							),
 						),
@@ -47,7 +49,7 @@ return array(
 	),
 	'view_manager' => array(
 		'template_path_stack' => array(
-			'search' => __DIR__ . '/../view',
+			'course-search' => __DIR__ . '/../view',
 		),
 	),
 	'relevance_min' => 2,

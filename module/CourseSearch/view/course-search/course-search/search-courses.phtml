@@ -7,7 +7,7 @@ $this->headTitle($title);
 
 <?php
 if ($paginator instanceof Zend\Paginator\Paginator) {
-	echo $this->render('search/search/list-courses.phtml', array(
+	echo $this->render('course-search/course-search/list-courses.phtml', array(
 		'paginator' => $paginator,
 		'formData' => $formData
 	));

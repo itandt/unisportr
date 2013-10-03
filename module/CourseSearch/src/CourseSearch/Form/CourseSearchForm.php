@@ -1,5 +1,5 @@
 <?php
-namespace Search\Form;
+namespace CourseSearch\Form;
 
 use Zend\Form\Form;
 use Cache\Model\CityStorage;
@@ -11,7 +11,7 @@ class CourseSearchForm extends Form {
 	private $cities;
 	
 	public function __construct(array $cities) {
-		parent::__construct('courseSearch');
+		parent::__construct('courseCourseSearch');
 		$this->setCities($cities);
 		$this->setAttribute('method', 'get');
 		$this->setAttribute('id', 'searchForm');
