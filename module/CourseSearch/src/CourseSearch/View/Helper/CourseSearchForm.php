@@ -1,16 +1,16 @@
 <?php
-namespace Search\View\Helper;
+namespace CourseSearch\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 use Zend\View\Model\ViewModel;
-use Search\Form\CourseSearchForm;
+use CourseSearch\Form\CourseSearchForm as SearchForm;
 
-class SearchForm extends AbstractHelper {
+class CourseSearchForm extends AbstractHelper {
 	
 	/**
 	 * @var CourseSearchForm
 	 */
-	protected $searchForm;
+	protected $courseSearchForm;
 	
 	/**
 	 * $var string template used for view
@@ -37,7 +37,7 @@ class SearchForm extends AbstractHelper {
 		}
 	
 		$viewModel = new ViewModel(array(
-			'form' => $this->getSearchForm(),
+			'form' => $this->getCourseSearchForm(),
 			'redirect' => $redirect,
 		));
 		
@@ -51,28 +51,28 @@ class SearchForm extends AbstractHelper {
 	}
 	
 	/**
-	 * Retrieve Search Form Object
-	 * @return SearchForm
+	 * Retrieve CourseSearch Form Object
+	 * @return CourseSearchForm
 	 */
-	public function getSearchForm()
+	public function getCourseSearchForm()
 	{
 		return $this->searchForm;
 	}
 	
 	/**
-	 * Inject Search Form Object
-	 * @param CourseSearchForm $searchForm
-	 * @return SearchForm View Helper
+	 * Inject CourseSearch Form Object
+	 * @param SearchForm $courseSearchForm
+	 * @return CourseSearchForm View Helper
 	 */
-	public function setSearchForm(CourseSearchForm $searchForm)
+	public function setCourseSearchForm(SearchForm $courseSearchForm)
 	{
-		$this->searchForm = $searchForm;
+		$this->searchForm = $courseSearchForm;
 		return $this;
 	}
 	
 	/**
 	 * @param string $viewTemplate
-	 * @return SearchForm
+	 * @return CourseSearchForm
 	 */
 	public function setViewTemplate($viewTemplate)
 	{

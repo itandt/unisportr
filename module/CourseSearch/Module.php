@@ -1,14 +1,14 @@
 <?php
-namespace Search;
+namespace CourseSearch;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
-use Search\Model\CourseTable;
-use Search\Model\Course;
-use Search\Controller\SearchController;
+use CourseSearch\Model\CourseTable;
+use CourseSearch\Model\Course;
+use CourseSearch\Controller\CourseSearchController;
 use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
 
 class Module implements
@@ -39,8 +39,8 @@ class Module implements
 		try {
 			return array (
 				'factories' => array(
-					'Search\Model\CourseTable' => function($serviceManager) {
-						$tableGateway = $serviceManager->get('Search\Model\CourseTableGateway');
+					'CourseSearch\Model\CourseTable' => function($serviceManager) {
+						$tableGateway = $serviceManager->get('CourseSearch\Model\CourseTableGateway');
 						$table = new CourseTable(
 							$tableGateway,
 							$serviceManager->get('Config')['relevance_min'],
@@ -51,17 +51,17 @@ class Module implements
 						);
 						return $table;
 					},
-					'Search\Model\CourseTableGateway' => function($serviceManager) {
+					'CourseSearch\Model\CourseTableGateway' => function($serviceManager) {
 						$dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
 						$resultSetPrototype = new ResultSet();
 						$resultSetPrototype->setArrayObjectPrototype(new Course());
 						return new TableGateway('courses', $dbAdapter, null, $resultSetPrototype);
 					},
-					'Search\Form\CourseSearchForm' => function ($serviceManager) {
+					'CourseSearch\Form\CourseSearchForm' => function ($serviceManager) {
 						$cacheService = $serviceManager->get('Cache\Model\CityStorage');
 						$cities = $cacheService->getCities();
-						$searchForm = new Form\CourseSearchForm($cities);
-						return $searchForm;
+						$courseSearchForm = new Form\CourseSearchForm($cities);
+						return $courseSearchForm;
 					},
 				)
 			);
@@ -76,10 +76,10 @@ class Module implements
 		return array(
 			'factories' => array(
 				'searhForm' => function($serviceManager) {
-					$helper = new View\Helper\SearchForm(array('render' => true, 'redirect' => false));
-					$helper->setViewTemplate('search/search/search-form');
-					$searchForm = $serviceManager->getServiceLocator()->get('Search\Form\CourseSearchForm');
-					$helper->setSearchForm($searchForm);
+					$helper = new View\Helper\CourseSearchForm(array('render' => true, 'redirect' => false));
+					$helper->setViewTemplate('course-search/course-search/course-search-form');
+					$courseSearchForm = $serviceManager->getServiceLocator()->get('CourseSearch\Form\CourseSearchForm');
+					$helper->setCourseSearchForm($courseSearchForm);
 					return $helper;
 				}
 			)
