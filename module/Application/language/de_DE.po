@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-08 21:48+0100\n"
-"PO-Revision-Date: 2013-10-08 21:49+0100\n"
+"PO-Revision-Date: 2013-10-08 21:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -432,7 +432,7 @@ msgstr ""
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:158
 msgid "You can try it with the directly link to the course below."
-msgstr "Du kannst es mit dem direkten Link zum Kurs unten versuchen."
+msgstr "Du kannst es mit dem direkten Kurslink unten versuchen."
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:180
 msgid "on the website of"
