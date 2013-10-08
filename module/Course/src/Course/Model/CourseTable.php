@@ -36,7 +36,9 @@ class CourseTable {
 		$select->from($this->tableGateway->getTable());
 		$select
 			->join('allproviders', 'courses.provider_id = allproviders.providerid', array(
-				'providerName' => 'displayedname', 'providerType' => 'providertype', 'providerURL' => 'url'
+				'providerID' => 'id', 'providerName' => 'displayedname',
+				'providerType' => 'providertype', 'providerURL' => 'url',
+				'providerStatus' => 'status',
 			))
 			->join('cities', 'allproviders.city_id = cities.id', array(
 				'city' => 'name'
