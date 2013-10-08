@@ -195,6 +195,12 @@ ul#catalogListSports li span.aTextCountCourses {
 	font-size: 16px;
 	text-align: left;
 }
+#courseDisplayingForbidden {
+	/*background: #000fff;*/
+	margin: 10px 5px 50px 5px;
+	font-size: 16px;
+	text-align: left;
+}
 #courseData {
 	/*background: #9900cc;*/
 	margin: 20px 0 0 0;

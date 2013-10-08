@@ -28,9 +28,11 @@ class Course implements ArraySerializableInterface {
 	public $courseID02; // +
 	public $location; // +
 	public $url; // +
-	public $providerType;
+	public $providerId;
 	public $providerName;
+	public $providerType;
 	public $providerURL;
+	public $providerStatus;
 	public $sport; // +
 	public $sports; // +
 	
@@ -58,9 +60,11 @@ class Course implements ArraySerializableInterface {
 		$this->courseID02		= (isset($data['courseID02'])) ? $data['courseID02'] : null;
 		$this->location			= (isset($data['location'])) ? $data['location'] : null;
 		$this->url				= (isset($data['url'])) ? $data['url'] : null;
-		$this->providerType		= (isset($data['providerType'])) ? $data['providerType'] : null;
+		$this->providerID		= (isset($data['providerId'])) ? $data['providerId'] : null;
 		$this->providerName		= (isset($data['providerName'])) ? $data['providerName'] : null;
+		$this->providerType		= (isset($data['providerType'])) ? $data['providerType'] : null;
 		$this->providerURL		= (isset($data['providerURL'])) ? $data['providerURL'] : null;
+		$this->providerStatus	= (isset($data['providerStatus'])) ? $data['providerStatus'] : null;
 		$this->sport			= (isset($data['sport'])) ? $data['sport'] : null;
 		$this->sports			= (isset($data['sports'])) ? $data['sports'] : null;
 	}

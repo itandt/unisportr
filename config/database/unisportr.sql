@@ -398,7 +398,8 @@ SELECT
 	`providers`.`providerid` AS `providerid`,
 	`universities`.`displayedname`,
 	`universities`.`url`,
-	`universities`.`city_id`
+	`universities`.`city_id`,
+	`universities`.`status`
 FROM
 	`providers`
 JOIN
@@ -410,7 +411,8 @@ SELECT
 	`providers`.`providerid` AS `providerid`,
 	`partners`.`displayedname`,
 	NULL `url`,
-	`partners`.`city_id`
+	`partners`.`city_id`,
+	`partners`.`status`
 FROM
 	`providers`
 JOIN
