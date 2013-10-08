@@ -104,6 +104,8 @@ jQuery('document').ready(function() {
 		title="<?php echo $aText; ?>"
 	><?php echo $aText; ?></a>
 </div>
+<div class="clear"></div>
+<?php if ($course->providerStatus != 'inactive') : ?>
 <div id="courseLevel"><?php echo $courseLevel ? $this->translate('level') . ' ' . $courseLevel : '&nbsp;'; ?></div>
 <div class="clear"></div>
 <div id="courseData">
@@ -149,6 +151,22 @@ jQuery('document').ready(function() {
 	));
 	?>
 </div>
+<?php else : ?>
+<div id="courseDisplayingForbidden">
+	<?php
+	echo sprintf($this->translate(
+		'Unfortunately %s forbids displaying the courses information on unisport<span class="rStyle">r</span>.'), $courseProvider
+	);
+	?>
+	<?php
+	echo sprintf($this->translate(
+		'You can try it with the directly link to the course below.'
+	));
+	?>
+</div>
+<div class="clear"></div>
+<?php endif; ?>
+
 <div id="courseLink">
 	<a
 		href="<?php echo $courseUrl; ?>"
