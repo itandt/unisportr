@@ -123,6 +123,13 @@ ul#catalogListSports li span.aTextCountCourses {
 	bottom: 5px;
 	font-size: 12px;
 }
+.resultBlock .resultBlockCourseDisplayingForbidden {
+	/*background: #00aa00;*/
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	font-size: 12px;
+}
 /* search result list #stop# */
 
 /* pagination #start# */

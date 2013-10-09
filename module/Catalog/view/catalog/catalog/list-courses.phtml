@@ -78,10 +78,20 @@ $aText = $this->translate('course') . ' ' . $this->translate('link');
 			title="<?php echo $this->escapeHtml($course->title); ?>"
 		><?php echo $courseTitle; ?></a>
 	</div>
+	<?php if ($course->providerStatus != 'inactive') : ?>
 	<div class="resultBlockCourseLevel"><?php echo $courseLevel; ?></div>
 	<div class="resultBlockCourseDate"><?php echo $courseDate; ?></div>
 	<div class="resultBlockCourseWeekday"><?php echo $courseWeekday; ?></div>
 	<div class="resultBlockCourseTime"><?php echo $courseTime; ?></div>
 	<!--div class="resultBlockSocial">[share]</div-->
+	<?php else : ?>
+	<div class="resultBlockCourseDisplayingForbidden">
+	<?php
+	echo sprintf($this->translate(
+		'Unfortunately %s forbids displaying the courses information on unisport<span class="rStyle">r</span>.'
+	), $course->providerName);
+	?>
+	</div>
+	<?php endif; ?>
 </div>
 <?php endforeach; ?>
