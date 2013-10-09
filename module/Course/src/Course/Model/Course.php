@@ -28,7 +28,7 @@ class Course implements ArraySerializableInterface {
 	public $courseID02; // +
 	public $location; // +
 	public $url; // +
-	public $providerId;
+	public $providerID;
 	public $providerName;
 	public $providerType;
 	public $providerURL;

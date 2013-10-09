@@ -12,8 +12,10 @@ class Course implements ArraySerializableInterface {
 	public $endDate;
 	public $startTime;
 	public $endTime;
+	public $providerID;
 	public $providerName;
 	public $providerType;
+	public $providerStatus;
 	public $city;
 	public $weekday;
 	public $usrLevelMin;
@@ -30,8 +32,10 @@ class Course implements ArraySerializableInterface {
 		$this->endDate			= (isset($data['endDate'])) ? $data['endDate'] : null;
 		$this->startTime		= (isset($data['startTime'])) ? $data['startTime'] : null;
 		$this->endTime			= (isset($data['endTime'])) ? $data['endTime'] : null;
+		$this->providerID		= (isset($data['providerId'])) ? $data['providerId'] : null;
 		$this->providerName		= (isset($data['providerName'])) ? $data['providerName'] : null;
 		$this->providerType		= (isset($data['providerType'])) ? $data['providerType'] : null;
+		$this->providerStatus	= (isset($data['providerStatus'])) ? $data['providerStatus'] : null;
 		$this->city				= (isset($data['city'])) ? $data['city'] : null;
 		$this->weekday			= (isset($data['weekday'])) ? $data['weekday'] : null;
 		$this->usrLevelMin		= (isset($data['usrLevelMin'])) ? $data['usrLevelMin'] : null;
