@@ -31,6 +31,7 @@ Od<span class="rStyle">r</span> magst Du uns Dein Feedback geben, was Dir an der
 
 <ul id="catalogListUniversities" class="catalogList">
 <?php foreach ($universities as $university) : ?>
+	<?php if ($university->status != 'inactive') : ?>
 	<li>
 		<?php
 		$aURL = $this->url('city',  array('city' => $this->escapeHtml($university->cityName)));
@@ -38,5 +39,6 @@ Od<span class="rStyle">r</span> magst Du uns Dein Feedback geben, was Dir an der
 		?>
 		<span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span>
 	</li>
+	<?php endif; ?>
 <?php endforeach; ?>
 </ul>
