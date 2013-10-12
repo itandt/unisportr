@@ -10,7 +10,7 @@ return array(
 			'course' => array(
 				'type'	=> 'ITT\Mvc\Router\Http\UnicodeRegex',
 				'options' => array(
-					'regex'	=> '/course/(?<id>[\p{N}]*)-(?<title>[\p{L}\p{Z}\p{P}\p{S}]*)',
+					'regex'	=> '/course/(?<id>[\p{N}]*)-(?<title>[\p{C}\p{L}\p{M}\p{N}\p{P}\p{S}\p{Z}]*)',
 					'defaults' => array(
 						'controller' => 'Course\Controller\Course',
 						'action'	 => 'display-course',
