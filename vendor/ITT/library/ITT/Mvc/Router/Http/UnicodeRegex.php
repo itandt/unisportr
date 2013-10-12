@@ -53,7 +53,7 @@ class UnicodeRegex extends Regex
 			}
 		}
 		// make sure the url we built from spec exists in the original uri path
-		if (false === strpos($uri->getPath(), $url)) {
+		if (false === strpos(rawurldecode($uri->getPath()), rawurldecode($url))) {
 			return null;
 		}
 		// now we can get the matchedLength
