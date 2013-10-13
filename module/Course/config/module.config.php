@@ -8,7 +8,7 @@ return array(
 	'router' => array(
 		'routes' => array(
 			'course' => array(
-				'type'	=> 'ITT\Mvc\Router\Http\UnicodeRegex',
+				'type'	=> 'Zend\Mvc\Router\Http\Regex',
 				'options' => array(
 					'regex'	=> '/course/(?<id>[\p{N}]*)-(?<title>[\p{C}\p{L}\p{M}\p{N}\p{P}\p{S}\p{Z}]*)',
 					'defaults' => array(

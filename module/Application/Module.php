@@ -31,9 +31,6 @@ class Module {
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
 		$viewHelperManager->setInvokableClass('formlabel', 'ITT\Form\View\Helper\FormLabel');
 		$viewHelperManager->setInvokableClass('headmeta', 'ITT\View\Helper\HeadMeta');
-
-//		$routePluginManager = $mvcEvent->getRouter()->getRoutePluginManager();
-// 		$routePluginManager->setInvokableClass('part', 'ITT\Mvc\Router\Http\Part');
 		
 		// $viewHelperManager->setInvokableClass('url', 'ITT\View\Helper\Url'); doesn't work;
 		// factory must be set/overwritten instead.
@@ -95,14 +92,5 @@ class Module {
 			)
 		);
 	}
-	
-// 	public function getRouteConfig()
-// 	{
-// 		return array(
-// 			'invokables' => array(
-// 				'part' => 'ITT\Mvc\Router\Http\Part',
-// 			),
-// 		);
-// 	}
 	
 }
