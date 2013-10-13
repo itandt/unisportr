@@ -13,6 +13,7 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\AbstractValidator;
 use Zend\Console\Console;
+use Zend\Mvc\I18n\Translator;
 
 class Module {
 	
@@ -30,6 +31,9 @@ class Module {
 		$viewHelperManager->setInvokableClass('formrow', 'ITT\Form\View\Helper\FormRow');
 		$viewHelperManager->setInvokableClass('formlabel', 'ITT\Form\View\Helper\FormLabel');
 		$viewHelperManager->setInvokableClass('headmeta', 'ITT\View\Helper\HeadMeta');
+
+//		$routePluginManager = $mvcEvent->getRouter()->getRoutePluginManager();
+// 		$routePluginManager->setInvokableClass('part', 'ITT\Mvc\Router\Http\Part');
 		
 		// $viewHelperManager->setInvokableClass('url', 'ITT\View\Helper\Url'); doesn't work;
 		// factory must be set/overwritten instead.
@@ -54,7 +58,7 @@ class Module {
 			'phpArray',
 			'./vendor/zendframework/zendframework/resources/languages/de/Zend_Validate.php'
 		);
-		AbstractValidator::setDefaultTranslator($translator);
+		AbstractValidator::setDefaultTranslator(new Translator($translator));
 	}
 
 	public function getConfig()
@@ -91,5 +95,14 @@ class Module {
 			)
 		);
 	}
+	
+// 	public function getRouteConfig()
+// 	{
+// 		return array(
+// 			'invokables' => array(
+// 				'part' => 'ITT\Mvc\Router\Http\Part',
+// 			),
+// 		);
+// 	}
 	
 }

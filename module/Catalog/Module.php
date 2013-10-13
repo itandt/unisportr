@@ -25,6 +25,9 @@ use Catalog\Model\UniversityTable;
 
 class Module implements ConfigProviderInterface, ServiceProviderInterface, AutoloaderProviderInterface {
 	
+	public function onBootstrap(MvcEvent $mvcEvent) {
+	}
+	
 	public function getConfig() {
 		return include __DIR__ . '/config/module.config.php';
 	}

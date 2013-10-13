@@ -57,7 +57,8 @@ class UnicodeRegex extends Regex
 			return null;
 		}
 		// now we can get the matchedLength
-		$matchedLength = strlen($url);
+		
+		$matchedLength = strlen(rawurlencode($url));
 	
 		return new RouteMatch($mergedParams, $matchedLength);
 	}
