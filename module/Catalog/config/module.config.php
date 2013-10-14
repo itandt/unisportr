@@ -33,7 +33,7 @@ return array(
 			'sport' => array(
 				'type'	=> 'ITT\Mvc\Router\Http\Regex',
 				'options' => array(
-					'regex'	=> '/catalog/(?<city>[\p{C}\p{L}\p{M}\p{N}\p{S}\p{Zs}]*)/(?<sport>(?:(?!/)[\p{C}\p{L}\p{M}\p{N}\p{P}\p{S}\p{Zs}])*)',
+					'regex'	=> '/catalog/(?<city>(?:(?!/)[\p{C}\p{L}\p{M}\p{N}\p{P}\p{S}\p{Zs}])*)/(?<sport>(?:(?!/)[\p{C}\p{L}\p{M}\p{N}\p{P}\p{S}\p{Zs}])*)',
 					'defaults' => array(
 						'controller' => 'Catalog\Controller\Catalog',
 						'action'	 => 'list-courses',
