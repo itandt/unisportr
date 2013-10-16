@@ -15,4 +15,7 @@ $courseTitle = strlen($this->escapeHtml($course->title)) > $titleMaxLength
 
 <h1 id="pageTitle"><?php echo $title; ?></h1>
 
-<?php echo $this->translate('The course') . ' ' . $course->title . ' ' . $this->translate('has expired') . '.'; ?>
+<div id="courseExpired">
+<?php echo $this->translate('The course') . ' ' . $course->title . ' ' . $this->translate('is not available anymore') . '.'; ?>
+</div>
+<div class="clear"></div>

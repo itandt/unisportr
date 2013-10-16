@@ -1,0 +1,45 @@
+<div id="courseLevel"><?php echo $courseLevel ? $this->translate('level') . ' ' . $courseLevel : '&nbsp;'; ?></div>
+<div class="clear"></div>
+<div id="courseData">
+	<div class="courseInfo" id="courseInfoTimeData">
+		<div class="courseInfoLabel"><?php echo $this->translate('date and time'); ?>:</div>
+		<div class="courseInfoData">
+			<div><?php echo $courseDate; ?></div>
+			<div><?php echo $courseWeekday; ?> <?php echo $courseTime; ?></div>
+		</div>
+	</div>
+	<?php if (!empty($courseLocation)) : ?>
+	<div class="courseInfo">
+		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
+		<div class="courseInfoData"><?php echo $courseLocation; ?></div>
+	</div>
+	<?php endif; ?>
+	<?php if (!empty($courseTrainer)) : ?>
+	<div class="courseInfo">
+		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
+		<div class="courseInfoData"><?php echo $courseTrainer; ?></div>
+	</div>
+	<?php endif; ?>
+	<div class="courseInfo">
+		<div class="courseInfoLabel"><?php echo $providerLabel; ?>:</div>
+		<div class="courseInfoData"><?php echo $courseProvider; ?></div>
+	</div>
+</div>
+<div id="courseInfoGoogleMap">
+	<div id="gMapCanvas"></div>
+	<!-- <a id="gMapLink" href="#"></a> -->
+</div>
+<div class="clear"></div>
+<div id="courseDescription">
+	<div id="courseDescriptionLabel">&nbsp;</div>
+	<div id="courseDescriptionData"><?php echo $courseDescription; ?></div>
+</div>
+<!--div id="courseSocial">[share]</div-->
+<div>
+	<!-- Facebook Like Button -->
+	<?php
+	echo $this->render('/partials/facebook-like-button.phtml', array(
+		'url' => $uri,
+	));
+	?>
+</div>

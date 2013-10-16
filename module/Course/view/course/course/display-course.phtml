@@ -38,7 +38,6 @@ $courseCity = $this->escapeHtml($course->city);
 $courseTime = Utility::getOneOrPair(
 	$this->escapeHtml($course->startTime), $this->escapeHtml($course->endTime), ' - '
 );
-$courseUrl = $this->escapeHtml($course->url);
 $providerLabel = $this->escapeHtml($course->providerType) == 'university'
 	? $this->translate('university')
 	: $this->translate('partner')
@@ -80,7 +79,6 @@ if (!empty($course->courseID01)) {
 } else {
 	$courseID = null;
 }
-$courseIDText = $courseID . ' ';
 ?>
 <?php
 $urlParams = array('id' => $this->escapeHtml($course->id), 'title' => $courseTitle);
@@ -105,70 +103,50 @@ jQuery('document').ready(function() {
 	><?php echo $aText; ?></a>
 </div>
 <div class="clear"></div>
-<?php if ($course->providerStatus != 'inactive') : ?>
-<div id="courseLevel"><?php echo $courseLevel ? $this->translate('level') . ' ' . $courseLevel : '&nbsp;'; ?></div>
-<div class="clear"></div>
-<div id="courseData">
-	<div class="courseInfo" id="courseInfoTimeData">
-		<div class="courseInfoLabel"><?php echo $this->translate('date and time'); ?>:</div>
-		<div class="courseInfoData">
-			<div><?php echo $courseDate; ?></div>
-			<div><?php echo $courseWeekday; ?> <?php echo $courseTime; ?></div>
-		</div>
-	</div>
-	<?php if (!empty($courseLocation)) : ?>
-	<div class="courseInfo">
-		<div class="courseInfoLabel"><?php echo $this->translate('location'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseLocation; ?></div>
-	</div>
-	<?php endif; ?>
-	<?php if (!empty($courseTrainer)) : ?>
-	<div class="courseInfo">
-		<div class="courseInfoLabel"><?php echo $this->translate('trainer'); ?>:</div>
-		<div class="courseInfoData"><?php echo $courseTrainer; ?></div>
-	</div>
-	<?php endif; ?>
-	<div class="courseInfo">
-		<div class="courseInfoLabel"><?php echo $providerLabel; ?>:</div>
-		<div class="courseInfoData"><?php echo $courseProvider; ?></div>
-	</div>
-</div>
-<div id="courseInfoGoogleMap">
-	<div id="gMapCanvas"></div>
-	<!-- <a id="gMapLink" href="#"></a> -->
-</div>
-<div class="clear"></div>
-<div id="courseDescription">
-	<div id="courseDescriptionLabel">&nbsp;</div>
-	<div id="courseDescriptionData"><?php echo $courseDescription; ?></div>
-</div>
-<!--div id="courseSocial">[share]</div-->
-<div>
-	<!-- Facebook Like Button -->
-	<?php
-	echo $this->render('/partials/facebook-like-button.phtml', array(
-		'url' => $uri,
-	));
-	?>
-</div>
-<?php else : ?>
-<div id="courseDisplayingForbidden">
-	<?php
-	echo sprintf($this->translate(
-		'Unfortunately %s forbids displaying the courses information on unisport<span class="rStyle">r</span>.'
-	), $courseProvider);
-	?>
-	<?php echo $this->translate('You can try it with the directly link to the course below.'); ?>
-</div>
-<div class="clear"></div>
-<?php endif; ?>
+<?php
+$subViewParams = array(
+	'course' => $course,
+	'courseID' => $courseID,
+	'courseDescription' => $courseDescription,
+	'courseLevel' => $courseLevel,
+	'courseDate' => $courseDate,
+	'courseTime' => $courseTime,
+	'courseWeekday' => $courseWeekday,
+	'providerLabel' => $providerLabel,
+	'courseProvider' => $courseProvider,
+	'urlParams' => $urlParams,
+	'aURL' => $aURL,
+	'aText' => $aText,
+	'uri' => $uri,
+);
+
+// variant 1
+$dateTimeNow = new \DateTime('now');
+$dateTimeCourseEndDate = new \DateTime($course->endDate);
+$courseExpired = !($dateTimeCourseEndDate >= $dateTimeNow);
+// variant 2
+// $courseEndDate = date_create($course->endDate);
+// $nowDate = date_create('now');
+// $courseEndNowInterval = date_diff($nowDate, $courseEndDate);
+// $courseExpired = $courseEndNowInterval->format('%R%a') < 0;
+
+if ($course->providerStatus != 'inactive') {
+	if (!$courseExpired) {
+		echo $this->render('course/course/course-info.phtml', $subViewParams);
+	} else {
+		echo $this->render('course/course/course-expired.phtml', $subViewParams);
+	}	
+} else {
+	echo $this->render('course/course/course-forbidden.phtml', $subViewParams);
+}
+?>
 
 <div id="courseLink">
 	<a
-		href="<?php echo $courseUrl; ?>"
+		href="<?php echo $course->url; ?>"
 		title="<?php echo $courseProvider; ?>"
 		rel="nofollow"
-	><?php echo $this->translate('Course') . ' ' . $courseIDText . $this->translate('on the website of') . ' ' . $courseProvider . ' ' . $this->translate('visit'); ?></a>
+	><?php echo $this->translate('Course') . ' ' . $course->title . ' ' . $this->translate('on the website of') . ' ' . $courseProvider . ' ' . $this->translate('visit'); ?></a>
 </div>
 <div>
 	<!-- AddThis Panel -->

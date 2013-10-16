@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unisportr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-14 01:30+0100\n"
-"PO-Revision-Date: 2013-10-14 01:31+0100\n"
+"POT-Creation-Date: 2013-10-16 22:37+0100\n"
+"PO-Revision-Date: 2013-10-16 22:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITT <contact@it-and-t.com>\n"
 "Language: de_DE\n"
@@ -25,7 +25,7 @@ msgstr "Suchbegriff"
 
 #: M:\workspace\itt\unisportr-zf\module/CourseSearch/src/CourseSearch/Form/CourseSearchForm.php:38
 #: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/src/SportsPartnerSearch/Form/SportsPartnerSearchForm.php:38
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:127
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:20
 msgid "trainer"
 msgstr "Trainer"
 
@@ -130,16 +130,11 @@ msgstr "Impressum"
 
 #: ../view/application/index/sitemap.phtml:34
 #: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:34
-msgid "search"
-msgstr "Suche"
-
-#: ../view/application/index/sitemap.phtml:37
-#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:37
 msgid "course search"
 msgstr "Kurssuche"
 
-#: ../view/application/index/sitemap.phtml:40
-#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:40
+#: ../view/application/index/sitemap.phtml:37
+#: M:\workspace\itt\unisportr-zf\module/Application/view/application/index/sitemap.phtml:37
 msgid "sitemap"
 msgstr "Sitemap"
 
@@ -363,7 +358,7 @@ msgid "link"
 msgstr "Link"
 
 #: M:\workspace\itt\unisportr-zf\module/Catalog/view/catalog/catalog/list-courses.phtml:91
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:158
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-forbidden.phtml:4
 #: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/list-courses.phtml:64
 #, php-format
 msgid ""
@@ -385,13 +380,42 @@ msgstr "Nicht zugeordnet"
 msgid "course(-s)"
 msgstr "Kurs(-e)"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-expired.phtml:18
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-expired.phtml:19
 msgid "The course"
 msgstr "Der Kurs"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-expired.phtml:18
-msgid "has expired"
-msgstr "ist abgelaufen"
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-expired.phtml:19
+msgid "is not available anymore"
+msgstr "ist nicht mehr verfügbar"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-forbidden.phtml:7
+msgid "You can try it with the directly link to the course below."
+msgstr "Du kannst es mit dem direkten Kurslink unten versuchen."
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:2
+msgid "level"
+msgstr "Level"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:6
+msgid "date and time"
+msgstr "Termine"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:14
+msgid "location"
+msgstr "Ort"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:53
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:64
+msgid "Course"
+msgstr "Kurs"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:53
+msgid "on the website of"
+msgstr "auf der Website von"
+
+#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/course-info.phtml:53
+msgid "visit"
+msgstr "besuchen"
 
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:43
 msgid "university"
@@ -405,11 +429,6 @@ msgstr "Partner"
 msgid "and"
 msgstr "und"
 
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:64
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:171
-msgid "Course"
-msgstr "Kurs"
-
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:66
 msgid "by"
 msgstr "bei"
@@ -422,30 +441,6 @@ msgstr "an"
 #: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:70
 msgid "in"
 msgstr "in"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:109
-msgid "level"
-msgstr "Level"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:113
-msgid "date and time"
-msgstr "Termine"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:121
-msgid "location"
-msgstr "Ort"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:161
-msgid "You can try it with the directly link to the course below."
-msgstr "Du kannst es mit dem direkten Kurslink unten versuchen."
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:171
-msgid "on the website of"
-msgstr "auf der Website von"
-
-#: M:\workspace\itt\unisportr-zf\module/Course/view/course/course/display-course.phtml:171
-msgid "visit"
-msgstr "besuchen"
 
 #: M:\workspace\itt\unisportr-zf\module/CourseSearch/view/course-search/course-search/course-search-form.phtml:73
 #: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partner-search/sports-partner-search/sports-partner-search-form.phtml:73
@@ -465,6 +460,12 @@ msgstr "Hochschulsportkurssuche"
 #: M:\workspace\itt\unisportr-zf\module/SportsPartnerSearch/view/sports-partner-search/sports-partner-search/search-sports-partners.phtml:2
 msgid "Sports partner search"
 msgstr "Sportpartnersuche"
+
+#~ msgid "search"
+#~ msgstr "Suche"
+
+#~ msgid "has expired"
+#~ msgstr "ist abgelaufen"
 
 #, fuzzy
 #~ msgid "course-search"

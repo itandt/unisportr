@@ -203,7 +203,8 @@ ul#catalogListSports li span.aTextCountCourses {
 	font-size: 16px;
 	text-align: left;
 }
-#courseDisplayingForbidden {
+#courseDisplayingForbidden,
+#courseExpired {
 	/*background: #000fff;*/
 	margin: 10px 5px 50px 5px;
 	font-size: 16px;
