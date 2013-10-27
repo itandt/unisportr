@@ -9,7 +9,7 @@ $this->headTitle($title);
 
 <p>unisport<span class="rStyle">r</span> ist die erste zentrale bundesweite Plattform für Hochschulsport.
 Mit unisport<span class="rStyle">r</span> findest Du Kurse
-an derzeit über 20 großen Hochschulen.
+an derzeit über 10 großen Städten.
 
 <p>Finde Deinen Kurs mit uns<span class="rStyle">r</span>m
 <a href="<?php echo $this->url('course-search'); ?>">Kurs-Find<span class="rStyle">r</span></a>
@@ -26,18 +26,24 @@ Od<span class="rStyle">r</span> magst Du uns Dein Feedback geben, was Dir an der
 
 <p>Dein unisport<span class="rStyle">r</span> Team</p>
 
-<p>Sportkurse dies<span class="rStyle">r</span> Hochschulen kannst Du mit unisport<span class="rStyle">r</span> finden:</p>
+<p>Sportkurse in diesen Städten kannst Du mit unisport<span class="rStyle">r</span> finden:</p>
 
 <ul id="catalogListUniversities" class="catalogList">
+<?php $printedCities = array(); ?>
 <?php foreach ($universities as $university) : ?>
 	<?php if ($university->status != 'inactive') : ?>
-	<li>
-		<?php
-		$aURL = $this->url('city',  array('city' => $this->escapeHtml($university->cityName)));
-		$aText = $this->escapeHtml($university->displayedName);
-		?>
-		<span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span>
-	</li>
+		<?php if(!in_array($university->cityName, $printedCities)) : ?>
+			<li>
+				<?php
+				$aURL = $this->url('city',  array('city' => $this->escapeHtml($university->cityName)));
+				$aText = $this->escapeHtml($university->cityName);
+				?>
+				<span><a href="<?php echo $aURL; ?>"><?php echo $aText; ?></a></span>
+			</li>
+			<?php
+			$printedCities[] = $university->cityName;
+			?>
+		<?php endif; ?>
 	<?php endif; ?>
 <?php endforeach; ?>
 </ul>
