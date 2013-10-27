@@ -43,3 +43,10 @@
 	));
 	?>
 </div>
+<div id="courseLink">
+	<a
+		href="<?php echo $course->url; ?>"
+		title="<?php echo $courseProvider; ?>"
+		rel="nofollow"
+	><?php echo $this->translate('Course') . ' ' . $course->title . ' ' . $this->translate('on the website of') . ' ' . $courseProvider . ' ' . $this->translate('visit'); ?></a>
+</div>
