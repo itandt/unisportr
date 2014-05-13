@@ -117,9 +117,11 @@ echo $this->doctype();
 		</div>
 		<!-- AddThis Welcome Bar -->
 		<?php // echo $this->partial('/partials/addthis-welcome-bar.phtml'); ?>
-		<!-- feedeebuzz /-->
+		<!-- Feedeebuzz /-->
 		<?php echo $this->partial('partials/feedeebuzz.phtml'); ?>
-		<!-- piwik -->
+		<!-- Piwik -->
 		<?php echo $this->contentForEnvironment('partials/piwik.phtml', ['live']); ?>
+		<!-- Google Analytics -->
+		<?php echo $this->contentForEnvironment('partials/google-analytics.phtml', ['live']); ?>
 	</body>
 </html>
